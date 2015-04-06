@@ -1,0 +1,52 @@
+
+.footer-home
+	background: $background-dark
+	padding: $double-unit-layout 0 $quadruple-unit-layout
+	width: 100%
+	color: white
+	font-size: rem(14px)
+
+	a
+		text-decoration: none
+		color: white
+	h4
+		color: lighten($background-dark, 20%)
+
+	.footer-links
+		+nobullet
+		margin-bottom: $double-unit-layout
+		li
+			&:not(:last-child)
+				margin-bottom: $half-unit-layout
+			a
+				color: white
+
+	.copyright
+		margin-top: $unit-layout
+		padding: $unit-layout 0
+		font-size: rem(12px)
+		color: lighten($background-dark, 20%)
+
+		.social-profiles
+			+nobullet
+			align-self: flex-end
+			margin-left: auto
+			display: flex
+			
+			li
+				&:not(:last-child)
+					margin-right: $unit-layout
+				a
+					+background-image
+					display: block
+					background-size: 20px 20px
+					width: 20px
+					height: 20px
+
+					&.facebook
+						background-image: url(../images/icons/grey/icon-facebook.svg)
+					&.twitter
+						background-image: url(../images/icons/grey/icon-twitter.svg)
+					&.google-plus
+						background-image: url(../images/icons/grey/icon-google-plus.svg)
+

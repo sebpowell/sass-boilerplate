@@ -1,0 +1,32 @@
+.tabs
+	ul
+		background: #e5e5e5
+		+nobullet
+		+border-radius(5px)
+		display: flex
+		margin-bottom: $unit-layout
+		padding: 5px
+
+	li
+		flex: 1
+		+border-radius(5px)
+
+		> a
+			flex: 1
+			&:focus
+				outline: none
+
+			display: block
+			text-align: center
+			&:not(:last-child)
+				margin-right: 2px
+			padding: 10px
+			+border-radius(5px)
+			&:hover
+				background: white
+				cursor: pointer
+			
+		&.is-selected, &.ui-state-active
+			background: white
+			
+			

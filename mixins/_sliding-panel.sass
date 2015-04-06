@@ -1,0 +1,12 @@
+@mixin sliding-panel($direction, $width)
+
+	transition: .35s $direction ease-in-out
+	-webkit-transition: .35s $direction ease-in-out
+	-moz-transition: .35s $direction ease-in-out
+	-o-transition: .35s $direction ease-in-out
+
+	width: $width
+	height: 100%
+	#{$direction}: -$width
+	&.is-visible
+		#{$direction}: 0

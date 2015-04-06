@@ -1,0 +1,89 @@
+=background-image
+	background-size: 100%
+	background-position: center center
+	background-repeat: no-repeat
+
+.button, button
+	+border-radius(3px)
+	-webkit-appearance: none // Removes styling on iOS
+
+	display: inline-block // If class is applied to a element
+	background: transparent
+	font:
+		weight: 600
+		family: $font-family-primary
+		size: rem(12px)
+	text:
+		decoration: none
+		transform: capitalize
+		align: center
+	padding: rem(14px) $unit-layout
+	line-height: 1 !important
+	// height: auto !important
+	cursor: pointer
+	min-width: inherit
+	+respond-to-size($tablet)
+		font-size: rem(18px) !important
+
+	+hover()
+		//+box-shadow(0 1px 2px rgba(0,0,0,.125)) // This should not be black
+		border-color: $color-grey-300
+
+	&:active
+		border-color: $color-grey-500
+		color: $color-grey-500
+
+	// Color Modifiers
+	&.primary 
+		border-color: $color-primary
+		background: $color-primary
+		color: white
+		+hover
+			border-color: $color-primary-600
+	
+	&.bordered
+		border: 1px solid $color-primary
+		color: $color-primary
+
+	&.secondary
+		background: #92D32D
+		color: white
+
+	&.grey
+		background: #e5e5e5
+		border: 0
+		color: white
+
+	&.facebook
+		background-color: #3D5B99
+		color: white
+
+	&.twitter
+		background-color: #2894F3
+		color: white
+
+	&.white
+		background: white
+		color: $color-primary
+		&:hover
+			background: darken(white, 5%)
+
+	&.small
+		+border-radius(3px)
+		padding: .5rem
+		font-size: rem(12px)
+
+		&.rounded
+			+border-radius(15px)
+
+	&.medium
+		+border-radius(3px)
+		padding: 16px 20px
+		font-size: rem(18px)
+
+	&.large
+		font-size: rem(16px)
+		padding: 20px 32px
+
+	&.rounded
+		+border-radius(20px)

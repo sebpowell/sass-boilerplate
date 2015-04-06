@@ -1,0 +1,153 @@
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration
+	display: none
+
+
+
+.search-large
+	+box-shadow(0 1px 3px $drop-shadow)
+	position: fixed
+	width: 100%
+	top: $nav-height
+	left: 0
+	font-size: rem(24px)
+	z-index: 9999
+	margin-top: -1px
+	+respond-to-size($tablet)
+		top: 0
+	
+	.js-search-toggle
+		position: fixed
+		cursor: pointer
+		right: $double-unit-layout
+		top: $double-unit-layout
+		stroke: $color-primary
+		z-index: 9999
+		
+	.area
+		position: relative
+		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1)
+		display: flex
+
+	input
+		+border-radius(0)
+		background-image: url(../images/icons/white/icon-search.svg)
+		background-color: $background-dark
+		background-repeat: no-repeat
+		border: 0
+		background-position: 33px 21px
+		background-size: 20px 20px 
+		font-size: rem(18px)
+		padding-left: 62px
+		height: 62px
+		color: white
+		+placeholder
+			color: lighten($background-dark, 30%)
+		&:focus
+			box-shadow: none
+			color: white !important
+			border-color: $color-border !important
+
+
+
+
+.search-block
+	input[type="search"]
+		-webkit-appearance: textfield // Need to replace this
+		width: 100%
+		background: white
+
+		font-size: rem(16px)
+		padding: $unit-layout
+		+border-radius(0)
+		border-bottom: 0 !important
+		padding-left: 48px !important
+		color: $color-grey-600
+		background-image: url(../images/icons/grey/icon-search.svg)
+		background-repeat: no-repeat
+		background-position: 12px
+		border: 0
+		background-size: 24px 24px
+
+.search
+	display: flex
+	position: relative // Anchors search results.
+	button
+		// background-color: $color-grey-100
+		// +border-radius(3px 0 0 3px)
+		// border: 1px solid $color-grey-200
+
+		align-self: center
+		width: 60px
+		height: 100% !important
+		
+		&:hover
+			box-shadow: none !important
+
+	// Move this to nav? 
+	input[type="search"]
+		+transition(color, .25s)
+		-webkit-appearance: textfield // Need to replace this
+		width: 100%
+		flex: 3
+		background: white
+		font-size: rem(18px)
+	
+		color: $color-grey-600
+		background:
+			image: url(../images/icons/grey/icon-search.svg)
+			repeat: no-repeat
+			size: rem(20px)
+			position: 30px 22px
+		
+		+respond-to-size($tablet)
+			font-size: rem(14px)
+		&:focus
+			color: $color-grey-900
+			+placeholder
+				color: $color-grey-200
+		&:hover
+			box-shadow: none
+
+
+
+.search-results
+	+box-shadow(0px 1px 2px $drop-shadow)
+	border-bottom: 1px solid $keyline-light
+	border-top: 0
+	background: white
+	position: absolute
+	top: 100%
+	left: 0
+	z-index: 9995
+	width: 100%
+
+	+respond-to-size($tablet)
+		+border-radius(0)
+
+	ul
+		max-height: 300px
+		overflow-y: scroll
+		+nobullet
+		li
+			cursor: pointer
+			padding-left: $double-unit-layout
+			height: 62px
+			font-size: 16px
+			line-height: 62px
+			text-align: left
+			&:hover, &.selected
+				background-color: $background-light
+				color: $color-primary
+			&:not(:last-child)
+				border-bottom: 1px solid $color-grey-200
+			&.sub-heading
+				line-height: 1 !important
+				height: auto !important
+				&:hover
+					color: inherit
+					cursor: default
+			> [class^="icon"]
+				margin-right: $half-unit-layout

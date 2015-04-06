@@ -1,0 +1,15 @@
+.vertical-list
+	+nobullet
+	li
+		padding: $unit-layout
+		display: flex
+	&.is-bordered
+		> li
+			border-bottom: 1px solid $color-grey-100
+	.icon
+		background: white
+		width: 30px
+		height: 30px
+	&.is-thin
+		> li
+			padding: $half-unit-layout $unit-layout

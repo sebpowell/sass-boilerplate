@@ -1,0 +1,26 @@
+.is-hidden 
+	display: none !important
+	visibility: hidden !important
+
+.is-visible
+	display: inherit !important
+	visibility: visible !important
+
+// Shows elements only on mobile phones.
+.is-visible-phone
+	display: none !important
+	visibility: hidden !important
+	+respond-to-size(500px)
+		display: block !important
+		visibility: visible !important
+
+.is-hidden-phone
+	+respond-to-size(500px)
+		display: none !important
+		visibility: hidden !important
+
+.is-hidden-tablet
+	+respond-to-size($tablet)
+		display: none !important
+		visibility: hidden !important
+

@@ -1,0 +1,116 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/sebpowell/.nvm/v0.10.32/bin/node',
+1 verbose cli   '/Users/sebpowell/.nvm/v0.10.32/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save-dev',
+1 verbose cli   'gulp-ruby-sass' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose readDependencies using package.json deps
+5 verbose cache add [ 'gulp-ruby-sass', null ]
+6 verbose cache add name=undefined spec="gulp-ruby-sass" args=["gulp-ruby-sass",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'gulp-ruby-sass',
+7 verbose parsed url   path: 'gulp-ruby-sass',
+7 verbose parsed url   href: 'gulp-ruby-sass' }
+8 silly lockFile a832ec05-gulp-ruby-sass gulp-ruby-sass
+9 verbose lock gulp-ruby-sass /Users/sebpowell/.npm/a832ec05-gulp-ruby-sass.lock
+10 silly lockFile a832ec05-gulp-ruby-sass gulp-ruby-sass
+11 silly lockFile a832ec05-gulp-ruby-sass gulp-ruby-sass
+12 verbose addNamed [ 'gulp-ruby-sass', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile c308c9d4-gulp-ruby-sass gulp-ruby-sass@
+15 verbose lock gulp-ruby-sass@ /Users/sebpowell/.npm/c308c9d4-gulp-ruby-sass.lock
+16 silly addNameRange { name: 'gulp-ruby-sass', range: '*', hasData: false }
+17 verbose request where is /gulp-ruby-sass
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id ebb80bece611d980
+20 verbose url raw /gulp-ruby-sass
+21 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-ruby-sass' ]
+22 verbose url resolved https://registry.npmjs.org/gulp-ruby-sass
+23 verbose request where is https://registry.npmjs.org/gulp-ruby-sass
+24 info trying registry request attempt 1 at 14:39:19
+25 verbose etag "9MJ321D348ROQA44ZT1YYP3R"
+26 http GET https://registry.npmjs.org/gulp-ruby-sass
+27 http 304 https://registry.npmjs.org/gulp-ruby-sass
+28 silly registry.get cb [ 304,
+28 silly registry.get   { date: 'Sun, 05 Apr 2015 13:39:19 GMT',
+28 silly registry.get     server: 'Apache',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     'last-modified': 'Sun, 05 Apr 2015 13:39:19 GMT',
+28 silly registry.get     'cache-control': 'max-age=60',
+28 silly registry.get     etag: '"9MJ321D348ROQA44ZT1YYP3R"',
+28 silly registry.get     age: '0',
+28 silly registry.get     'x-served-by': 'cache-ams4140-AMS',
+28 silly registry.get     'x-cache': 'HIT',
+28 silly registry.get     'x-cache-hits': '1',
+28 silly registry.get     'x-timer': 'S1428241159.440123,VS0,VE384',
+28 silly registry.get     vary: 'Accept',
+28 silly registry.get     'content-length': '0',
+28 silly registry.get     'keep-alive': 'timeout=10, max=50',
+28 silly registry.get     connection: 'Keep-Alive' } ]
+29 verbose etag https://registry.npmjs.org/gulp-ruby-sass from cache
+30 silly addNameRange number 2 { name: 'gulp-ruby-sass', range: '*', hasData: true }
+31 silly addNameRange versions [ 'gulp-ruby-sass',
+31 silly addNameRange   [ '0.1.0',
+31 silly addNameRange     '0.1.1',
+31 silly addNameRange     '0.1.2',
+31 silly addNameRange     '0.2.0',
+31 silly addNameRange     '0.3.0',
+31 silly addNameRange     '0.3.1',
+31 silly addNameRange     '0.4.0',
+31 silly addNameRange     '0.4.1',
+31 silly addNameRange     '0.4.2',
+31 silly addNameRange     '0.4.3',
+31 silly addNameRange     '0.5.0',
+31 silly addNameRange     '0.6.0',
+31 silly addNameRange     '0.7.0',
+31 silly addNameRange     '0.7.1',
+31 silly addNameRange     '1.0.0-alpha',
+31 silly addNameRange     '1.0.0-alpha.2',
+31 silly addNameRange     '1.0.0-alpha.3',
+31 silly addNameRange     '1.0.0',
+31 silly addNameRange     '1.0.1' ] ]
+32 verbose addNamed [ 'gulp-ruby-sass', '1.0.1' ]
+33 verbose addNamed [ '1.0.1', '1.0.1' ]
+34 silly lockFile 2d8af6f9-gulp-ruby-sass-1-0-1 gulp-ruby-sass@1.0.1
+35 verbose lock gulp-ruby-sass@1.0.1 /Users/sebpowell/.npm/2d8af6f9-gulp-ruby-sass-1-0-1.lock
+36 silly lockFile d3850662-by-sass-gulp-ruby-sass-1-0-1-tgz https://registry.npmjs.org/gulp-ruby-sass/-/gulp-ruby-sass-1.0.1.tgz
+37 verbose lock https://registry.npmjs.org/gulp-ruby-sass/-/gulp-ruby-sass-1.0.1.tgz /Users/sebpowell/.npm/d3850662-by-sass-gulp-ruby-sass-1-0-1-tgz.lock
+38 verbose addRemoteTarball [ 'https://registry.npmjs.org/gulp-ruby-sass/-/gulp-ruby-sass-1.0.1.tgz',
+38 verbose addRemoteTarball   'd9890fc25e885ca54bea8c99102cd30f165de531' ]
+39 info retry fetch attempt 1 at 14:39:19
+40 verbose fetch to= /var/folders/69/xmfbmlc91bzfq639slmrp9nh0000gn/T/npm-12913-eq3aDDXu/registry.npmjs.org/gulp-ruby-sass/-/gulp-ruby-sass-1.0.1.tgz
+41 http GET https://registry.npmjs.org/gulp-ruby-sass/-/gulp-ruby-sass-1.0.1.tgz
+42 http 200 https://registry.npmjs.org/gulp-ruby-sass/-/gulp-ruby-sass-1.0.1.tgz
+43 silly lockFile d3850662-by-sass-gulp-ruby-sass-1-0-1-tgz https://registry.npmjs.org/gulp-ruby-sass/-/gulp-ruby-sass-1.0.1.tgz
+44 silly lockFile d3850662-by-sass-gulp-ruby-sass-1-0-1-tgz https://registry.npmjs.org/gulp-ruby-sass/-/gulp-ruby-sass-1.0.1.tgz
+45 silly lockFile 2d8af6f9-gulp-ruby-sass-1-0-1 gulp-ruby-sass@1.0.1
+46 silly lockFile 2d8af6f9-gulp-ruby-sass-1-0-1 gulp-ruby-sass@1.0.1
+47 silly lockFile c308c9d4-gulp-ruby-sass gulp-ruby-sass@
+48 silly lockFile c308c9d4-gulp-ruby-sass gulp-ruby-sass@
+49 error Error: EACCES, mkdir '/Users/sebpowell/.npm/gulp-ruby-sass/1.0.1'
+49 error  { [Error: EACCES, mkdir '/Users/sebpowell/.npm/gulp-ruby-sass/1.0.1']
+49 error   errno: 3,
+49 error   code: 'EACCES',
+49 error   path: '/Users/sebpowell/.npm/gulp-ruby-sass/1.0.1',
+49 error   parent: 'get-agent' }
+50 error Please try running this command again as root/Administrator.
+51 error System Darwin 14.1.0
+52 error command "/Users/sebpowell/.nvm/v0.10.32/bin/node" "/Users/sebpowell/.nvm/v0.10.32/bin/npm" "install" "--save-dev" "gulp-ruby-sass"
+53 error cwd /Users/sebpowell/Desktop/css
+54 error node -v v0.10.32
+55 error npm -v 1.4.28
+56 error path /Users/sebpowell/.npm/gulp-ruby-sass/1.0.1
+57 error code EACCES
+58 error errno 3
+59 error stack Error: EACCES, mkdir '/Users/sebpowell/.npm/gulp-ruby-sass/1.0.1'
+60 verbose exit [ 3, true ]
