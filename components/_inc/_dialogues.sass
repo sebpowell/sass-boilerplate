@@ -1,0 +1,60 @@
+.modal
+	+border-radius($border-radius)
+	+transition(all, 1s)
+	position: fixed
+	top: 50%
+	left: 50%
+	z-index: 9999
+	width: 500px
+	background-color: white
+	overflow: hidden
+
+	.small
+		width: 400px
+		margin: auto
+	
+	&.large
+		max-width: 600px
+		width: 95%
+
+	.modal-header
+		+clearfix
+		position: relative
+		display: flex
+		font:
+			size: rem(24px)
+			weight: 500
+		text-transform: capitalize
+		padding: $size-single-unit $size-double-unit
+		border-bottom: 1px solid $color-keyline-light
+
+	.modal-close
+		position: absolute !Important
+		cursor: pointer
+		right: $size-single-unit
+		top: $size-single-unit
+		z-index: 999
+		line-height: 1
+		&:before
+			content: "\00d7"
+			color: white
+			font-size: 24px
+		
+	.modal-body
+		+clearfix
+		padding: $size-double-unit
+
+	.modal-footer
+		+clearfix
+		padding: $size-single-unit
+		border-top: 1px solid $color-keyline-light
+		text-align: right
+
+.modal-backdrop
+	+z-index(modal-backdrop)
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(00, 00, 00, 0.5)

@@ -1,0 +1,136 @@
+// Large / medium / small form
+
+
+
+input[type="submit"]
+	width: 100%
+
+.form-group
+	margin-bottom: $size-single-unit
+
+$height-form-element: 52px
+
+.checkbox
+	+clearfix
+
+	label
+		float: left
+		margin: 0
+		font-size: 24px
+		font-weight: 400
+
+	input
+		float: left
+		margin-top: rem(8px)
+		margin-right: $size-single-unit
+
+form
+	button
+		height: $height-form-element
+		padding: 0 40px
+		min-width: 100px
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="url"],
+input[type="date"],
+input[type="tel"],
+input[type="search"],
+select,
+textarea,
+.input
+	-webkit-appearance: none // Need to replace this
+	+box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.05))
+	+border-radius($border-radius)
+	+transition()
+
+	+placeholder
+		+transition(color, .25s)
+		color: $color-text-medium
+
+	border: 1px solid $color-keyline-light
+	background: white
+	height: $height-form-element
+	padding: $size-single-unit
+	font-weight: 400
+	font-family: $font-family-primary !important
+	font-size: rem(14px)
+	outline: none
+	color: $color-text-dark
+	text-decoration: none
+	width: 100%
+
+textarea
+	height: auto !important
+	resize: none !important
+
+
+	// min-width: $size-double-unit * 10
+
+	&:last-child
+		margin-bottom: 0
+
+	&:focus
+		+box-shadow(0 0 0 3px lighten($color-primary, 52%))
+		+placeholder
+			color: $color-text-light
+
+// This is used throughout the platform to display error message below input fields.
+.form-error-message
+	+border-radius($size-border-radius)
+	position: relative
+	
+	bottom: -50%
+	display: none
+	width: 100%
+	left: 0
+	z-index: 9999
+	padding: $size-single-unit
+	background: #F2DEDE
+	color: #B94A48
+	text-align: center
+	font-size: rem(12px)
+	
+	&:after
+		position: absolute
+		+triangle(up, #F2DEDE, 8px)
+		left: 50%
+		margin-left: -4px
+		top: -8px
+		z-index: 9999
+
+label
+	display: block
+	font-size: rem(18px)
+	font-weight: 500
+	margin-bottom: $size-half-unit
+
+textarea
+	// min-height: $size-triple-unit * 2
+	resize: vertical
+
+select
+	appearance: none
+	cursor: pointer
+	-webkit-appearance: none
+	-moz-appearance: none
+
+.select
+	position: relative
+	cursor: pointer
+	width: 100%
+	&:after
+		+triangle(down, $color-primary, 5px)
+		+transition
+		position: absolute
+		right: 0.9em
+		top: 50%
+		margin-top: -2px
+	+hover
+		&:after
+			+triangle(down, $color-primary, 5px)
+
+
+

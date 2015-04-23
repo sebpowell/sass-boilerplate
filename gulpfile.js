@@ -17,42 +17,21 @@ var gulp = require("gulp"),
 	cssGlobbing = require('gulp-css-globbing');
 
 // Browser Sync Config
-gulp.task('browser-sync', function() {
-    browserSync({
-        proxy: "localhost:3000",
-        port: 3002
-    });
-});
-
-gulp.task("sass", function() {
-	var onError = notify.onError({
-		title:    'Your SASS is broken!',
-		subtitle: '<%= file %> did not compile!',
-		message:  '<%= error.message %>'   
-	})
-	gulp.src("public/css/include/*.sass")
-		.pipe(sass({
-			loadPath: process.cwd() + "public/css/include",
-			style: "nested"
-		}))
-		.pipe(autoprefixer("last 2 version", "> 1%"))
-		.pipe(gulp.dest("public/css"))
-		.pipe(filter('**/*.css'))
-		.pipe(browserSync.reload({stream:true}));
-		// .pipe(notify("SASS successfully compiled!"));
-});
-
+// gulp.task('browser-sync', function() {
+//     browserSync({
+//         proxy: "localhost:3000",
+//         port: 3002
+//     });
+// });
 gulp.task("watch", function() {
-	livereload.listen();
-	gulp.watch("public/css/include/**/*.*", ["sass"])
-	gulp.watch("public/js/include/**/*.js", ["uglify"]);
-	gulp.watch("public/demo//**/*.jade", ["jade"]);
+	gulp.watch("*/*/*.*", ["sass"])
 });
-/*
- * Default Gulp task
- */
+
+gulp.task('sass', function() {
+    return sass('dev.sass', { style: 'expanded' })
+        .pipe(gulp.dest('css'));
+});
+
 gulp.task("default", function() {
-	gulp.start("watch");
-	return gulp.src('app.js')
-    .pipe(jsValidate());
+	gulp.watch("*.sass", "*.scss", ["sass"])
 });

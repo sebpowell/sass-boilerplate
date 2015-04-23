@@ -1,0 +1,18 @@
+// Themes
+$theme-getagent: (
+	brand-primary: (
+		light: lighten($color-brand-primary, 5%),
+		base: $color-brand-primary,
+		dark: darken($color-brand-primary, 5%)
+	),
+	brand-secondary: (
+		light: lighten($color-brand-secondary, 5%),
+		base: $color-brand-secondary,
+		dark: darken($color-brand-secondary, 5%)
+	),
+	greyscale: (
+		light: null,
+		base: null,
+		dark: null,
+	)	
+)

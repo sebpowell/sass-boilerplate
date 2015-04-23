@@ -1,0 +1,92 @@
+h1, h2, h3, h4, h5, h6
+	font-weight: 600
+	line-height: 1
+	margin-bottom: $size-single-unit
+	&.uppercase
+		font-weight: 600
+		text-transform: uppercase
+		letter-spacing: 0.1em
+
+p
+	line-height: 1
+	&.lead
+		font-size: rem(24px)
+
+	&.caption
+		@include responsive-text-size(small)
+
+
+.typography
+	h1, h2, h3, h4, h5, h6
+		margin-bottom: $size-single-unit
+
+	p
+		margin-bottom: $size-single-unit
+
+		&:last-child
+			margin-bottom: 0
+
+		&:first-child
+			margin-top: 0
+	a
+		text-decoration: underline
+
+	ul, ol
+		line-height: 1.5
+		margin: 0 0 $size-single-unit $size-single-unit
+
+		li
+			margin: 0
+
+		&:last-child
+			margin-bottom: 0
+
+h1, .h1
+	@include responsive-text-size(x-large)
+
+h2, .h2
+	@include responsive-text-size(large)
+
+h3, .h3
+	@include responsive-text-size(base)
+
+h4, .h4
+	@include responsive-text-size(small)
+
+h5, .h5
+	@include responsive-text-size(x-small)
+
+// Used for headings
+.divider
+	border-bottom: 1px solid $color-keyline-light
+	text-align: center
+	margin-bottom: $size-double-unit
+	h2
+		position: relative
+		bottom: -15px
+		background: white
+		display: inline-block
+		padding: 0 15px
+		font-size: 20px
+
+
+
+
+
+
+
+
+.heading
+	text-transform: uppercase
+	font-size: rem(24px)
+	font-weight: 500
+
+
+.legal
+	display: block
+	margin-top: $size-half-unit
+	color: $color-text-light
+	line-height: 1.5
+	font-size: rem(12px)
+	a
+		color: $color-primary

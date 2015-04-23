@@ -1,0 +1,65 @@
+.example
+	.modal
+		position: relative
+		border: 1px solid $color-keyline-light
+		left: 0
+		margin: auto
+
+.section-team
+	img
+		margin-bottom: $size-double-half-unit
+
+	
+
+
+.footer
+	background: $color-background-dark
+	padding: $size-double-unit 0 $size-quadruple-unit
+	width: 100%
+	color: white
+	font-size: rem(14px)
+
+	a
+		text-decoration: none
+		color: white
+	h4
+		color: lighten($color-background-dark, 20%)
+
+	.footer-links
+		+nobullet
+		margin-bottom: $size-double-unit
+		li
+			&:not(:last-child)
+				margin-bottom: $size-half-unit
+			a
+				color: white
+
+	.copyright
+		margin-top: $size-single-unit
+		padding: $size-single-unit 0
+		font-size: rem(12px)
+		color: lighten($color-background-dark, 20%)
+
+		.social-profiles
+			+nobullet
+			align-self: flex-end
+			margin-left: auto
+			display: flex
+			
+			li
+				&:not(:last-child)
+					margin-right: $size-single-unit
+				a
+					// +background-image
+					display: block
+					background-size: 20px 20px
+					width: 20px
+					height: 20px
+
+					&.facebook
+						background-image: url(../images/icons/grey/icon-facebook.svg)
+					&.twitter
+						background-image: url(../images/icons/grey/icon-twitter.svg)
+					&.google-plus
+						background-image: url(../images/icons/grey/icon-google-plus.svg)
+

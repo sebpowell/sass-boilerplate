@@ -1,0 +1,42 @@
+@function palette($palette, $tone: 'base')
+	@return map-get(map-get($theme-getagent, $palette), $tone)
+
+////////////////////////////////////////////////////////////////////////////////////////////
+/// Colours
+////////////////////////////////////////////////////////////////////////////////////////////
+
+// Used for form elements, panels, and other items that need to stand out from the background. 
+
+$drop-shadow: 													0 2px 3px rgba(231,231,231,0.50)
+
+// Primary brand colours - used for text, buttons and backgrounds. 
+$color-brand-blue:											#009DFF
+$color-brand-green:											#6FC16A
+
+$color-primary:											#009DFF
+$color-brand-primary:											#009DFF
+$color-brand-secondary:											#6FC16A
+
+// Keylines are used to delineate blocks of content from the rest of the page. These are used on modals, panels, input fields etc. 
+$color-keyline-light: 									#D8D8D8
+$color-keyline-medium: 									#e5e5e5
+
+$color-text-light: 											#ADADAD
+$color-text-medium: 										#999999
+$color-text-dark: 											#333333
+
+// Different backgrounds are used to create contrasting elements on the screen. Used in some modules to create clearer delineation between elements, 
+// and occasionally used as page background color. 
+
+$color-background-light:								#F5F5F5
+$color-background-medium:								#D2D2D3
+$color-background-dark:									#343840
+
+// Used for form elements and notification messages. 
+$color-error: 													#EB5A5A
+$color-info: 														#FFF9D7
+$color-success: 												$color-brand-green
+
+
+
+

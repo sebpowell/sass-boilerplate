@@ -1,0 +1,19 @@
+// .no-margin
+// 	margin: 0 !important
+
+// .no-padding
+// 	padding: 0
+
+$types: padding, margin
+$sides: top, right, bottom, left
+$modifiers: (quarter: $size-quarter-unit, half: $size-half-unit, base: $size-single-unit, double: $size-double-unit)
+
+@each $type in $types
+	@each $side in $sides
+		@each $key, $value in $modifiers
+			.#{$type}-#{$side}-#{$key}
+				#{$type}-#{$side}: $value
+
+	@each $key, $value in $modifiers
+		.#{$type}-#{$key}
+			#{$type}: $value

@@ -1,0 +1,36 @@
+.toggle
+	+clearfix
+	+border-radius(5px)
+
+	display: block
+	margin: auto
+	text-align: center
+	color: $color-primary
+
+	ul
+		+border-radius(5px)
+		+nobullet
+		display: table
+		table-layout: fixed
+		width: 100%
+		border: 1px solid $color-primary
+		
+		li
+			display: table-cell
+			vertical-align: middle
+			font-weight: 600
+			padding: rem(12px) $size-half-unit // Same height as inputs.
+			
+			&:not(:last-child)
+				border-right: 1px solid $color-primary
+			
+			&.is-selected
+				background-color: $color-primary
+				color: white
+
+			&:hover
+				cursor: pointer
+
+			a
+				color: inherit
+				display: block

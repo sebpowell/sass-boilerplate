@@ -1,0 +1,302 @@
+.vertical-nav
+	+transition(all, .5s)
+	background: #2F3C49
+	height: 100vh
+	width: 60px
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 9999
+	// border-right: 1px solid $color-keyline-light
+	&:hover
+		width: 200px
+
+
+
+// Shows User Links
+.user
+	margin-left: auto
+	color: $color-primary
+	+respond-to-size($tablet)
+		display: none
+	> a
+		height: 50px
+		font-size: 12px
+		font-weight: 600
+		display: block
+		text-transform: uppercase
+		letter-spacing: 1px
+		line-height: 50px
+		color: $color-text-light
+	
+	.dropdown-menu-toggle
+		display: flex
+		align-items: center
+		height: 48px // Ensures dropdown is positioned correctly
+	// display: flex
+	// align-items: center
+
+.logo
+	// height: $nav-height
+	padding-left: 0 $size-double-unit
+	background-position: center center
+	background-size: 140px 18px
+	background-image: url(../images/logo/logo-blue.svg)
+
+
+.primary-header-site
+	+z-index(primary-navigation-desktop)
+	+clearfix
+	position: fixed !important
+	border-bottom: 1px solid $color-keyline-medium
+	background: white
+	// height: $nav-height
+	display: flex
+	width: 100%
+	top: 0
+	&.is-fixed
+		+box-shadow(0 1px 3px $drop-shadow)
+		// +text-color($color-text-light !important)
+		background: white !important
+		.logo	
+			background-image: url(../images/logo/logo-blue.svg) !important
+
+
+
+		.mobile-navigation-toggle
+			li
+				background: $color-primary !important
+
+	.flex
+		width: 100%
+
+	
+
+
+
+	+respond-to-size($tablet)
+		padding-right: 0 !important
+
+	&.shadow
+		box-shadow: 0 0 4px rgba(00,00,00,0.1)
+		
+
+	.container-wide
+		display: flex
+		+respond-to-size($tablet)
+			padding: 0
+
+	.search-container
+		position: relative
+		// border-right: 1px solid $color-primary
+		flex: 1
+
+	.search
+		height: 60px
+		input
+			background: transparent !important
+			border: 0
+			border-radius: (0 3px 3px 0)
+			border-left: 0
+			+hover
+				border-color: $color-primary
+				box-shadow: none
+
+		.select
+			border-left: 1px solid $color-keyline-light
+			flex: 1
+			top: 0
+			right: 0
+			select
+				+border-radius(0)
+				border: 0
+				height: 49px
+				font-size: rem(14px)
+				&:hover
+					box-shadow: none
+			+respond-to-size($tablet)
+				display: none
+
+	
+
+	.navigation
+		+nobullet
+		margin-left: $size-single-unit
+		display: flex
+		align-items: center
+		+clearfix
+		+respond-to-size($tablet)
+			background: $color-text-dark
+			top: 0
+			left: -100%
+			height: 100%
+			position: fixed
+			+transition(all, .5s)
+			z-index: 9999
+			flex-direction: column
+			width: calc(100% - 52px)
+			align-items: flex-start
+			&.is-visible
+				left: 0
+
+		> li
+			padding: 0 $size-single-unit
+			float: left
+			// border-left: 1px solid $color-keyline-light
+			// &:last-child
+			// 	border-right: 1px solid $color-keyline-light
+			+respond-to-size($tablet)
+				float: none
+			> a
+				+transition(color, .25s)
+				display: block
+				text-transform: uppercase
+				letter-spacing: 1px
+				color: $color-text-light
+				height: 60px
+				line-height: 60px
+				cursor: pointer
+				font-size: rem(12px) !important
+				font-weight: 600
+				&:hover
+					color: $color-primary !important
+				+respond-to-size($tablet)
+					height: auto
+					line-height: 1
+					padding: $size-double-unit
+					text-transform: none !important
+					font-size: rem(18px) !important
+					font-weight: 400
+
+				// Used for what is this link - need to change
+				// display: block
+				// height: 50px
+				// line-height: 52px
+				// cursor: pointer
+				// text-transform: uppercase
+				// font-size: rem(14px)
+				// font-weight: 500
+				// color: #338EDA
+
+	.avatar
+		width: 20px
+		height: 20px
+		background: black
+		display: inline-block
+		vertical-align: middle
+
+
+
+.mobile-navigation-toggle
+	
+	+respond-to-size($tablet)
+		display: flex
+	+nobullet
+	width: 50px
+	display: none
+	height: 59px
+	padding: 10px 14px
+	margin-left: auto
+	flex-direction: column
+	justify-content: center
+
+	li
+		width: 100%
+		height: 2px
+		background: $color-primary
+		&:not(:last-child)
+			margin-bottom: 4px
+
+	&.close-panel
+		position: absolute
+		right: 0
+		margin-right: 0
+		z-index: 9999
+		li
+			margin-bottom: 0
+		li:first-child
+			+transform(rotateZ(45deg))
+		li:nth-child(2)
+			display: none
+		li:last-child
+			+transform(rotateZ(135deg))
+			margin-top: -2px
+
+
+
+
+.primary-navigation-mobile
+	+transition(all, .5s)
+	position: fixed
+	top: 0
+	left: -100%
+	width: 85%
+	height: 100vh
+	overflow-y: scroll
+	background: white
+	z-index: 9998
+
+	.search-large
+		position: relative
+		+box-shadow(none)
+		input
+			background-color: $color-primary
+			height: 81px
+			background-position: 30px 30px
+			+placeholder
+				color: white
+			&:focus
+				+placeholder
+					color: rgba(255,255,255,0.6)
+	.close
+		position: fixed
+		cursor: pointer
+		right: $size-double-unit
+		top: $size-double-unit
+		stroke: $color-primary
+		z-index: 9999
+
+	&.show
+		left: 0
+
+	.navigation
+		+nobullet
+		li
+			a
+				font-size: rem(32px) !important
+				padding: $size-double-unit $size-triple-unit
+				display: block
+	.nav-footer
+		margin-top: $size-single-unit
+		padding: $size-single-unit
+	
+	.social-profiles
+		margin-top: $size-single-unit
+		justify-content: center
+		
+
+	
+
+
+
+.secondary-header-site
+
+	background: #e5e5e5
+	position: fixed
+	width: 100%
+	top: 50px
+	left: 0
+	z-index: 9999
+	text-align: center
+	color: white
+
+	ul
+		+nobullet
+
+		li
+			display: inline-block
+
+			a
+				display: block
+				padding: rem(12px)
+				color: #B1A8A8
