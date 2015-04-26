@@ -1,0 +1,48 @@
+////////////////////////////////////////////////////////////////////////////////////////////
+/// Sizes
+////////////////////////////////////////////////////////////////////////////////////////////
+
+// This is the px value of the main unit - rem base - on which all sizing and
+// layout depends. Every single rem value is calculated using this value. Also used as base font-size.
+
+@function parseInt($n)
+	@return $n / ($n * 0 + 1)
+
+
+@function rem($size)
+	$remSize: (parseInt($size) / parseInt($size-base)) * 1rem
+	@return $remSize
+
+
+
+
+$size-base: 																16px
+$rem-base: $size-base
+// The base size is used to create the following set of standard sizes, used throughout the interface for margins, padding, height etc. 
+$size-quarter-unit: 												rem($rem-base / 4)
+$size-half-unit: 														rem($rem-base / 2)
+$size-single-unit: 													rem($rem-base)
+$size-double-half-unit: 										rem($rem-base * 1.5)
+$size-double-unit: 													rem($rem-base * 2)
+$size-triple-unit: 													rem($rem-base * 3)
+$size-quadruple-unit: 											rem($rem-base * 4)
+
+// // Used on dialogues, form elements and buttons. 
+$size-border-radius: 												3px
+$border-radius: $size-border-radius
+// // Apply to buttons and inputs to ensure consistent height.
+// $size-input-height: 												rem(48px)
+
+//  // Appy to nav if fixed, then to body element. 
+$size-nav-height:													rem(60px) 
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+/// Grid
+////////////////////////////////////////////////////////////////////////////////////////////
+
+// Need to set vars for container (fluid, ntriangle etc)
+$size-site-width: 															rem(960px)
+$size-grid-gutter: 															$size-single-unit

@@ -1,0 +1,54 @@
+.course
+
+.masthead
+	background-image: none
+	color: black
+	height: 200px
+	margin-bottom: $size-double-unit
+	@extend .border-bottom
+
+html
+	font-family: $font-family-primary
+
+
+.cta
+	background: black
+	width: 100%
+	color: white
+	text-align: center
+	padding: $size-single-unit
+
+.site-footer
+	@extend .border-top
+	background: white
+	height: 200px
+
+.typography
+	h2
+		@include responsive-text-size(base)
+		text-transform: uppercase
+		font-weight: 700
+		letter-spacing: 0.05rem
+
+
+.course-details
+	position: fixed
+	top: 0
+	border: 4px solid black
+	background: white
+	padding: $size-double-unit
+
+
+.nav
+	background: white
+	.primary-links
+		+no-bullet
+		> li
+			float: left
+			&:not(:last-child)
+				margin-right: $size-double-unit
+			> a, .dropdown-menu-toggle
+				color: black
+				height: $size-nav-height
+				line-height: $size-nav-height
+				display: block

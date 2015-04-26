@@ -1,0 +1,36 @@
+// <div class="masthead">
+//	<div class="container-wide">
+//  </div>
+//
+
+html
+	font-family: 'proxima nova'
+
+.masthead
+
+	width: 100%
+	background: 
+		repeat: no-repeat no-repeat
+		size: cover
+
+	min-height: 400px
+	padding: $size-double-unit 0
+	text-align: center
+	color: white
+	display: table
+	
+	> .masthead-contents
+		display: table-cell
+		vertical-align: middle
+
+	&.full-height
+	
+	p 
+		margin-top: $size-single-unit
+
+	.buttons
+		.button:not(:last-child)
+			margin-right: $size-single-unit
+
+	input
+		border: 0

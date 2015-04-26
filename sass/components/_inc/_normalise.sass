@@ -1,0 +1,64 @@
+*
+	-webkit-box-sizing: border-box
+	box-sizing: border-box
+
+html,body, div, span, object, iframe, hr,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, b, sub, sup, var, i, em,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, input, button, textarea, select,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video
+	margin: 0
+	// padding: 0
+	border: 0
+	outline: 0
+	vertical-align: baseline
+
+html
+	font-size: $rem-base // This is the only case where px unit is used
+	line-height: 1
+	color: $color-text-dark
+	min-height: 100%
+
+article, aside, footer, header, menu, nav, section
+	display: block
+
+table, tbody, tr, th, td
+	border-collapse: collapse
+	border-spacing: 0
+	border: 0
+
+nav ul
+	list-style: none
+
+mark
+	background-color: #F0F012
+	color: $color-text-dark
+	font-weight: 500
+hr
+	display: block
+	height: 1px
+	border-top: 1px solid $color-keyline-light
+	margin: $size-double-unit 0
+
+strong, b
+	font-weight: 500
+
+a
+	cursor: pointer
+	text-decoration: none
+	color: $color-primary
+
+em, i
+	font-style: italic
+
+p, h1, h2, h3, h4, h5, h6
+	// line-height: $base-unit-line-height
+
+img
+	max-width: 100%

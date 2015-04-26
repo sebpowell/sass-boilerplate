@@ -1,0 +1,67 @@
+// The dropdown can be positoned to the left, center or right of the parent element, by adding the class .left, .center or .right to 
+// .dropdown-menu.
+// By default, each item is expected to be an <a> element. 
+// To ensure the dropdown is positioned correctly, make sure the parent element has position: relative set on it. 
+// If it doesnn't you can also use the class .dropdown-menu-toggle. 
+
+.dropdown-menu-toggle
+	position: relative
+	cursor: pointer
+	height: $size-nav-height
+	padding: 0 12px // Need to refactor HTMl
+	&:after
+		+triangle(down, $color-primary, 5px)
+		margin-left: $size-half-unit
+		margin-top: 3px
+		&:hover
+			color: $color-primary
+	&:hover
+		color: $color-primary
+		&:after
+			+triangle(down, $color-primary, 5px)
+
+.dropdown-menu
+	z-index: 200 // Temp
+	+border-radius($size-border-radius)
+	+box-shadow(0 1px 3px rgba(120, 127, 131, 0.25))
+	position: absolute
+	top: 100%
+	min-width: 180px
+	background: white
+	padding: 0
+	margin: 0
+	border: 1px solid $color-primary
+
+	// Menu items.
+	> ul
+		+nobullet
+
+		> li
+			// Apply styles here to avoid styles being inherited from the parent element, such as primary menu links.
+			text-align: left
+			line-height: 1
+			width: 100%
+			&:not(:last-of-type)
+				border-bottom: 1px solid $color-primary
+
+			> a
+				display: block
+				padding: $size-single-unit
+				color: $color-primary
+				font-size: rem(14px)
+				&:hover
+					color: $color-primary
+
+	// Positioning helpers.
+	&.left
+		left: 0
+	&.center
+		left: 50%
+		margin-left: -90px
+	&.right
+		right: 0
+
+
+
+
+

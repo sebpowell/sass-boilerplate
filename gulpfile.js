@@ -11,10 +11,12 @@ var gulp = require("gulp"),
 	jade = require('gulp-jade'),
 	plumber = require('gulp-plumber'),
 	filter  = require('gulp-filter'),
-	browserSync = require('browser-sync'),
 	jsValidate = require('gulp-jsvalidate'),
-	nodemon = require('gulp-nodemon');
-	cssGlobbing = require('gulp-css-globbing');
+	nodemon = require('gulp-nodemon'),
+	cssGlobbing = require('gulp-css-globbing'),
+	extender = require('gulp-html-extend'),
+	browserSync = require('browser-sync').create(),
+	fileinclude = require('gulp-file-include');
 
 // Browser Sync Config
 // gulp.task('browser-sync', function() {
@@ -23,15 +25,50 @@ var gulp = require("gulp"),
 //         port: 3002
 //     });
 // });
-gulp.task("watch", function() {
-	gulp.watch("*/*/*.*", ["sass"])
+
+
+gulp.task('sass', function () {
+return sass('sass/base.sass')
+.on('error', function (err) {
+console.error('Error!', err.message);
+})
+.pipe(gulp.dest('sass'));
 });
 
-gulp.task('sass', function() {
-    return sass('dev.sass', { style: 'expanded' })
-        .pipe(gulp.dest('css'));
+gulp.task('clickmechanic', function () {
+	return sass('clickmechanic/clickmechanic.sass')
+	.on('error', function (err) {
+	console.error('Error!', err.message);
+	})
+	.pipe(gulp.dest('clickmechanic/'));
+
+	gulp.src(['clickmechanic/views/*.html'])
+    .pipe(fileinclude())
+    .pipe(gulp.dest('clickmechanic/views/'))
+    .pipe( notify({ message: "fileInclude tasks have been completed!"}) );
+});
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy: "test.dev"
+    });
+});
+
+gulp.task('fileinclude', function() {
+  gulp.src(['clickmechanic/views/*.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest('clickmechanic/views/build'));
+});
+
+gulp.task("watch", function() {
+	gulp.watch("sass/**/*.*", ["sass"])
+	gulp.watch(['clickmechanic/views/*.html'], ['fileinclude'])
+	gulp.watch(['clickmechanic/**/*'], ['clickmechanic'])
 });
 
 gulp.task("default", function() {
-	gulp.watch("*.sass", "*.scss", ["sass"])
+	
 });
