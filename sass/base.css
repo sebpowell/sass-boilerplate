@@ -337,10 +337,10 @@
   text-align: center;
   cursor: pointer;
   min-width: inherit; }
-  @media screen and (max-width: 720px) {
+  @media screen and (min-width: 720px) {
     .button, input[type="submit"], button {
       font-size: 1rem; } }
-  @media screen and (max-width: 960px) {
+  @media screen and (min-width: 960px) {
     .button, input[type="submit"], button {
       font-size: 1rem; } }
   .button.primary, input[type="submit"], button.primary {
@@ -583,7 +583,7 @@
     margin: 0;
     padding: 0;
     margin-bottom: 2rem; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 480px) {
       .footer .footer-links {
         display: none; } }
     .footer .footer-links li:not(:last-child) {
@@ -1045,14 +1045,11 @@ section.padded {
     width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-1 > li:nth-last-child(-n+1) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-1 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-1 > li {
-        width: 50%; } }
+        width: 100%; }
+        .flex-grid-1 > li:nth-last-child(-n+1) {
+          margin-bottom: 0; } }
   .flex-grid-1 > li {
     padding: 0 2rem; }
   .flex-grid-1 > li {
@@ -1072,17 +1069,14 @@ section.padded {
   margin-left: -3rem;
   margin-right: -3rem; }
   .flex-grid-2 > li {
-    width: 50%;
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-2 > li:nth-last-child(-n+2) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-2 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-2 > li {
-        width: 50%; } }
+        width: 50%; }
+        .flex-grid-2 > li:nth-last-child(-n+2) {
+          margin-bottom: 0; } }
   .flex-grid-2 > li {
     padding: 0 2rem; }
   .flex-grid-2 > li {
@@ -1102,17 +1096,14 @@ section.padded {
   margin-left: -3rem;
   margin-right: -3rem; }
   .flex-grid-3 > li {
-    width: 33.33333%;
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-3 > li:nth-last-child(-n+3) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-3 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-3 > li {
-        width: 50%; } }
+        width: 33.33333%; }
+        .flex-grid-3 > li:nth-last-child(-n+3) {
+          margin-bottom: 0; } }
   .flex-grid-3 > li {
     padding: 0 2rem; }
   .flex-grid-3 > li {
@@ -1132,17 +1123,14 @@ section.padded {
   margin-left: -3rem;
   margin-right: -3rem; }
   .flex-grid-4 > li {
-    width: 25%;
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-4 > li:nth-last-child(-n+4) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-4 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-4 > li {
-        width: 50%; } }
+        width: 25%; }
+        .flex-grid-4 > li:nth-last-child(-n+4) {
+          margin-bottom: 0; } }
   .flex-grid-4 > li {
     padding: 0 2rem; }
   .flex-grid-4 > li {
@@ -1162,17 +1150,14 @@ section.padded {
   margin-left: -3rem;
   margin-right: -3rem; }
   .flex-grid-5 > li {
-    width: 20%;
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-5 > li:nth-last-child(-n+5) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-5 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-5 > li {
-        width: 50%; } }
+        width: 20%; }
+        .flex-grid-5 > li:nth-last-child(-n+5) {
+          margin-bottom: 0; } }
   .flex-grid-5 > li {
     padding: 0 2rem; }
   .flex-grid-5 > li {
@@ -1192,17 +1177,14 @@ section.padded {
   margin-left: -3rem;
   margin-right: -3rem; }
   .flex-grid-6 > li {
-    width: 16.66667%;
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-6 > li:nth-last-child(-n+6) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-6 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-6 > li {
-        width: 50%; } }
+        width: 16.66667%; }
+        .flex-grid-6 > li:nth-last-child(-n+6) {
+          margin-bottom: 0; } }
   .flex-grid-6 > li {
     padding: 0 2rem; }
   .flex-grid-6 > li {
@@ -1222,17 +1204,14 @@ section.padded {
   margin-left: -3rem;
   margin-right: -3rem; }
   .flex-grid-7 > li {
-    width: 14.28571%;
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-7 > li:nth-last-child(-n+7) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-7 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-7 > li {
-        width: 50%; } }
+        width: 14.28571%; }
+        .flex-grid-7 > li:nth-last-child(-n+7) {
+          margin-bottom: 0; } }
   .flex-grid-7 > li {
     padding: 0 2rem; }
   .flex-grid-7 > li {
@@ -1252,17 +1231,14 @@ section.padded {
   margin-left: -3rem;
   margin-right: -3rem; }
   .flex-grid-8 > li {
-    width: 12.5%;
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-8 > li:nth-last-child(-n+8) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-8 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-8 > li {
-        width: 50%; } }
+        width: 12.5%; }
+        .flex-grid-8 > li:nth-last-child(-n+8) {
+          margin-bottom: 0; } }
   .flex-grid-8 > li {
     padding: 0 2rem; }
   .flex-grid-8 > li {
@@ -1282,17 +1258,14 @@ section.padded {
   margin-left: -3rem;
   margin-right: -3rem; }
   .flex-grid-9 > li {
-    width: 11.11111%;
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-9 > li:nth-last-child(-n+9) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-9 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-9 > li {
-        width: 50%; } }
+        width: 11.11111%; }
+        .flex-grid-9 > li:nth-last-child(-n+9) {
+          margin-bottom: 0; } }
   .flex-grid-9 > li {
     padding: 0 2rem; }
   .flex-grid-9 > li {
@@ -1312,17 +1285,14 @@ section.padded {
   margin-left: -3rem;
   margin-right: -3rem; }
   .flex-grid-10 > li {
-    width: 10%;
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-10 > li:nth-last-child(-n+10) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-10 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-10 > li {
-        width: 50%; } }
+        width: 10%; }
+        .flex-grid-10 > li:nth-last-child(-n+10) {
+          margin-bottom: 0; } }
   .flex-grid-10 > li {
     padding: 0 2rem; }
   .flex-grid-10 > li {
@@ -1342,17 +1312,14 @@ section.padded {
   margin-left: -3rem;
   margin-right: -3rem; }
   .flex-grid-11 > li {
-    width: 9.09091%;
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-11 > li:nth-last-child(-n+11) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-11 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-11 > li {
-        width: 50%; } }
+        width: 9.09091%; }
+        .flex-grid-11 > li:nth-last-child(-n+11) {
+          margin-bottom: 0; } }
   .flex-grid-11 > li {
     padding: 0 2rem; }
   .flex-grid-11 > li {
@@ -1372,17 +1339,14 @@ section.padded {
   margin-left: -3rem;
   margin-right: -3rem; }
   .flex-grid-12 > li {
-    width: 8.33333%;
+    width: 100%;
     padding: 0 1rem;
     margin-bottom: 1rem; }
-    .flex-grid-12 > li:nth-last-child(-n+12) {
-      margin-bottom: 0; }
-    @media screen and (max-width: 480px) {
+    @media screen and (min-width: 720px) {
       .flex-grid-12 > li {
-        width: 100% !important; } }
-    @media screen and (max-width: 720px) {
-      .flex-grid-12 > li {
-        width: 50%; } }
+        width: 8.33333%; }
+        .flex-grid-12 > li:nth-last-child(-n+12) {
+          margin-bottom: 0; } }
   .flex-grid-12 > li {
     padding: 0 2rem; }
   .flex-grid-12 > li {
@@ -1505,41 +1469,53 @@ section.padded {
     .columns-12 {
       width: 100%; } }
 
-.offset-1 {
-  margin-left: 8.33333%; }
+@media screen and (min-width: 960px) {
+  .offset-1 {
+    margin-left: 8.33333%; } }
 
-.offset-2 {
-  margin-left: 16.66667%; }
+@media screen and (min-width: 960px) {
+  .offset-2 {
+    margin-left: 16.66667%; } }
 
-.offset-3 {
-  margin-left: 25%; }
+@media screen and (min-width: 960px) {
+  .offset-3 {
+    margin-left: 25%; } }
 
-.offset-4 {
-  margin-left: 33.33333%; }
+@media screen and (min-width: 960px) {
+  .offset-4 {
+    margin-left: 33.33333%; } }
 
-.offset-5 {
-  margin-left: 41.66667%; }
+@media screen and (min-width: 960px) {
+  .offset-5 {
+    margin-left: 41.66667%; } }
 
-.offset-6 {
-  margin-left: 50%; }
+@media screen and (min-width: 960px) {
+  .offset-6 {
+    margin-left: 50%; } }
 
-.offset-7 {
-  margin-left: 58.33333%; }
+@media screen and (min-width: 960px) {
+  .offset-7 {
+    margin-left: 58.33333%; } }
 
-.offset-8 {
-  margin-left: 66.66667%; }
+@media screen and (min-width: 960px) {
+  .offset-8 {
+    margin-left: 66.66667%; } }
 
-.offset-9 {
-  margin-left: 75%; }
+@media screen and (min-width: 960px) {
+  .offset-9 {
+    margin-left: 75%; } }
 
-.offset-10 {
-  margin-left: 83.33333%; }
+@media screen and (min-width: 960px) {
+  .offset-10 {
+    margin-left: 83.33333%; } }
 
-.offset-11 {
-  margin-left: 91.66667%; }
+@media screen and (min-width: 960px) {
+  .offset-11 {
+    margin-left: 91.66667%; } }
 
-.offset-12 {
-  margin-left: 100%; }
+@media screen and (min-width: 960px) {
+  .offset-12 {
+    margin-left: 100%; } }
 
 .row, .flex-row {
   zoom: 1;
@@ -1627,14 +1603,18 @@ html {
   width: 100%;
   background-repeat: no-repeat no-repeat;
   background-size: cover;
+  background-position: center center;
   min-height: 400px;
   padding: 2rem 0;
+  margin-bottom: 2rem;
   text-align: center;
   color: white;
   display: table; }
   .masthead > .masthead-contents {
     display: table-cell;
     vertical-align: middle; }
+  .masthead h1 {
+    margin-bottom: 0; }
   .masthead p {
     margin-top: 1rem; }
   .masthead .buttons .button:not(:last-child), .masthead .buttons input[type="submit"]:not(:last-child) {
@@ -1649,18 +1629,44 @@ section.padded {
   background: #cccccc;
   padding: 1rem; }
 
-.secondary-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: none; }
-  .secondary-nav ul > li {
-    margin-bottom: 2rem; }
-    .secondary-nav ul > li > a {
-      text-decoration: none;
-      color: inherit; }
-      .secondary-nav ul > li > a:hover {
-        color: #009DFF; }
+.secondary-nav {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 9999; }
+  @media screen and (min-width: 960px) {
+    .secondary-nav {
+      left: auto;
+      width: 33.33333%;
+      margin-left: -1rem;
+      padding: 0 1rem; } }
+  .secondary-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    .secondary-nav ul > li {
+      display: none; }
+      @media screen and (min-width: 960px) {
+        .secondary-nav ul > li {
+          display: block; } }
+      .secondary-nav ul > li.is-selected {
+        display: block; }
+      .secondary-nav ul > li > a {
+        text-decoration: none;
+        display: block;
+        background: #343840;
+        padding: 1rem;
+        color: red; }
+        .secondary-nav ul > li > a:after {
+          height: 0;
+          width: 0;
+          content: "";
+          position: absolute; }
+        @media screen and (min-width: 960px) {
+          .secondary-nav ul > li > a {
+            background: white; }
+            .secondary-nav ul > li > a:hover {
+              color: #009DFF; } }
 
 .primary-nav-desktop {
   zoom: 1;
@@ -2216,16 +2222,6 @@ input[type="search"]::-webkit-search-results-decoration {
     @media all and (max-width: 700px) {
       .search input[type="search"] {
         font-size: 0.875rem; } }
-    .search input[type="search"]:focus {
-      color: #333333; }
-      .search input[type="search"]:focus::-webkit-input-placeholder {
-        color: #009DFF; }
-      .search input[type="search"]:focus::-moz-placeholder {
-        color: #009DFF; }
-      .search input[type="search"]:focus:-moz-placeholder {
-        color: #009DFF; }
-      .search input[type="search"]:focus:-ms-input-placeholder {
-        color: #009DFF; }
     .search input[type="search"]:hover {
       box-shadow: none; }
   .search .search-results {
@@ -2297,12 +2293,21 @@ p {
     font-size: 1.5rem; }
   p.caption {
     font-size: 0.875rem; }
-    @media screen and (max-width: 720px) {
+    @media screen and (min-width: 720px) {
       p.caption {
         font-size: 0.875rem; } }
-    @media screen and (max-width: 960px) {
+    @media screen and (min-width: 960px) {
       p.caption {
         font-size: 0.875rem; } }
+
+.no-bullet {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+  .no-bullet > li {
+    line-height: 1.5; }
+    .no-bullet > li:not(:last-child) {
+      margin-bottom: 1rem; }
 
 .typography h1, .typography h2, .typography h3, .typography h4, .typography h5, .typography h6 {
   margin-bottom: 1rem; }
@@ -2325,46 +2330,46 @@ p {
 
 h1, .h1 {
   font-size: 2.625rem; }
-  @media screen and (max-width: 720px) {
+  @media screen and (min-width: 720px) {
     h1, .h1 {
       font-size: 2.625rem; } }
-  @media screen and (max-width: 960px) {
+  @media screen and (min-width: 960px) {
     h1, .h1 {
       font-size: 2.625rem; } }
 
 h2, .h2 {
   font-size: 2rem; }
-  @media screen and (max-width: 720px) {
+  @media screen and (min-width: 720px) {
     h2, .h2 {
       font-size: 2rem; } }
-  @media screen and (max-width: 960px) {
+  @media screen and (min-width: 960px) {
     h2, .h2 {
       font-size: 2rem; } }
 
 h3, .h3 {
   font-size: 1.5rem; }
-  @media screen and (max-width: 720px) {
+  @media screen and (min-width: 720px) {
     h3, .h3 {
       font-size: 1.5rem; } }
-  @media screen and (max-width: 960px) {
+  @media screen and (min-width: 960px) {
     h3, .h3 {
       font-size: 1.5rem; } }
 
 h4, .h4 {
   font-size: 0.875rem; }
-  @media screen and (max-width: 720px) {
+  @media screen and (min-width: 720px) {
     h4, .h4 {
       font-size: 0.875rem; } }
-  @media screen and (max-width: 960px) {
+  @media screen and (min-width: 960px) {
     h4, .h4 {
       font-size: 0.875rem; } }
 
 h5, .h5 {
   font-size: 0.875rem; }
-  @media screen and (max-width: 720px) {
+  @media screen and (min-width: 720px) {
     h5, .h5 {
       font-size: 0.75rem; } }
-  @media screen and (max-width: 960px) {
+  @media screen and (min-width: 960px) {
     h5, .h5 {
       font-size: 0.75rem; } }
 

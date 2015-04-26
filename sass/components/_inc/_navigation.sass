@@ -7,18 +7,47 @@ section
 	background: palette(greyscale, base)
 	padding: $size-single-unit
 
-.secondary-nav
 
+
+
+.secondary-nav
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 9999 // Temp
+	+respond(device-large)
+		left: auto
+		width: (100% / 12) * 3
+		margin-left: -($size-single-unit)
+		padding: 0 $size-single-unit
 	ul
 		+nobullet
-		display: none
 		> li 
-			margin-bottom: $size-double-unit
 			> a
 				text-decoration: none
-				color: inherit
-				&:hover
-					color: palette(brand-primary, base)
+				background: palette(greyscale, dark)
+				padding: $size-single-unit
+				color: white
+				display: none
+				+respond(device-large)
+					display: block
+					padding: 0
+					padding-bottom: $size-double-unit
+				&.is-selected
+					display: block
+					&:after
+						+triangle(10px, white, down)
+						position: relative
+						content: ""
+						float: right
+						top: 5px
+
+				+respond(device-large)
+					background: white
+					color: palette(greyscale, dark)
+					&:hover
+						color: palette(brand-primary, base)
 
 
 
@@ -29,7 +58,7 @@ section
 	top: 0
 	left: 0
 	background: palette(brand-primary, base)
-	height: 52px
+	height: $size-nav-height
 	display: flex
 	width: 100%
 	z-index: 9999
@@ -51,7 +80,7 @@ section
 				display: block
 				text-transform: uppercase
 				letter-spacing: 1px
-				color: $color-text-light
+				color: white
 				height: 60px
 				line-height: 60px
 				cursor: pointer
@@ -143,6 +172,7 @@ section
 				font-size: rem(32px) !important
 				padding: $size-double-unit $size-triple-unit
 				display: block
+				color: white
 	.nav-footer
 		margin-top: $size-single-unit
 		padding: $size-single-unit

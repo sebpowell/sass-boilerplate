@@ -6,13 +6,13 @@ h1, h2, h3, h4, h5, h6
 		text-transform: uppercase
 		letter-spacing: 0.1em
 
-h1, h2
+
+// Why margin here?
+h1, h2, h3, h4, h5, h6
 	margin: $size-triple-unit 0 $size-double-unit 0
 	&:first-child
 		margin-top: 0
 
-h3, h4, h5, h6
-	margin-bottom: $size-half-unit
 
 p
 	line-height: 1.8
@@ -22,6 +22,16 @@ p
 
 	&.caption
 		+responsive-text-size(small)
+
+.no-bullet
+	list-style-type: none
+	padding: 0
+	margin: 0
+	> li
+		line-height: 1.5 // Change to variable
+		&:not(:last-child)
+			margin-bottom: $size-single-unit
+
 
 
 .typography

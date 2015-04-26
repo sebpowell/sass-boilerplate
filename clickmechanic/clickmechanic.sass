@@ -1,4 +1,27 @@
 @import "sass/base.sass"
 
+$size-nav-height:													rem(62px) 
+
+
 .masthead
 	background-image: url("../clickmechanic/images/bg-mechanics.jpg")
+
+
+.page-body
+	padding-top: 80px // Temp
+	padding-bottom: 40px
+	+respond(device-large)
+		padding-top: 0
+
+
+.page-support
+	
+	.masthead
+		margin-bottom: 0
+		+respond(device-large)
+			margin-bottom: $size-double-unit
+.page-legals
+	.masthead
+		margin-bottom: 0
+		+respond(device-large)
+			margin-bottom: $size-double-unit

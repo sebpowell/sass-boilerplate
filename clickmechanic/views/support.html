@@ -1,3 +1,70 @@
 @@include('_header.html')
-	<body>
+	<body class="page-support">
 		<!-- Masthead !-->
+			<div class="masthead">
+				<div class="masthead-contents">
+					<h1>Support</h1>
+				</div>
+			</div>
+		<!-- Masthead !-->
+		<div class="container-wide page-body">
+			<nav class="secondary-nav">
+				<ul>
+					<li><a class="is-selected" href="#">The Basics</a></li>
+					<li><a href="#">Booking Process</a></li>
+					<li><a href="#">For Mechanics</a></li>
+					<li><a href="#">Inspections</a></li>
+					<li><a href="#">Payments &amp; Refunds</a></li>
+				</ul>
+			</nav>
+			<div class="flex-row">
+				<div class="columns-9 offset-3">
+					<div class="search margin-bottom-double">
+						<input type="search" placeholder="Search the support center">
+					</div>
+					<ul class="flex-grid-2">
+						<li>
+							<h3>The basics</h3>
+							<ul class="no-bullet">
+								<li><a href="#">Are the mechanics in your network vetted?</a></li>
+								<li>Are the mechanics in your network vetted?</li>
+							</ul>
+							<a href="#">See More Questions</a>
+						</li>
+						<li>
+							<h3>The basics</h3>
+							<ul class="no-bullet">
+								<li>Are the mechanics in your network vetted?</li>
+								<li>Are the mechanics in your network vetted?</li>
+							</ul>
+							<a href="#">See More Questions</a>
+						</li>
+						<li>
+							<h3>The basics</h3>
+							<ul class="no-bullet">
+								<li>Are the mechanics in your network vetted?</li>
+								<li>Are the mechanics in your network vetted?</li>
+							</ul>
+							<a href="#">See More Questions</a>
+						</li>
+						<li>
+							<h3>The basics</h3>
+							<ul class="no-bullet">
+								<li>Are the mechanics in your network vetted?</li>
+								<li>Are the mechanics in your network vetted?</li>
+							</ul>
+							<a href="#">See More Questions</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		@@include('_footer.html')
+		<script>
+			$(document).ready(function() {
+				$(".secondary-nav li").click(function() {
+					$(".secondary-nav li a").toggleClass("is-visible");
+					console.log("test");
+				});
+			});
+		</script>

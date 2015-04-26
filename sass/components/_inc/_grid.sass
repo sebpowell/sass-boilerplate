@@ -42,18 +42,16 @@ section
 		margin-right: -$size-single-unit
 	
 		> li
-			width: 100% / $i
+			width: 100%
 			padding: 0 $size-single-unit
 			margin-bottom: $size-single-unit
-			// Removes bottom margin from last elements in the block.
-			&:nth-last-child(-n+#{$i})
-				margin-bottom: 0
-
-			+respond(device-small)
-				width: 100% !important
-
+			
 			+respond(device-medium)
-				width: 50%
+				width: 100% / $i
+				// Removes bottom margin from last elements in the block.
+				&:nth-last-child(-n+#{$i})
+					margin-bottom: 0
+
 
 		&.gutter-double
 		margin-left: -$size-double-unit
@@ -109,7 +107,9 @@ section
 // Generates classes for column offsets.
 @for $i from 1 through $column-numbers
 	.offset-#{$i}
-		margin-left: $i * $column-width
+		+respond(device-large)
+			margin-left: $i * $column-width
+
 
 // Grid Container & Helper Classes
 // Start with a row container. Inside the roe container, use the columns. The module or component is then place dinside each column.

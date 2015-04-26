@@ -28,11 +28,11 @@ var gulp = require("gulp"),
 
 
 gulp.task('sass', function () {
-return sass('sass/base.sass')
-.on('error', function (err) {
-console.error('Error!', err.message);
-})
-.pipe(gulp.dest('sass'));
+	// return sass('sass/base.sass')
+	// .pipe(gulp.dest('sass'));
+	
+	return sass('clickmechanic/clickmechanic.sass')
+	.pipe(gulp.dest('clickmechanic'));
 });
 
 gulp.task('clickmechanic', function () {
