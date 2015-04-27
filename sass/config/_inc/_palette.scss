@@ -11,8 +11,16 @@ $theme-getagent: (
 		dark: darken($color-brand-secondary, 5%)
 	),
 	greyscale: (
-		light: #F5F5F5,
+		x-light: #F5F5F5,
+		light: #EDEDED,
 		base: #cccccc,
 		dark: #343840,
 	)	
-)
+);
+
+@function palette($palette, $tone: 'base') {
+	@return map-get(map-get($theme-getagent, $palette), $tone);
+}
+
+
+$color-keyline-light: 									palette(greyscale, light);

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 	<head>
 		<title></title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="../../clickmechanic.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js"></script>
 	</head>
-	
+
 <body class="page-about">
 	<nav class="primary-nav-desktop">
 		<div class="container-wide">
@@ -32,7 +33,21 @@
 	<section class="padded text-center section-team border-bottom">
 		<h2>Team Photos</h2>
 		<div class="container-wide">
-			<ul class="flex-grid-4 gutter-triple margin-bottom-triple">
+			<ul class="flex-grid-4 gutter-triple margin-bottom-triple" ng-controller="PhotosCtrl">
+			<div class="box" ng-repeat="photo in photos">
+  <img ng-src="{{photo.src}}">
+  <label for="url">URL:</label> <input ng-model="photo.url" name="url" id="url">
+  <div class="controls" ng-show="photo.selected">
+    <div class="photo">
+      <div class="field">
+        
+      </div>
+      <div class="field">
+        <label for="tags">Tags:</label> <input ng-list ng-model="photo.tags" name="tags" id="tags">
+      </div>
+    </div>
+  </div>
+</div>
 				<li>
 					<img src="../../images/andrew-jervis.png">
 					<h3>Andy Jervis</h3>
@@ -149,4 +164,21 @@
 		</div>
 	</footer>
 	</body>
+	<script>
+
+  var PhotosCtrl = function ($scope) {
+    $scope.photos = [
+      { 
+      	src: '//farm3.staticflickr.com/2871/9096220194_ff9e60d646_z.jpg', 
+      	tags: ['bird'], 
+      	url: "test.html",
+      },
+      { src: '//farm4.staticflickr.com/3251/3089268872_1869860fbf_z.jpg' },
+      { src: '//farm4.staticflickr.com/3049/3088429317_05a0c51605_z.jpg' },
+      { src: '//farm3.staticflickr.com/2155/2348877473_ec3768d5d9_z.jpg', tags: ['desert'] },
+      { src: '//farm4.staticflickr.com/3044/2348881979_1fd7f979f3_z.jpg', tags: ['valley'] },
+      { src: '//farm3.staticflickr.com/2273/2348882083_d8e3e38f89_z.jpg', tags: ['valley'] },
+    ];
+  }
+</script>
 </html>

@@ -9,17 +9,19 @@ h1, h2, h3, h4, h5, h6
 
 // Why margin here?
 h1, h2, h3, h4, h5, h6
-	margin: $size-triple-unit 0 $size-double-unit 0
+	// margin: $size-triple-unit 0 $size-double-unit 0
+	margin-bottom: $size-half-unit
 	&:first-child
 		margin-top: 0
 
 
 p
+	+responsive-text-size(base)
 	line-height: 1.8
-	margin-bottom: $size-double-unit
+	margin-bottom: $size-single-unit
+
 	&.lead
 		font-size: rem(24px)
-
 	&.caption
 		+responsive-text-size(small)
 
@@ -70,9 +72,12 @@ h3, .h3
 	@include responsive-text-size(medium-large)
 
 h4, .h4
-	@include responsive-text-size(small)
+	@include responsive-text-size(medium)
 
 h5, .h5
+	@include responsive-text-size(small)
+
+h6, .h6
 	@include responsive-text-size(x-small)
 
 // Used for headings

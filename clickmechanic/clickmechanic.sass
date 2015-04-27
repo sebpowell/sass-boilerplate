@@ -2,10 +2,43 @@
 
 $size-nav-height:													rem(62px) 
 
+=background-image($size)
+	background-size: $size
+	background-position: center center
+	background-repeat: no-repeat
+
+
+.section
+	background: white
+	width: 100%
+	margin-bottom: $size-double-unit
+	+border-radius($size-border-radius)
+	+box-shadow(0px 3px 0px rgba(230,230,230,1))
+	td
+		padding: 20px
+
+	.section-header
+		border-bottom: 1px solid $color-keyline-light
+		h3
+			margin: 0
+
+.email
+	max-width: 600px
+	margin: auto 
 
 .masthead
 	background-image: url("../clickmechanic/images/bg-mechanics.jpg")
 
+
+.logo
+	+background-image(100%)
+	background-image: url("../clickmechanic/images/logo.png")
+	width: 200px
+	height: 50px
+
+.page-emails
+	background: palette(greyscale, x-light)
+	padding: 50px 20px 0 20px
 
 .page-body
 	padding-top: 80px // Temp
