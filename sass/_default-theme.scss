@@ -7,10 +7,6 @@ $size-input-height: 												rem(48px);
 //  Appy to nav if fixed, then to body element. 
 $size-nav-height:													rem(60px);
 
-$drop-shadow: 													0 2px 3px rgba(231,231,231,0.50);
-$color-keyline-medium: 									palette(greyscale, light);
-$color-keyline-light: 									palette(greyscale, light);
-
 $colors: (
 	brand-primary: (
 		light: lighten(#009DFF, 5%),
@@ -33,3 +29,6 @@ $colors: (
 		info:	#FFF9D7,
 	),
 );
+
+$drop-shadow: 													0 2px 3px rgba(231,231,231,0.50);
+$color-keyline-light: 									#EDEDED;

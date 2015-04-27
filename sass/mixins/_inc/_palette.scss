@@ -3,6 +3,6 @@
 }
 
 
-@function sizing($size, $value: 'base') {
-	@return map-get(map-get($sizes, $size), $value);
+@function sizes($value) {
+	@return map-get($sizes, $value);
 }
