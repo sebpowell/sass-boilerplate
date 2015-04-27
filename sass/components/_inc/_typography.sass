@@ -18,12 +18,18 @@ h1, h2, h3, h4, h5, h6
 p
 	+responsive-text-size(base)
 	line-height: 1.8
-	margin-bottom: $size-single-unit
+	&:not(:last-child)
+		margin-bottom: $size-single-unit
 
 	&.lead
 		font-size: rem(24px)
-	&.caption
-		+responsive-text-size(small)
+
+
+small
+	// Used for small labels, captiojs etc. 
+	+responsive-text-size(x-small)
+
+
 
 .no-bullet
 	list-style-type: none

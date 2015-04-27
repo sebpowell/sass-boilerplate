@@ -8,14 +8,25 @@ $size-nav-height:													rem(62px)
 	background-repeat: no-repeat
 
 
+table
+	margin-bottom: $size-double-unit
+
+
+
 .section
 	background: white
 	width: 100%
-	margin-bottom: $size-double-unit
+	
 	+border-radius($size-border-radius)
 	+box-shadow(0px 3px 0px rgba(230,230,230,1))
-	td
-		padding: 20px
+	> tbody
+		> tr
+			> td
+				// Padding around the container
+				padding: $size-single-unit
+				td
+					// Vertical padding
+					padding: $size-single-unit 0
 
 	.section-header
 		border-bottom: 1px solid $color-keyline-light
@@ -32,6 +43,7 @@ $size-nav-height:													rem(62px)
 
 .logo
 	+background-image(100%)
+	display: inline-block
 	background-image: url("../clickmechanic/images/logo.png")
 	width: 200px
 	height: 50px
