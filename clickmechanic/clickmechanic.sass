@@ -1,15 +1,13 @@
 @import "sass/base.sass"
 
 $size-nav-height:													rem(62px) 
+$font-family-primary: adelle sans
 
-=background-image($size)
-	background-size: $size
-	background-position: center center
-	background-repeat: no-repeat
+
 
 
 table
-	margin-bottom: $size-double-unit
+	margin-bottom: sizes(double)
 
 
 
@@ -23,10 +21,10 @@ table
 		> tr
 			> td
 				// Padding around the container
-				padding: $size-single-unit
+				padding: sizes(base)
 				td
 					// Vertical padding
-					padding: $size-single-unit 0
+					padding: sizes(base) 0
 
 	.section-header
 		border-bottom: 1px solid $color-keyline-light
@@ -64,9 +62,9 @@ table
 	.masthead
 		margin-bottom: 0
 		+respond(device-large)
-			margin-bottom: $size-double-unit
+			margin-bottom: sizes(double)
 .page-legals
 	.masthead
 		margin-bottom: 0
 		+respond(device-large)
-			margin-bottom: $size-double-unit
+			margin-bottom: sizes(double)

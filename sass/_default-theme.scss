@@ -1,0 +1,35 @@
+// // Used on dialogues, form elements and buttons. 
+$size-border-radius: 												3px;
+
+// Apply to buttons and inputs to ensure consistent height. Is this used everywhere? 
+$size-input-height: 												rem(48px);
+
+//  Appy to nav if fixed, then to body element. 
+$size-nav-height:													rem(60px);
+
+$drop-shadow: 													0 2px 3px rgba(231,231,231,0.50);
+$color-keyline-medium: 									palette(greyscale, light);
+$color-keyline-light: 									palette(greyscale, light);
+
+$colors: (
+	brand-primary: (
+		light: lighten(#009DFF, 5%),
+		base: #009DFF,
+		dark: darken(#009DFF, 5%)
+	),
+	brand-secondary: (
+		light: lighten(#009DFF, 5%),
+		base: #009DFF,
+		dark: darken(#009DFF, 5%)
+	),
+	greyscale: (
+		x-light: #F5F5F5,
+		light: #EDEDED,
+		base: #CCCCCC,
+		dark: #343840,
+	), 
+	notifications: (
+		error: #EB5A5A,
+		info:	#FFF9D7,
+	),
+);

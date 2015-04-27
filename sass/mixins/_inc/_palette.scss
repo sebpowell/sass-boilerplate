@@ -1,0 +1,8 @@
+@function palette($palette, $tone: 'base') {
+	@return map-get(map-get($colors, $palette), $tone);
+}
+
+
+@function sizing($size, $value: 'base') {
+	@return map-get(map-get($sizes, $size), $value);
+}

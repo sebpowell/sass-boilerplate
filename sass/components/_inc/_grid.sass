@@ -1,14 +1,14 @@
 // Grid settings
 $column-numbers: 12
 $column-width: 100% / $column-numbers
-
+$size-grid-gutter: 															sizes(base)
 // Idea?
 $screen-padding: null 
 
 
 section
 	&.padded
-		padding: $size-triple-unit 0 
+		padding: sizes(triple) 0 
 
 %container
 	+clearfix
@@ -16,7 +16,7 @@ section
 	margin: auto
 	// Keep some padding between contents and browser edge.
 	width: 100%
-	padding: 0 $size-double-unit
+	padding: 0 sizes(double)
 
 .container-wide
 	@extend %container
@@ -38,13 +38,13 @@ section
 		+no-bullet
 		display: flex
 		flex-wrap: wrap
-		margin-left: -$size-single-unit
-		margin-right: -$size-single-unit
+		margin-left: -sizes(base)
+		margin-right: -sizes(base)
 	
 		> li
 			width: 100%
-			padding: 0 $size-single-unit
-			margin-bottom: $size-single-unit
+			padding: 0 sizes(base)
+			margin-bottom: sizes(base)
 			
 			+respond(device-medium)
 				width: 100% / $i
@@ -54,18 +54,18 @@ section
 
 
 		&.gutter-double
-		margin-left: -$size-double-unit
-		margin-right: -$size-double-unit
+		margin-left: -sizes(double)
+		margin-right: -sizes(double)
 		> li
-			padding: 0 $size-double-unit
+			padding: 0 sizes(double)
 
 		&.gutter-triple
-		margin-left: -$size-triple-unit
-		margin-right: -$size-triple-unit
+		margin-left: -sizes(triple)
+		margin-right: -sizes(triple)
 
 		> li
-			padding: 0 $size-triple-unit
-			margin-bottom: $size-triple-unit
+			padding: 0 sizes(triple)
+			margin-bottom: sizes(triple)
 
 // @NOTE this is a very silly hotfix to make all .flex-grid-* classes display: flex
 [class^="flex-grid"]
@@ -99,10 +99,10 @@ section
 @for $i from 1 through $column-numbers
 	.columns-#{$i}
 		width: $i * $column-width
-		padding: 0 $size-single-unit
+		padding: 0 sizes(base)
 		float: left
-		+respond-to-size($tablet)
-			width: 100%
+		// +respond-to-size($tablet)
+		// 	width: 100%
 
 // Generates classes for column offsets.
 @for $i from 1 through $column-numbers
@@ -116,8 +116,8 @@ section
 .row, .flex-row
 	+clearfix
 	position: relative
-	margin-left: -$size-single-unit
-	margin-right: -$size-single-unit
+	margin-left: -sizes(base)
+	margin-right: -sizes(base)
 
 	&.no-gutter, &.full-bleed
 		margin-left: 0 !important
@@ -127,15 +127,15 @@ section
 	
 	// Halfs the spacing between the columns
 	&.gutter-half
-		margin-left: -$size-half-unit
-		margin-right: -$size-half-unit
+		margin-left: -sizes(half)
+		margin-right: -sizes(half)
 		> [class^="column"]
-			padding: 0 $size-half-unit
+			padding: 0 sizes(half)
 	
 	&.gutter-double
-		margin-left: -$size-double-unit
-		margin-right: -$size-double-unit
+		margin-left: -sizes(double)
+		margin-right: -sizes(double)
 		> [class^="column"]
-			padding: 0 $size-double-unit
+			padding: 0 sizes(double)
 
 

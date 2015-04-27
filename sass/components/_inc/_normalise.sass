@@ -20,9 +20,9 @@ time, mark, audio, video
 	vertical-align: baseline
 
 html
-	font-size: $rem-base // This is the only case where px unit is used
+	font-size: sizes(base) // This is the only case where px unit is used
 	line-height: 1
-	color: $color-text-dark
+	color: colours(greyscale, dark)
 	min-height: 100%
 
 article, aside, footer, header, menu, nav, section
@@ -38,13 +38,13 @@ nav ul
 
 mark
 	background-color: #F0F012
-	color: $color-text-dark
+	color: colours(greyscale, dark)
 	font-weight: 500
 hr
 	display: block
 	height: 1px
 	border-top: 1px solid $color-keyline-light
-	margin: $size-double-unit 0
+	margin: sizes(double) 0
 
 strong, b
 	font-weight: 500
@@ -52,7 +52,7 @@ strong, b
 a
 	cursor: pointer
 	text-decoration: none
-	color: $color-primary
+	color: colours(brand-primary)
 
 em, i
 	font-style: italic

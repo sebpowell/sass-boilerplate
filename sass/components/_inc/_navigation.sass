@@ -5,7 +5,7 @@ section
 
 .secondary-nav-mobile-toggle
 	background: palette(greyscale, base)
-	padding: $size-single-unit
+	padding: sizes(base)
 
 
 
@@ -19,21 +19,21 @@ section
 	+respond(device-large)
 		left: auto
 		width: (100% / 12) * 3
-		margin-left: -($size-single-unit)
-		padding: 0 $size-single-unit
+		margin-left: -(sizes(base))
+		padding: 0 sizes(base)
 	ul
 		+nobullet
 		> li 
 			> a
 				text-decoration: none
 				background: palette(greyscale, dark)
-				padding: $size-single-unit
+				padding: sizes(base)
 				color: white
 				display: none
 				+respond(device-large)
 					display: block
 					padding: 0
-					padding-bottom: $size-double-unit
+					padding-bottom: sizes(double)
 				&.is-selected
 					display: block
 					&:after
@@ -69,10 +69,10 @@ section
 	.primary-nav-links
 		+nobullet
 		+clearfix
-		margin-left: $size-single-unit
+		margin-left: sizes(base)
 	
 		> li
-			padding: 0 $size-single-unit
+			padding: 0 sizes(base)
 			float: left
 
 			> a
@@ -87,7 +87,7 @@ section
 				font-size: rem(12px) !important
 				font-weight: 600
 				&:hover
-					color: $color-primary !important
+					color: colours(brand-primary)
 
 
 
@@ -95,8 +95,8 @@ section
 
 .mobile-navigation-toggle
 	
-	+respond-to-size($tablet)
-		display: flex
+	// +respond-to-size($tablet)
+	// 	display: flex
 	+nobullet
 	width: 50px
 	display: none
@@ -109,7 +109,7 @@ section
 	li
 		width: 100%
 		height: 2px
-		background: $color-primary
+		background: colours(brand-primary)
 		&:not(:last-child)
 			margin-bottom: 4px
 
@@ -146,7 +146,7 @@ section
 		position: relative
 		+box-shadow(none)
 		input
-			background-color: $color-primary
+			background-color: colours(brand-primary)
 			height: 81px
 			background-position: 30px 30px
 			+placeholder
@@ -157,9 +157,9 @@ section
 	.close
 		position: fixed
 		cursor: pointer
-		right: $size-double-unit
-		top: $size-double-unit
-		stroke: $color-primary
+		right: sizes(double)
+		top: sizes(double)
+		stroke: colours(primary)
 		z-index: 9999
 
 	&.show
@@ -170,14 +170,14 @@ section
 		li
 			a
 				font-size: rem(32px) !important
-				padding: $size-double-unit $size-triple-unit
+				padding: sizes(double) sizes(triple)
 				display: block
 				color: white
 	.nav-footer
-		margin-top: $size-single-unit
-		padding: $size-single-unit
+		margin-top: sizes(base)
+		padding: sizes(base)
 	
 	.social-profiles
-		margin-top: $size-single-unit
+		margin-top: sizes(base)
 		justify-content: center
 

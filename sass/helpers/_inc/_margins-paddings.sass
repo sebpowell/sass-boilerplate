@@ -6,14 +6,14 @@
 
 $types: padding, margin
 $sides: top, right, bottom, left
-$modifiers: (quarter: $size-quarter-unit, half: $size-half-unit, base: $size-single-unit, double: $size-double-unit, triple: $size-triple-unit)
+// $modifiers: (quarter: @include(sizes, sizes(quarter)), half: sizes(half), base: sizes(base), double: $size-double-unit, triple: $size-triple-unit)
 
 @each $type in $types
 	@each $side in $sides
-		@each $key, $value in $modifiers
+		@each $key, $value in $sizes
 			.#{$type}-#{$side}-#{$key}
 				#{$type}-#{$side}: $value !important
 
-		@each $key, $value in $modifiers
+		@each $key, $value in $sizes
 			.#{$type}-#{$key}
 				#{$type}: $value

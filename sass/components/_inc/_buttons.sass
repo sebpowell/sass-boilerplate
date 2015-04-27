@@ -8,7 +8,7 @@
 
 	display: inline-block // If class is applied to a element
 	background: transparent
-	padding: 0 $size-double-unit !important
+	padding: 0 sizes(double) !important
 	height: 52px
 	line-height: 52px
 	@include responsive-text-size(base)
@@ -19,7 +19,7 @@
 		decoration: none
 		transform: capitalize
 		align: center
-	// padding: rem(14px) $size-single-unit
+	// padding: rem(14px) sizes(base)
 	// line-height: 1 !important
 	cursor: pointer
 	min-width: inherit
@@ -39,8 +39,8 @@
 
 	
 	&.bordered
-		border: 1px solid $color-primary
-		color: $color-primary
+		// border: 1px solid $color-primary
+		// color: $color-primary
 
 	&.secondary
 		background: #92D32D
@@ -61,7 +61,7 @@
 
 	&.white
 		background: white
-		color: $color-primary
+		// color: $color-primary
 		&:hover
 			background: darken(white, 5%)
 

@@ -8,17 +8,17 @@
 	button, .button
 		+border-radius(0 3px 3px 0)
 		height: rem(52px)
-		padding: 0 $size-single-unit
-		+respond-to-size($phone)
-			+border-radius(3px !important)
+		padding: 0 sizes(base)
+		// +respond-to-size($phone)
+		// 	+border-radius(3px !important)
 
 	input, select
 		+border-radius(0)
 		+box-shadow(none)
 		border: 0 
 		height: rem(52px)
-		+respond-to-size($phone)
-			+border-radius(3px !important)
+		// +respond-to-size($phone)
+		// 	+border-radius(3px !important)
 
 	.filter-container
 		float: left
@@ -31,19 +31,19 @@
 			input, select
 				+border-radius(0 3px 3px 0) 
 
-		+respond-to-size($phone)
-			width: 100% !important
-			border-right: 0 !important
+		// +respond-to-size($phone)
+		// 	width: 100% !important
+		// 	border-right: 0 !important
 
-			&:not(:last-child)
-				margin-bottom: $size-single-unit
+		// 	&:not(:last-child)
+		// 		margin-bottom: sizes(base)
 
 		&:not(:last-child)
 			border-right: 1px solid $color-keyline-light
 	
 		&:first-child
 			input
-				+border-radius(3px 0 0 3px)
+				+border-radius($size-border-radius 0 0 $size-border-radius)
 		&.postcode
 			width: 320px
 
@@ -56,7 +56,7 @@
 				position: absolute
 				top: 50%
 				margin-top: -11px
-				left: $size-single-unit
+				left: sizes(base)
 				background-image: url(../images/icons/icon-pin-grey.png)
 				background-size: 100%
 
@@ -67,7 +67,7 @@
 
 .post-code-finder
 	
-	margin-bottom: $size-single-unit
+	margin-bottom: sizes(base)
 	.form-error-message
 		position: absolute
 		width: 300px
@@ -76,7 +76,7 @@
 
 	.benefits
 		+nobullet
-		margin-bottom: $size-single-unit
+		margin-bottom: sizes(base)
 		li
 			display: inline-block
 			font-size: rem(12px)
@@ -87,22 +87,22 @@
 				margin-left: -4px
 				&:after
 					content: "\2022"
-					padding: 0 $size-single-unit
+					padding: 0 sizes(base)
 
 	
 	.form
 		display: flex
-		+respond-to-size($phone)
-			flex-wrap: wrap
+		// +respond-to-size($phone)
+		// 	flex-wrap: wrap
 		input
 			flex: 8
-			+respond-to-size($phone)
-				flex: auto
-				margin-bottom: $size-single-unit
+			// +respond-to-size($phone)
+			// 	flex: auto
+			// 	margin-bottom: sizes(base)
 		button
 			flex: 4
-			margin-left: $size-single-unit
-			+respond-to-size($phone)
-				flex: auto
-				width: 100%
-				margin-left: 0
+			margin-left: sizes(base)
+			// +respond-to-size($phone)
+			// 	flex: auto
+			// 	width: 100%
+			// 	margin-left: 0

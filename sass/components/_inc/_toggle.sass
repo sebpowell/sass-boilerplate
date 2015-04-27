@@ -5,7 +5,7 @@
 	display: block
 	margin: auto
 	text-align: center
-	color: $color-primary
+	color: colours(brand-primary)
 
 	ul
 		+border-radius(5px)
@@ -13,19 +13,19 @@
 		display: table
 		table-layout: fixed
 		width: 100%
-		border: 1px solid $color-primary
+		border: 1px solid colours(brand-primary)
 		
 		li
 			display: table-cell
 			vertical-align: middle
 			font-weight: 600
-			padding: rem(12px) $size-half-unit // Same height as inputs.
+			padding: rem(12px) sizes(half) // Same height as inputs.
 			
 			&:not(:last-child)
-				border-right: 1px solid $color-primary
+				border-right: 1px solid colours(brand-primary)
 			
 			&.is-selected
-				background-color: $color-primary
+				background-color: colours(brand-primary)
 				color: white
 
 			&:hover

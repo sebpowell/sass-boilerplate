@@ -7,16 +7,12 @@
 
 .section-team
 	img
-		margin-bottom: $size-double-half-unit
-
-	
-
-
+		margin-bottom: sizes(double-half)
 
 
 .footer
-	background: $color-background-dark
-	padding: $size-double-unit 0 $size-quadruple-unit
+	background: colors(greyscale, dark)
+	padding: sizes(single) 0 sizes(quadruple)
 	width: 100%
 	color: white
 	font-size: rem(14px)
@@ -25,21 +21,21 @@
 		text-decoration: none
 		color: white
 	h4
-		color: lighten($color-background-dark, 20%)
+		// color: lighten($color-background-dark, 20%)
 
 	.footer-links
 		+nobullet
 		li
 			&:not(:last-child)
-				margin-bottom: $size-single-unit
+				margin-bottom: sizes(base)
 			a
 				color: white
 
 	.copyright
-		margin-top: $size-single-unit
-		padding: $size-single-unit 0
+		margin-top: sizes(base)
+		padding: sizes(base) 0
 		font-size: rem(12px)
-		color: lighten($color-background-dark, 20%)
+		// color: lighten($color-background-dark, 20%)
 
 		.social-profiles
 			+nobullet
@@ -49,7 +45,7 @@
 			
 			li
 				&:not(:last-child)
-					margin-right: $size-single-unit
+					margin-right: sizes(base)
 				a
 					// +background-image
 					display: block

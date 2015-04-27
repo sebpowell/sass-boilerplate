@@ -1,5 +1,5 @@
 .modal
-	+border-radius($border-radius)
+	+border-radius($size-border-radius)
 	+transition(all, 1s)
 	position: fixed
 	top: 50%
@@ -25,14 +25,14 @@
 			size: rem(24px)
 			weight: 500
 		text-transform: capitalize
-		padding: $size-single-unit $size-double-unit
+		padding: sizes(single) sizes(single)
 		border-bottom: 1px solid $color-keyline-light
 
 	.modal-close
 		position: absolute !Important
 		cursor: pointer
-		right: $size-single-unit
-		top: $size-single-unit
+		right: sizes(single)
+		top: sizes(single)
 		z-index: 999
 		line-height: 1
 		&:before
@@ -42,11 +42,11 @@
 		
 	.modal-body
 		+clearfix
-		padding: $size-double-unit
+		padding: sizes(single)
 
 	.modal-footer
 		+clearfix
-		padding: $size-single-unit
+		padding: sizes(single)
 		border-top: 1px solid $color-keyline-light
 		text-align: right
 

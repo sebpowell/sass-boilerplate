@@ -7,7 +7,7 @@
 		// +box-shadow(0 0 15px 1px rgba(00,00,00,0.2))
 		+z-index(tooltip)
 		white-space: normal
-		padding: $size-single-unit
+		padding: sizes(base)
 		display: none
 		text-transform: none !important
 		font-size: rem(12px) !important
@@ -15,7 +15,7 @@
 		text-align: center
 		color: white
 		position: absolute
-		background: $color-text-dark
+		background: colours(greyscale, dark)
 	
 		&:after
 			position: absolute
@@ -51,7 +51,7 @@
 		left: 50%
 		top: -52px
 		&:after
-			+triangle(down, $color-text-dark, 8px)
+			+triangle(down, colours(greyscale, dark), 8px)
 			left: 50%
 			margin-left: -8px
 			bottom: -8px
@@ -62,7 +62,7 @@
 		left: 50%
 		top: 100%
 		&:after
-			+triangle(up, $color-text-dark, 8px)
+			+triangle(up, colours(greyscale, dark), 8px)
 			left: 50%
 			margin-left: -8px
 			top: -8px
@@ -74,8 +74,8 @@
 		right: 0
 		top: 100%
 		&:after
-			+triangle(up, $color-text-dark, 8px)
-			right: $size-single-unit
+			+triangle(up, colours(greyscale, dark), 8px)
+			right: sizes(base)
 			top: -8px
 
 .tooltip-bottom-left
@@ -84,8 +84,8 @@
 		left: 0
 		top: 100%
 		&:after
-			+triangle(up, $color-text-dark, 8px)
-			left: $size-single-unit
+			+triangle(up, colours(greyscale, dark), 8px)
+			left: sizes(base)
 			top: -8px
 
 

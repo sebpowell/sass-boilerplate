@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6
 // Why margin here?
 h1, h2, h3, h4, h5, h6
 	// margin: $size-triple-unit 0 $size-double-unit 0
-	margin-bottom: $size-half-unit
+	margin-bottom: sizes(half)
 	&:first-child
 		margin-top: 0
 
@@ -19,7 +19,7 @@ p
 	+responsive-text-size(base)
 	line-height: 1.8
 	&:not(:last-child)
-		margin-bottom: $size-single-unit
+		margin-bottom: sizes(base)
 
 	&.lead
 		font-size: rem(24px)
@@ -38,16 +38,16 @@ small
 	> li
 		line-height: 1.5 // Change to variable
 		&:not(:last-child)
-			margin-bottom: $size-single-unit
+			margin-bottom: sizes(base)
 
 
 
 .typography
 	h1, h2, h3, h4, h5, h6
-		margin-bottom: $size-single-unit
+		margin-bottom: sizes(base)
 
 	p
-		margin-bottom: $size-single-unit
+		margin-bottom: sizes(base)
 		line-height: 2
 
 		&:last-child
@@ -60,7 +60,7 @@ small
 
 	ul, ol
 		line-height: 1.5
-		margin: 0 0 $size-single-unit $size-single-unit
+		margin: 0 0 sizes(base) sizes(base)
 
 		li
 			margin: 0
@@ -90,7 +90,7 @@ h6, .h6
 .divider
 	border-bottom: 1px solid $color-keyline-light
 	text-align: center
-	margin-bottom: $size-double-unit
+	margin-bottom: sizes(double)
 	h2
 		position: relative
 		bottom: -15px
@@ -114,9 +114,9 @@ h6, .h6
 
 .legal
 	display: block
-	margin-top: $size-half-unit
-	color: $color-text-light
+	margin-top: sizes(half)
+	color: colours(greyscale, light)
 	line-height: 1.5
 	font-size: rem(12px)
 	a
-		color: $color-primary
+		color: colours(brand-primary)
