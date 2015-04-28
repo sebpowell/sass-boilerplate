@@ -4,7 +4,7 @@ section
 
 
 .secondary-nav-mobile-toggle
-	background: palette(greyscale, base)
+	background: colors(greyscale, base)
 	padding: sizes(base)
 
 
@@ -26,7 +26,7 @@ section
 		> li 
 			> a
 				text-decoration: none
-				background: palette(greyscale, dark)
+				background: colors(greyscale, dark)
 				padding: sizes(base)
 				color: white
 				display: none
@@ -45,9 +45,9 @@ section
 
 				+respond(device-large)
 					background: white
-					color: palette(greyscale, dark)
+					color: colors(greyscale, dark)
 					&:hover
-						color: palette(brand-primary, base)
+						color: colors(brand-primary, base)
 
 
 
@@ -57,7 +57,7 @@ section
 	position: fixed !important
 	top: 0
 	left: 0
-	background: palette(brand-primary, base)
+	background: colors(brand-primary, base)
 	height: $size-nav-height
 	display: flex
 	width: 100%

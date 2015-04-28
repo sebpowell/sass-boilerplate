@@ -1,7 +1,29 @@
+
 @import "sass/base.sass"
 
 $size-nav-height:													rem(62px) 
 $font-family-primary: adelle sans
+
+
+.checklist
+	+no-bullet
+	> li
+		+clearfix
+		margin-bottom: sizes(base)
+		line-height: 1.7
+		img
+			width: 30px
+			margin-right: sizes(base)
+			float: left
+
+.referral
+	+border-radius(3px)
+	background: colors(info, light)
+	border: 1px solid colors(info, base)
+	color: colors(info, dark)
+	text-align: center
+	td
+		padding: 20px
 
 
 
@@ -26,6 +48,8 @@ table
 					// Vertical padding
 					padding: sizes(base) 0
 
+	// .section-body
+	// 	padding: 
 	.section-header
 		border-bottom: 1px solid $color-keyline-light
 		h3
@@ -47,7 +71,7 @@ table
 	height: 50px
 
 .page-emails
-	background: palette(greyscale, x-light)
+	background: colors(greyscale, x-light)
 	padding: 50px 20px 0 20px
 
 .page-body

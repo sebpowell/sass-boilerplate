@@ -1,167 +1,99 @@
 @@include('_header.html')
-<body class="page-about">
-	@@include('_nav.html')
-	<div class="masthead no-margin">
-		<div class="masthead-contents">
-			<h1>About Us</h1>
-		</div>
-	</div>
-	<section class='padded background-light-grey text-center typography'>
-		<div class="container-wide">
-			<p>It has been well documented by the press and consumer watchdogs that the automotive repair industry is fraught with problems. Lack of transparency, poor quality labour, and wasted time taking cars to garages have all led to a large amount of mistrust in the industry.</p>
-			
-			<p>With a background in Automotive and Technology the team at ClickMechanic decided that there was a better way and in 2012 ClickMechanic was born.</p>
-		</div>
-	</section>
-	<section class="padded text-center section-team border-bottom">
-		<h2>Team Photos</h2>
-		<div class="container-wide">
-			<ul class="flex-grid-4 gutter-triple margin-bottom-triple" ng-controller="PhotosCtrl">
-			<div class="box" ng-repeat="photo in photos">
-  <img ng-src="{{photo.src}}">
-  <label for="url">URL:</label> <input ng-model="photo.url" name="url" id="url">
-  <div class="controls" ng-show="photo.selected">
-    <div class="photo">
-      <div class="field">
-        
-      </div>
-      <div class="field">
-        <label for="tags">Tags:</label> <input ng-list ng-model="photo.tags" name="tags" id="tags">
-      </div>
-    </div>
-  </div>
-</div>
-				<li>
-					<img src="../../images/andrew-jervis.png">
-					<h3>Andy Jervis</h3>
-					<p class="caption">Co-founder &amp; CEO</p>
-				</li>
-				<li>
-					<img src="images/felix-kenton.png">
-					<h3>Andy Jervis</h3>
-					<p class="caption">Co-founder &amp; CEO</p>
-				</li>
-				<li>
-					<img src="images/jake-mellett.png">
-					<h3>Andy Jervis</h3>
-					<p class="caption">Co-founder &amp; CEO</p>
-				</li>
-				<li>
-					<img src="images/peter-kerr.png">
-					<h3>Andy Jervis</h3>
-					<p class="caption">Co-founder &amp; CEO</p>
-				</li>
-			</ul>
-			<h2>Investors</h2>
-			<ul class="flex-grid-4 gutter-triple">
-				<li>
-					<img src="images/klaus-nyengaard.png">
-					<h3>Klaus Nyengaard</h3>
-					<p class="caption">Chairman, Wahanda</p>
-				</li>
-				<li>
-					<img src="images/rasmus-wolff.png">
-					<h3>Rasmus Wolff</h3>
-					<p class="caption">Former CCO, JustEat</p>
-				</li>
-				<li>
-					<img src="images/giorgio-ponticelli.png">
-					<h3>Giorgio Ponticelli</h3>
-					<p class="caption">MD New Markets, Wahanda</p>
-				</li>
-				<li>
-					<img src="images/lopo-champalimaud.png">
-					<h3>Lopo Champalimaud</h3>
-					<p class="caption">Founder &amp; CEO, Wahanda</p>
-				</li>
-				<li>
-					<img src="images/chris-wood.png">
-					<h3>Chris Wood</h3>
-					<p class="caption">CCO, Wahanda</p>
-				</li>
-				<li>
-					<img src="images/james-bromley.png">
-					<h3>James Bromley</h3>
-					<p class="caption">Former MD, Autotrader</p>
-				</li>
-				<li>
-					<img src="images/simon-schneider.png">
-					<h3>Simon Schneider</h3>
-					<p class="caption">Former SEO Lead, Zoopla</p>
-				</li>
-				<li>
-					<img src="images/andy-wilson.png">
-					<h3>Andy Wilson</h3>
-					<p class="caption">Growth Lead, GetYourGuide</p>
-				</li>
-				<li>
-					<img src="images/leigh-philipson.png">
-					<h3>Leigh Philipson</h3>
-					<p class="caption">Founder &amp; CEO, Wahanda</p>
-				</li>
-				<li>
-					<img src="images/imperial.png">
-					<h3>Imperial Innovations</h3>
-				</li>
-				<li>
-					<img src="images/ef.png">
-					<h3>Entrpreneur First</h3>
-				</li>
-			</ul>
-		</div>
-	</section>
-	<section class="padded text-center">
-		<div class="container-wide">
-			<h2>We're Hiring</h2>
-			<a class="button primary">See Vacancies</a>
-		</div>
-	</section>
-	<footer class="footer">
-		<div class="container-wide">
-			<div class="flex-row">
-				<div class="columns-4">
-					<h4 class="uppercase">Help &amp; Support</h4>
-					<ul class="footer-links">
-						<li><a>How It Works</a></li>
-						<li><a>FAQ</a></li>
-						<li><a>Why Use Us</a></li>
-						<li><a>Contact Us</a></li>
-					</ul>
-				</div>
-				<div class="columns-4">
-					<h4 class="uppercase">Company</h4>
-					<ul class="footer-links">
-						<li><a>Our Story</a></li>
-						<li><a>News &amp; Blog</a></li>
-						<li><a>Press</a></li>
-						<li><a>Reviews</a></li>
-						<li><a>Careers</a></li>
-						<li><a>Legals</a></li>
-					</ul>
-				</div>
-				<div class="columns-4">
-					<h4 class="uppercase">Get In Touch</h4>
-					We're a chatty bunch - give us a call on 070 787987 78798.
-				</div>
+	<body class="page-about">
+		@@include('_nav.html')
+		<div class="masthead no-margin">
+			<div class="masthead-contents">
+				<h1>About Us</h1>
 			</div>
 		</div>
-	</footer>
+		<section class='padded background-light-grey text-center typography'>
+			<div class="container-wide">
+				<p>It has been well documented by the press and consumer watchdogs that the automotive repair industry is fraught with problems. Lack of transparency, poor quality labour, and wasted time taking cars to garages have all led to a large amount of mistrust in the industry.</p>
+				
+				<p>With a background in Automotive and Technology the team at ClickMechanic decided that there was a better way and in 2012 ClickMechanic was born.</p>
+			</div>
+		</section>
+		<section class="padded text-center section-team border-bottom">
+			<h2>Team Photos</h2>
+			
+			<div class="container-wide">
+				<ul class="flex-grid-4 gutter-triple margin-bottom-triple" ng-controller="team">
+					<li ng-repeat="person in team">
+						<img ng-src="{{person.photo}}" style="max-width: 140px">
+						<h3>{{person.name}}</h3>
+						<p class="caption">{{person.position}}</p>
+					</li>
+				</ul>
+				<h2>Investors</h2>
+				<ul class="flex-grid-4 gutter-triple" ng-controller="investors">
+					<li ng-repeat="person in investors">
+						<img ng-src="{{person.photo}}" style="max-width: 140px">
+						<h3>{{person.name}}</h3>
+						<p class="caption">{{person.position}}</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="padded text-center">
+			<div class="container-wide">
+				<h2>We're Hiring</h2>
+				<a class="button primary">See Vacancies</a>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="container-wide">
+				<div class="flex-row">
+					<div class="columns-4">
+						<h4 class="uppercase">Help &amp; Support</h4>
+						<ul class="footer-links">
+							<li><a>How It Works</a></li>
+							<li><a>FAQ</a></li>
+							<li><a>Why Use Us</a></li>
+							<li><a>Contact Us</a></li>
+						</ul>
+					</div>
+					<div class="columns-4">
+						<h4 class="uppercase">Company</h4>
+						<ul class="footer-links">
+							<li><a>Our Story</a></li>
+							<li><a>News &amp; Blog</a></li>
+							<li><a>Press</a></li>
+							<li><a>Reviews</a></li>
+							<li><a>Careers</a></li>
+							<li><a>Legals</a></li>
+						</ul>
+					</div>
+					<div class="columns-4">
+						<h4 class="uppercase">Get In Touch</h4>
+						We're a chatty bunch - give us a call on 070 787987 78798.
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 	<script>
-
-  var PhotosCtrl = function ($scope) {
-    $scope.photos = [
-      { 
-      	src: '//farm3.staticflickr.com/2871/9096220194_ff9e60d646_z.jpg', 
-      	tags: ['bird'], 
-      	url: "test.html",
-      },
-      { src: '//farm4.staticflickr.com/3251/3089268872_1869860fbf_z.jpg' },
-      { src: '//farm4.staticflickr.com/3049/3088429317_05a0c51605_z.jpg' },
-      { src: '//farm3.staticflickr.com/2155/2348877473_ec3768d5d9_z.jpg', tags: ['desert'] },
-      { src: '//farm4.staticflickr.com/3044/2348881979_1fd7f979f3_z.jpg', tags: ['valley'] },
-      { src: '//farm3.staticflickr.com/2273/2348882083_d8e3e38f89_z.jpg', tags: ['valley'] },
-    ];
-  }
-</script>
+		var team = function ($scope) {
+			$scope.team = [
+				{ photo: '../../images/andrew-jervis.png', name: "Andrew Jervis", position: "Co-founder & CEO"},
+				{ photo: '../../images/felix-kenton.png', name: "Felix Kenton", position: "Co-founder & CTO"},
+				{ photo: '../../images/jake-mellett.png', name: "Jake Mellett", position: "Digital Marketing"},
+				{ photo: '../../images/peter-kerr.png', name: "Peter Kerr", position: "Sales"},
+			];
+		}
+		var investors = function ($scope) {
+			$scope.investors = [
+				{ photo: '../../images/klaus-nyengaard.png', name: "Klaus Nyengaard", position: "Chairman, Wahanda"},
+				{ photo: '../../images/rasmus-wolff.png', name: "Rasmus Wolff", position: "Former CCO, JustEat"},
+				{ photo: '../../images/giorgio-ponticelli.png', name: "Giorgio Ponticelli", position: "MD New Markets, Wahanda"},
+				{ photo: '../../images/lopo-champalimaud.png', name: "Lopo Champalimaud", position: "Founder & CEO, Wahanda"},
+				{ photo: '../../images/chris-wood.png', name: "Chris Wood", position: "CCO, Wahanda"},
+				{ photo: '../../images/james-bromley.png', name: "James Bromley", position: "Former MD, Autotrader"},
+				{ photo: '../../images/simon-schnieders.png', name: "Simon Schnieders", position: "Former SEO Lead, Zoopla"},
+				{ photo: '../../images/andy-wilson.png', name: "Andy Wilson", position: "Growth Lead, GetYourGuide"},
+				{ photo: '../../images/leigh-philipson.png', name: "Leigh Philipson", position: ""},
+				{ photo: '../../images/imperial.png', name: "Imperial", position: ""},
+				{ photo: '../../images/ef.png', name: "Entrpreneur First", position: ""},
+			];
+		}
+	</script>
 </html>

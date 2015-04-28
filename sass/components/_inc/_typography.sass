@@ -7,13 +7,16 @@ h1, h2, h3, h4, h5, h6
 		letter-spacing: 0.1em
 
 
+
+h1, h2
+	margin-bottom: sizes(double)
 // Why margin here?
-h1, h2, h3, h4, h5, h6
+h3, h4, h5, h6
 	// margin: $size-triple-unit 0 $size-double-unit 0
 	margin-bottom: sizes(half)
-	&:first-child
-		margin-top: 0
 
+a
+	color: colors(greyscale)
 
 p
 	+responsive-text-size(base)
@@ -23,6 +26,9 @@ p
 
 	&.lead
 		font-size: rem(24px)
+
+	&.caption
+		+responsive-text-size(small)
 
 
 small
