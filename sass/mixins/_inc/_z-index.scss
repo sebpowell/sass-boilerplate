@@ -1,0 +1,19 @@
+@mixin z-index($value) {
+	// z-index: index($objects, $value);
+}
+
+$layer: (
+	modal: 1,
+	dropdown: 2,
+	header: 3,
+);
+
+@function layer($name) {
+	@if map-has-key($layer, $name) {
+		@return map-get($layer, $name);  
+	}
+	 
+	@warn "The key #{$name} is not in the map ’$layer’";
+	@return null;
+};
+ 

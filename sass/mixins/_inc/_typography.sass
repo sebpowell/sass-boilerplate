@@ -1,6 +1,7 @@
 @function breakpoint($breakpoint-name)
 	@return map-get($breakpoints, $breakpoint-name)
 
+
 // lib/functions/_typography.scss
 @function text-breakpoints-for($text-size)
 	@return map-get($text-sizing, $text-size)
@@ -19,6 +20,7 @@ $mobile-first: true
 	@if $mobile-first == false
 		@media screen and (max-width: breakpoint($breakpoint-name)) 
 			@content
+
 
 // lib/mixins/_typography.scss
 @mixin text-size($text-size, $breakpoint-name: "small")
