@@ -1,0 +1,45 @@
+@@include('_header.html')
+	<body class="page-support">
+		<!-- Masthead !-->
+			<div class="masthead">
+				<div class="masthead-contents">
+					<div class="container-narrow">
+						<h1>The Best Mobile </br> Mechanics In Birmingham</h1>
+						<p>Get a vetted mobile mechanic to repair your vehicle wherever </br> and whenever you want, saving you time and money.</p>
+						<div class="buttons">
+							<a href="#" class="button primary">Get Started</a>
+							<a href="#" class="button white hollow">Get Started</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- Masthead !-->
+		
+		<section class="margin-bottom-double">
+			<div class="container-wide">
+				<div class="flex-grid-3" ng-controller="makes">
+					<li ng-repeat="car in makes">
+						<div class="card padded">
+							<h3 class="text-capitalize">{{car.make}}</h3>
+							<ul class="no-bullet">
+								<li><a>Repairs</a></li>
+								<li><a>Inspections</a></li>
+								<li><a>Servicing</a></li>
+								<li><a>Servicing</a></li>
+							</ul>
+						</div>
+					</li>
+				</div>
+			</div>
+		</section>
+
+		@@include('_footer.html')
+		<script>
+			var makes = function ($scope) {
+					$scope.makes = [
+						{"make":"acura"},{"make":"aixam"},{"make":"alfa-romeo"},{"make":"asia"},{"make":"aston"},{"make":"audi"},{"make":"austin"},{"make":"barkas"},{"make":"bedford"},{"make":"bently"},{"make":"bmw"},{"make":"builck"},{"make":"cadillac"},{"make":"carbodies"},{"make":"chevrolet"},{"make":"chrysler"},{"make":"citroen"},{"make":"dacia"},{"make":"daewoo"},{"make":"daihatsu"},{"make":"daimler"},{"make":"dodge"},{"make":"ferrari"},{"make":"fiat"},{"make":"ford"},{"make":"ford-us"},{"make":"fso"},{"make":"gmc"},{"make":"great-wall-motors"},{"make":"honda"},{"make":"hummer"},{"make":"hyundai"},{"make":"infiniti"},{"make":"isuzu"},{"make":"iveco"},{"make":"jaguar"},{"make":"jeep"},{"make":"kia"},{"make":"lada"},{"make":"lamborghini"},{"make":"lancia"},{"make":"land-rover"},{"make":"ldv"},{"make":"lexus"},{"make":"london-taxi"},{"make":"lotus"},{"make":"maruti"},{"make":"maserati"},{"make":"maxus"},{"make":"maybach"},{"make":"mazda"},{"make":"mercedes"},{"make":"mercedes-benz"},{"make":"metrocab"},{"make":"mg"},{"make":"microcar"},{"make":"mini"},{"make":"mitsubishi"},{"make":"morgan"},{"make":"moskvich"},{"make":"nissan"},{"make":"opel"},{"make":"perodua"},{"make":"peugeot"},{"make":"piaggio"},{"make":"pontiac"},{"make":"porsche"},{"make":"proton"},{"make":"renault"},{"make":"reva"},{"make":"rolls-royce"},{"make":"rover"},{"make":"saab"},{"make":"sao"},{"make":"saturn"},{"make":"seat"},{"make":"skoda"},{"make":"smart-car"},{"make":"ssangyong"},{"make":"subaru"},{"make":"suzuki"},{"make":"talbot"},{"make":"tata"},{"make":"taxi"},{"make":"toyota"},{"make":"trabant"},{"make":"tvr"},{"make":"vauxhall"},{"make":"volkswagen"},{"make":"volvo"},{"make":"vw"},{"make":"wartburg"},{"make":"zastava"}
+				]
+				
+			}
+		
+		</script>

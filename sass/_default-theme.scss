@@ -5,7 +5,7 @@ $size-border-radius: 												3px;
 $size-input-height: 												rem(48px);
 
 //  Appy to nav if fixed, then to body element. 
-$size-nav-height:													rem(60px);
+
 
 $colors: (
 	brand-primary: (
@@ -22,6 +22,8 @@ $colors: (
 		x-light: #F5F5F5,
 		light: #EDEDED,
 		base: #CCCCCC,
+		mid: #989898,
+		mid-dark: #CCCCCC,
 		dark: #343840,
 	), 
 	info: (
@@ -33,3 +35,4 @@ $colors: (
 
 $drop-shadow: 													0 2px 3px rgba(231,231,231,0.50);
 $color-keyline-light: 									#EDEDED;
+$font-family-primary: 'proxima nova', Helvetica, Arial, sans-serif ;

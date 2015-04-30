@@ -1,7 +1,8 @@
 
 @import "sass/base.sass"
-html
-	font-family: 'proxima nova'
+
+body
+	padding-top: $size-nav-height
 
 
 .popular
@@ -16,6 +17,8 @@ html
 	// +box-shadow($drop-shadow)
 	background: white
 	border: 1px solid #DFDFDF
+	&.padded
+		padding: sizes(base)
 	header
 		padding: sizes(base) 0
 		text-align: center
@@ -36,22 +39,23 @@ html
 				margin-bottom: sizes(base)
 
 .stats
-	padding: sizes(base) 0
+	padding: sizes(double) 0
 	ul
 		+no-bullet
 		display: flex
 		> li
-			flex: 1
+			width: 100%
+			+respond(device-medium)
+				flex: 1
 			background: white
 			border: 1px solid #cccccc
 			text-align: center
-			padding: sizes(double) 0
+			padding: sizes(triple) 0
 			&:not(:last-child)
 				margin-right: sizes(double)
 			.stat-value
 				+responsive-text-size(large)
-			h3
-				+responsive-text-size(small)
+				color: colors(brand-primary)
 
 
 
@@ -65,8 +69,7 @@ $font-family-primary: adelle sans
 	margin-bottom: sizes(double)
 	// border: 1px solid $color-keyline-light
 	.mechanic-details
-		@extend .columns-4
-		padding: sizes(double)
+		+grid(4)
 		text-align: center
 		
 		.avatar
@@ -76,19 +79,17 @@ $font-family-primary: adelle sans
 			margin-bottom: sizes(base)
 
 	.mechanic-info
-		@extend .columns-8
+		+grid(8)
 		border-left: 1px solid $color-keyline-light
+	
+	.card-section
 		padding: sizes(double)
 
-	.reviews
+	.mechanic-reviews
 		+no-bullet
-		border-top: 1px solid $color-keyline-light
-		.date
-			float: right
-		p
-			font-size: 20px
-
 		li
+			&:not(:last-child)
+				margin-bottom: sizes(double)
 
 
 

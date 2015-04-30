@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../../clickmechanic.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js"></script>
+	</head>
+
+	<header class="primary-nav-desktop">
+		<div class="container-wide">
+			<ul class="primary-nav-links">
+				<li><a href="#">How It Works</a></li>
+				<li><a href="#">How It Works</a></li>
+				<li><a href="#">How It Works</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<body class="page-support">
+		<!-- Masthead !-->
+			<div class="masthead">
+				<div class="masthead-contents">
+					<div class="container-narrow">
+						<h1>The Best Mobile </br> Mechanics In Birmingham</h1>
+						<p>Get a vetted mobile mechanic to repair your vehicle wherever </br> and whenever you want, saving you time and money.</p>
+						<div class="buttons">
+							<a href="#" class="button primary">Get Started</a>
+							<a href="#" class="button white hollow">Get Started</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- Masthead !-->
+		
+		<section class="margin-bottom-double">
+			<div class="container-wide">
+				<div class="flex-grid-3" ng-controller="makes">
+					<li ng-repeat="car in makes">
+						<div class="card padded">
+							<h3 class="text-capitalize">{{car.make}}</h3>
+							<ul class="no-bullet">
+								<li><a>Repairs</a></li>
+								<li><a>Inspections</a></li>
+								<li><a>Servicing</a></li>
+								<li><a>Servicing</a></li>
+							</ul>
+						</div>
+					</li>
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer">
+	<div class="container-wide">
+		<div class="flex-row">
+			<div class="columns-4">
+				<h4 class="uppercase">Help &amp; Support</h4>
+				<ul class="footer-links">
+					<li><a>How It Works</a></li>
+					<li><a>FAQ</a></li>
+					<li><a>Why Use Us</a></li>
+					<li><a>Contact Us</a></li>
+				</ul>
+			</div>
+			<div class="columns-4">
+				<h4 class="uppercase">Company</h4>
+				<ul class="footer-links">
+					<li><a href="about.html">Our Story</a></li>
+					<li><a>News &amp; Blog</a></li>
+					<li><a>Press</a></li>
+					<li><a>Reviews</a></li>
+					<li><a>Careers</a></li>
+					<li><a>Legals</a></li>
+				</ul>
+			</div>
+			<div class="columns-4">
+				<h4 class="uppercase">Get In Touch</h4>
+				We're a chatty bunch - give us a call on 070 787987 78798.
+			</div>
+		</div>
+	</div>
+</footer>
+		<script>
+			var makes = function ($scope) {
+					$scope.makes = [
+						{"make":"acura"},{"make":"aixam"},{"make":"alfa-romeo"},{"make":"asia"},{"make":"aston"},{"make":"audi"},{"make":"austin"},{"make":"barkas"},{"make":"bedford"},{"make":"bently"},{"make":"bmw"},{"make":"builck"},{"make":"cadillac"},{"make":"carbodies"},{"make":"chevrolet"},{"make":"chrysler"},{"make":"citroen"},{"make":"dacia"},{"make":"daewoo"},{"make":"daihatsu"},{"make":"daimler"},{"make":"dodge"},{"make":"ferrari"},{"make":"fiat"},{"make":"ford"},{"make":"ford-us"},{"make":"fso"},{"make":"gmc"},{"make":"great-wall-motors"},{"make":"honda"},{"make":"hummer"},{"make":"hyundai"},{"make":"infiniti"},{"make":"isuzu"},{"make":"iveco"},{"make":"jaguar"},{"make":"jeep"},{"make":"kia"},{"make":"lada"},{"make":"lamborghini"},{"make":"lancia"},{"make":"land-rover"},{"make":"ldv"},{"make":"lexus"},{"make":"london-taxi"},{"make":"lotus"},{"make":"maruti"},{"make":"maserati"},{"make":"maxus"},{"make":"maybach"},{"make":"mazda"},{"make":"mercedes"},{"make":"mercedes-benz"},{"make":"metrocab"},{"make":"mg"},{"make":"microcar"},{"make":"mini"},{"make":"mitsubishi"},{"make":"morgan"},{"make":"moskvich"},{"make":"nissan"},{"make":"opel"},{"make":"perodua"},{"make":"peugeot"},{"make":"piaggio"},{"make":"pontiac"},{"make":"porsche"},{"make":"proton"},{"make":"renault"},{"make":"reva"},{"make":"rolls-royce"},{"make":"rover"},{"make":"saab"},{"make":"sao"},{"make":"saturn"},{"make":"seat"},{"make":"skoda"},{"make":"smart-car"},{"make":"ssangyong"},{"make":"subaru"},{"make":"suzuki"},{"make":"talbot"},{"make":"tata"},{"make":"taxi"},{"make":"toyota"},{"make":"trabant"},{"make":"tvr"},{"make":"vauxhall"},{"make":"volkswagen"},{"make":"volvo"},{"make":"vw"},{"make":"wartburg"},{"make":"zastava"}
+				]
+				
+			}
+		
+		</script>

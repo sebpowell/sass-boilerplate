@@ -70,7 +70,7 @@ gulp.task('fileinclude', function() {
 });
 
 gulp.task("watch", function() {
-	gulp.watch("sass/**/*.*", ["sass"])
+	gulp.watch("sass/**/*.*", ['clickmechanic'])
 	gulp.watch(['clickmechanic/views/*.html'], ['fileinclude'])
 	gulp.watch(['clickmechanic/**/*'], ['clickmechanic'])
 });

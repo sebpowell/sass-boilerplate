@@ -3,11 +3,15 @@
 
 .filters
 	+clearfix
-	display: inline-block
-	// Makes it centered without needing to specify width. 
+	display: block
+	+respond(device-medium)
+		// Makes it centered without needing to specify width. 
+		display: inline-block
+	
 	button, .button
 		+border-radius(0 3px 3px 0)
 		height: rem(52px)
+		line-height: rem(52px)
 		padding: 0 sizes(base)
 		// +respond-to-size($phone)
 		// 	+border-radius(3px !important)
@@ -21,29 +25,38 @@
 		// 	+border-radius(3px !important)
 
 	.filter-container
-		float: left
-		position: relative
-		min-width: 140px
+
+		.button
+			+border-radius(0 0 3px 3px)
 		&:first-child
-			input, select
-				+border-radius(3px 0 0 3px)
-		&:last-child
-			input, select
-				+border-radius(0 3px 3px 0) 
+			+border-radius(3px 3px 0 0)
 
-		// +respond-to-size($phone)
-		// 	width: 100% !important
-		// 	border-right: 0 !important
-
-		// 	&:not(:last-child)
-		// 		margin-bottom: sizes(base)
+	
 
 		&:not(:last-child)
-			border-right: 1px solid $color-keyline-light
-	
-		&:first-child
-			input
-				+border-radius($size-border-radius 0 0 $size-border-radius)
+			+border(bottom, $color-keyline-light)
+
+		width: 100%
+		overflow: hidden
+		+respond(device-medium)
+			min-width: 200px
+			width: auto
+			float: left
+			position: relative
+			&:not(:last-child)
+				border-right: 1px solid $color-keyline-light
+			
+			&:first-child
+				input, select
+					+border-radius(3px 0 0 3px)
+			
+			&:last-child
+				input, select
+					+border-radius(0 3px 3px 0) 
+
+
+
+
 		&.postcode
 			width: 320px
 

@@ -6,20 +6,35 @@ h1, h2, h3, h4, h5, h6
 		text-transform: uppercase
 		letter-spacing: 0.1em
 
-
+// Generate text-sizes from array
 
 h1, h2
-	margin-bottom: sizes(double)
+	margin-bottom: sizes(base)
 // Why margin here?
 h3, h4, h5, h6
 	// margin: $size-triple-unit 0 $size-double-unit 0
-	margin-bottom: sizes(base)
+	margin-bottom: sizes(half)
+
+
+
+
+
+.text-primary
+	color: colors(brand-primary)
+
+.text-muted
+	color: colors(greyscale, mid)
 
 .link-reset 
 	color: inherit
 
+// a
+// 	color: colors(greyscale)
+
 a
-	color: colors(greyscale)
+	color: greyscale(dark)
+	&:hover
+		color: colors(brand-primary)
 
 p
 	+responsive-text-size(base)
@@ -39,7 +54,8 @@ small
 	// Used for small labels, captiojs etc. 
 	+responsive-text-size(x-small)
 
-
+strong
+	font-weight: 600
 
 .no-bullet
 	list-style-type: none

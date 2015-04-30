@@ -1,16 +1,8 @@
-@function parseInt($n) {
-	@return $n / ($n * 0 + 1);
-}
-
-@function rem($size) {
-	$remSize: (parseInt($size) / parseInt($size-base)) * 1rem;
-	@return $remSize;
-}
-
-
 // Should this be project specific?
 // The base size is used to create the following set of standard sizes, used throughout the interface for margins, padding, height etc. 
 $size-base: 																16px;
+
+$size-nav-height:												rem(60px);
 
 $sizes: (
   quarter: 												rem($size-base / 4),

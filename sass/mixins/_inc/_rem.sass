@@ -1,3 +1,10 @@
 // @function rem($size)
 //   $remSize: 12px
 //   @return $remSize
+
+@function parseInt($n)
+	@return $n / ($n * 0 + 1)
+
+@function rem($size)
+	$remSize: (parseInt($size) / parseInt($size-base)) * 1rem
+	@return $remSize
