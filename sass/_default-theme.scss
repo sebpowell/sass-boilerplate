@@ -34,5 +34,33 @@ $colors: (
 );
 
 $drop-shadow: 													0 2px 3px rgba(231,231,231,0.50);
-$color-keyline-light: 									#EDEDED;
+$color-keyline-light: 									#DFDFDF;
 $font-family-primary: 'proxima nova', 'proxima-nova', Helvetica, Arial, sans-serif ;
+
+
+// @mixin grid($value, $position: null, $offset: null) {
+// 	// float: left;
+// 	width: 100%;
+// 	@media #{$large-up} {
+// 		width: (100% / $column-numbers) * $value;
+// 	}
+
+// 	@if ($offset) {
+// 		@media #{$large-up} {
+// 			margin-left: (100% / $column-numbers) * $offset;
+// 		}
+// 	}
+
+// 	@if $position == "centered" {
+// 		margin: auto;
+// 	}
+// }
+
+
+
+
+
+
+
+
+

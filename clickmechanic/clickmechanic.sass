@@ -3,6 +3,35 @@
 
 body
 	padding-top: $size-nav-height
+	background: #f5f5f5
+
+
+
+
+
+@mixin list-grid($value, $position: null)
+	@include clearfix
+	@include no-bullet
+	margin-left: -(sizes(base))
+	margin-right: -(sizes(base))
+	> li 
+		float: left
+		width: (100% / $column-numbers) * $value
+		margin-bottom: sizes(double)
+		padding: 0 sizes(base) 
+		// &:nth-last-child(-n+#{$value})
+		// 	margin-bottom: 0
+
+		@if $position == "centered"
+			margin: auto
+
+.manufacturer-list
+	@include list-grid(4)
+	.card
+		cursor: pointer
+		&:hover
+			h3
+				color: colors(brand-primary)
 
 
 .popular
@@ -13,6 +42,7 @@ body
 
 
 %card, .card
+	position: relative
 	+border-radius($size-border-radius)
 	// +box-shadow($drop-shadow)
 	background: white
@@ -40,6 +70,7 @@ body
 
 .stats
 	padding: sizes(double) 0
+
 	ul
 		+no-bullet
 		display: flex
@@ -56,6 +87,33 @@ body
 			.stat-value
 				+responsive-text-size(large)
 				color: colors(brand-primary)
+
+=vertical-list($bordered: null, $padding: sizes(base))
+	+no-bullet
+	> li
+		
+		> a
+			display: block
+			padding: $padding
+			&:hover
+				color: colors(brand-primary)
+		@if $bordered == "bordered"
+			&:not(:last-child)
+				border-bottom: 1px solid $color-keyline-light
+
+.make-options
+	position: absolute
+	left: 0
+	top: 100%
+	display: none	
+	border: 1px solid $color-keyline-light
+	+box-shadow($drop-shadow)
+	background: white
+	width: 100%
+	z-index: 9999
+	ul
+		+vertical-list(bordered, sizes(double))
+	
 
 
 

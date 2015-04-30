@@ -14,25 +14,33 @@
 				</div>
 			</div>
 		<!-- Masthead !-->
+
+		<!-- Stats !-->
 		<section class="background-light-grey stats">
 			<div class="container-wide">
 				<ul>
 					<li>
-						<h3 class="h4">Local Mechanics</h3>
-						<div class="h1 text-primary"><strong>500</strong></div>
+						<h1 class="text-medium margin-bottom-half">Local Mechanics</h1>
+						<h2 class="text-xlarge text-primary margin-bottom-half"><strong>500</strong></h2>
+						<div class="text-small text-muted">Total mechanics operating in this area.</div>
 					</li>
 					<li>
-						<h3 class="h4">Local Mechanics</h3>
-						<div class="h1 text-primary"><strong>500</strong></div>
+						<h1 class="text-medium margin-bottom-half">Number of Ratings</h1>
+						<h2 class="text-xlarge text-primary margin-bottom-half"><strong>342</strong></h2>
+						<div class="text-small text-muted">Total mechanics operating in this area.</div>
 					</li>
 					<li>
-						<h3 class="h4">Local Mechanics</h3>
-						<div class="h1 text-primary"><strong>500</strong></div>
+						<h1 class="text-medium margin-bottom-half">Average Rating</h1>
+						<h2 class="margin-bottom-base"><img style="width: 120px" src="../../images/icon-stars.png"></h2>
+						<div class="text-small text-muted">Average user rating for local mechanics.</div>
 					</li>
 				</ul>
 			</div>
 		</section>
-		<section class="padded text-center border-bottom">
+		<!-- Stats !-->
+
+		<!-- How It Works !-->
+		<!-- <section class="padded text-center border-bottom">
 			<div class="container-wide">
 				<h2 class="margin-bottom-double">Book a trusted mechanic for any car problem</h2>
 				<div class="row">
@@ -47,12 +55,49 @@
 					</div>
 				</div>
 			</div>
-		</section>
+		</section> -->
+		<!-- How It Works !-->
+
 		<section class="padded">
 			<div class="container-wide">
 			<h2>Meet some of our highly rated mechanics</h2>
 			<p>If you don't book and pay through the ClickMecahnic playform, you can't leave a review</p>
 			<div class="row">
+				<div class="columns-8" ng-controller="cmmechanic">
+					<div class="mechanic-card" ng-repeat="i in getNumber(number) track by $index">
+						<div class="mechanic-details">
+							<div class="card-section">
+								<img class="avatar" src="../../images/klaus-nyengaard.png">
+								<img class="rating" src="../../images/icon-stars.png">
+								<div class="label primary">12 Reviews</div>
+								<img width="80px" src="../../images/icon-verified.png">
+							</div>
+						</div>
+						<div class="mechanic-info">
+							<div class="card-section border-bottom">
+								<h3>Aiden M</h3>
+								<div class="text-small text-muted margin-bottom-base">Aiden M Limited</div>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed maximus mauris. Proin neque velit, sodales ut nunc ut, efficitur consequat nibh….</p>
+							</div>
+							<div class="card-section">
+								<ul class="mechanic-reviews">
+									<li>
+										<div class="float-right text-muted">1st of February 2015</div>
+										<img src="../../images/icon-stars.png">
+										<p class="large margin-bottom-base">“Did the job well”</p>
+										<div class="text-muted">Wenda</div>
+									</li>
+									<li>
+										<div class="float-right text-muted">1st of February 2015</div>
+										<img src="../../images/icon-stars.png">
+										<p class="large margin-bottom-base">“Did the job well”</p>
+										<div class="text-muted">Wenda</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 				<div class="columns-4">
 					<div class="card margin-bottom-double">
 						<header><h3>Popular Jobs</h3></header>
@@ -91,41 +136,7 @@
 						</main>
 					</div>
 				</div>
-				<div class="columns-8">
-							<div class="mechanic-card">
-						<div class="mechanic-details">
-							<div class="card-section">
-								<img class="avatar" src="../../images/klaus-nyengaard.png">
-								<img class="rating" src="../../images/icon-stars.png">
-								<div class="label primary">12 Reviews</div>
-								<img width="80px" src="../../images/icon-verified.png">
-							</div>
-						</div>
-						<div class="mechanic-info">
-							<div class="card-section border-bottom">
-								<h3>Aiden M</h3>
-								<div class="text-small text-muted margin-bottom-base">Aiden M Limited</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed maximus mauris. Proin neque velit, sodales ut nunc ut, efficitur consequat nibh….</p>
-							</div>
-							<div class="card-section">
-								<ul class="mechanic-reviews">
-									<li>
-										<div class="float-right text-muted">1st of February 2015</div>
-										<img src="../../images/icon-stars.png">
-										<p class="large margin-bottom-base">“Did the job well”</p>
-										<div class="text-muted">Wenda</div>
-									</li>
-									<li>
-										<div class="float-right text-muted">1st of February 2015</div>
-										<img src="../../images/icon-stars.png">
-										<p class="large margin-bottom-base">“Did the job well”</p>
-										<div class="text-muted">Wenda</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 				</div>
 
 				<section class="unregistered-mechanics">
@@ -134,18 +145,71 @@
 						<li ng-repeat="i in getNumber(number) track by $index">
 							<div class="card">
 								<main>
-									<h4>Mechanic Name</h4>
-									<ul class="contact-details">
-										<li class="location"><span class="icon-map margin-right-half"></span>12 Massive Road, E3 2UH</li>
-										<li class="tel"><span class="icon-map margin-right-half"></span>079 22 78978 7899</li>
-										<li class="hours"><span class="icon-map margin-right-half"></span>9am - 5pm, Monday - Friday</li>
-										<li class="web"><span class="icon-map margin-right-half"></span>www.mymechanic.com</li>
-									</ul>
+									<h4 class="margin-bottom-base">Mechanic Name</h4>
+									<div class="text-muted"><span class="icon-map margin-right-half"></span>12 Massive Road, E3 2UH</div>
 								</main>
 							</div>
 						</li>
 					</ul>
 				</section>
+			</div>
+		</section>
+				<section class="background-white padded">
+					<div class="container-narrow">
+						<div class="text-center margin-bottom-double">
+							<h2 class="line-height-double">Want to learn more about brake pads replacements?</h2>
+							<p>Read our short guide with information on costs, symptoms and more.</p>
+						</div>
+						
+						<div class="faq">
+							<dt>What does a Brake Pad do?</dt>
+							<dd>Provided you car has disc brakes, the brake pads are an integral part of the brake unit at each wheel. Usually there are between 4-8 brake pads on each car. The brake pad is mounted inside the brake caliper at each wheel. When you apply the brakes the brake pads are forced onto the brake discs around the car, this in turn slows the car down.</dd>
+							<dt>How do you know there is something wrong with a Brake Pad?</dt>
+							<dd>
+								<ul>
+									<li>When the car does not slow down as well as would usually be the case.</li>
+									<li>When there is a squeaking or grinding noise to be heard when you brake.</li>
+									<li>When the brake warning light on the car's dashboard is on.</li>
+									<li>When the 'Low Brake Pad' warning light is on (only some cars have this).</li>
+									<li>When the brake pedal is in a lower position than usual.</li>
+									<li>When the car vibrates under braking.</li>
+									<li>When the car pulls to one side.</li>
+								</ul>
+							</dd>
+							<dt>When should you consider replacing a Brake Pad?</dt>
+							<dd>The pads will wear depending on your driving style and the environment where you drive (in the city or in the countryside). If the brake pads have worn out prematurely or if you are experiencing trouble under braking, it is advisable to seek the help of an expert to investigate the problem and, if necessary, replace the pads as soon as possible.Driving with brakes that do not function properly can, of course, lead to dangerous situations on the road. You should always replace either both the front pads, both the rear pads or all the pads together to ensure balanced brakes.
+
+						Importantly, servicing the brake pads is key to ensure that the brake system works correctly and effectively. Always service the brake pads according to the guidelines set out by your car's manufacturer.</dd>
+						<dt>What happens during a Brake Pad replacement?</dt>
+						<dd>	Mechanic will inspect the brake system.
+						Mechanic will establish how many brake pads need to be replaced.
+						If necessary, the mechanic will replace the brake pads.
+						Mechanic will inspect the brake system and, if deemed safe, will test drive the car.
+						If necessary, the mechanic will make any adjustments to optimise braking.</dd>
+						<dt>How much does a Brake Pad Replacement cost?</dt>
+						<dd>The cost of a brake pad replacement depends on your car and what parts your car's manufacturer recommends using for the replacement. Find out what you could save by having your brake pad replaced by Clickmechanic, by selecting your car at the top of this page!</dd>
+							
+						</div>
+						
+						
+
+						
+						
+						
+						
+
+						
+
+						
+					
+						
+						
+
+					</div>
+
+				</section>
+
+
 				</div>
 
 				
@@ -153,7 +217,6 @@
 		</div>
 		</div>
 		</section>
-
 	</div>
 		
 		@@include('_footer.html')
@@ -161,12 +224,22 @@
 			$(document).ready(function() {
 				$(".secondary-nav li").click(function() {
 					$(".secondary-nav li a").toggleClass("is-visible");
-					console.log("test");
+				});
+				$("dt").click(function() {
+					$("dd").slideUp();
+					$(this).next("dd").slideDown();
 				});
 			});
+			var cmmechanic = function ($scope) {
+
+			$scope.number = 5;
+				$scope.getNumber = function(num) {
+				    return new Array(num);   
+				}
+			}
 var mechanic = function ($scope) {
 
-			$scope.number = 20;
+			$scope.number = 15;
 				$scope.getNumber = function(num) {
 				    return new Array(num);   
 				}
