@@ -1,14 +1,13 @@
 .label
 	+border-radius(3px)
-
-	font-size: rem(13px)
-	padding: sizes(quarter) sizes(half)
-	border: 1px solid colors(greyscale)
-	color: colors(greyscale)
+	+responsive-text-size(small)
+	font-weight: 600
+	display: inline-block
+	padding: sizes(half) sizes(base)
 
 	&.primary
-		border-color: colors(brand-primary)
-		color: colors(brand-primary)
+		background: colors(brand-primary)
+		color: white
 
 	&.secondary
 		border-color: colors(brand-primary)

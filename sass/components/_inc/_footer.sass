@@ -12,7 +12,7 @@
 
 .footer
 	background: colors(greyscale, dark)
-	padding: sizes(single) 0 sizes(quadruple)
+	padding: sizes(triple) 0 sizes(quadruple)
 	width: 100%
 	color: white
 	font-size: rem(14px)
@@ -21,8 +21,9 @@
 		text-decoration: none
 		color: white
 	h4
+		+responsive-text-size(small)
+		margin-bottom: sizes(double)
 		// color: lighten($color-background-dark, 20%)
-
 	.footer-links
 		+nobullet
 		li

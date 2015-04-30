@@ -1,8 +1,97 @@
 
 @import "sass/base.sass"
+html
+	font-family: 'proxima nova'
+
+
+.popular
+	+no-bullet
+	> li
+		&:not(:last-child)
+			margin-bottom: sizes(base)
+
+
+%card, .card
+	+border-radius($size-border-radius)
+	// +box-shadow($drop-shadow)
+	background: white
+	border: 1px solid #DFDFDF
+	header
+		padding: sizes(base) 0
+		text-align: center
+		border-bottom: 1px solid $color-keyline-light
+		h3
+			+responsive-text-size(base)
+			margin: 0
+
+		
+	main
+		padding: sizes(double)
+
+	.contact-details
+		+no-bullet
+		> li
+			+responsive-text-size(small)
+			&:not(:last-child)
+				margin-bottom: sizes(base)
+
+.stats
+	padding: sizes(base) 0
+	ul
+		+no-bullet
+		display: flex
+		> li
+			flex: 1
+			background: white
+			border: 1px solid #cccccc
+			text-align: center
+			padding: sizes(double) 0
+			&:not(:last-child)
+				margin-right: sizes(double)
+			.stat-value
+				+responsive-text-size(large)
+			h3
+				+responsive-text-size(small)
+
+
+
 
 $size-nav-height:													rem(62px) 
 $font-family-primary: adelle sans
+
+.mechanic-card
+	@extend %card
+	+clearfix
+	margin-bottom: sizes(double)
+	// border: 1px solid $color-keyline-light
+	.mechanic-details
+		@extend .columns-4
+		padding: sizes(double)
+		text-align: center
+		
+		.avatar
+			max-width: 100px
+			margin-bottom: sizes(base)
+		.rating, .label
+			margin-bottom: sizes(base)
+
+	.mechanic-info
+		@extend .columns-8
+		border-left: 1px solid $color-keyline-light
+		padding: sizes(double)
+
+	.reviews
+		+no-bullet
+		border-top: 1px solid $color-keyline-light
+		.date
+			float: right
+		p
+			font-size: 20px
+
+		li
+
+
+
 
 
 .checklist

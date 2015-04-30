@@ -28,19 +28,25 @@ var gulp = require("gulp"),
 
 
 gulp.task('sass', function () {
-	// return sass('sass/base.sass')
-	// .pipe(gulp.dest('sass'));
-	
-	return sass('clickmechanic/clickmechanic.sass')
-	.pipe(gulp.dest('clickmechanic'));
+
+	return sass('clickmechanic/clickmechanic.sass', { style: 'compact' })	    
+	    // .pipe(gulp.dest('clickmechanic'))
+	    // // .pipe(rename({suffix: '.min'}))
+	    // // .pipe(minifycss())
+	    // // .pipe(gulp.dest('clickmechanic'));
 });
+        
+
+
 
 gulp.task('clickmechanic', function () {
-	return sass('clickmechanic/clickmechanic.sass')
+	return sass('clickmechanic/clickmechanic.sass', { style: 'compact' })
 	.on('error', function (err) {
-	console.error('Error!', err.message);
+		console.error('Error!', err.message);
 	})
+	.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
 	.pipe(gulp.dest('clickmechanic/'));
+	
 
 	gulp.src(['clickmechanic/views/*.html'])
     .pipe(fileinclude())

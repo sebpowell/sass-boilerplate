@@ -13,7 +13,10 @@ h1, h2
 // Why margin here?
 h3, h4, h5, h6
 	// margin: $size-triple-unit 0 $size-double-unit 0
-	margin-bottom: sizes(half)
+	margin-bottom: sizes(base)
+
+.link-reset 
+	color: inherit
 
 a
 	color: colors(greyscale)
@@ -29,6 +32,7 @@ p
 
 	&.caption
 		+responsive-text-size(small)
+		line-height: 1.2
 
 
 small

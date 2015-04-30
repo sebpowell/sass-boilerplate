@@ -44,12 +44,13 @@ $column-width: 100% / $column-numbers
 // Generates classes for columns 1 - 12.
 @for $i from 1 through $column-numbers
 	.columns-#{$i}
-		width: $i * $column-width
+		width: 100%
+		margin-bottom: sizes(double)
 		padding: 0 sizes(base)
 		float: left
-		// +respond-to-size($tablet)
-		// 	width: 100%
-		// 	margin-bottom: $double-unit-layout
+		+respond(device-medium)
+			width: $i * $column-width
+			
 
 @for $i from 1 through $column-numbers
 	.flex-grid-#{$i}
@@ -61,7 +62,7 @@ $column-width: 100% / $column-numbers
 		> li
 			width: 100% / $i
 			padding: 0 sizes(base)
-			margin-bottom: sizes(base)
+			margin-bottom: sizes(double)
 			&:nth-last-child(-n+#{$i})
 				margin-bottom: 0
 
@@ -75,10 +76,11 @@ $column-width: 100% / $column-numbers
 .row, .flex-row
 	+clearfix
 	position: relative
-	margin-left: -(sizes(base))
-	margin-right: -(sizes(base))
-	> [class^="column"]
-		padding: 0 sizes(base)
+	+respond(device-medium)
+		margin-left: -(sizes(base))
+		margin-right: -(sizes(base))
+		> [class^="column"]
+			padding: 0 sizes(base)
 
 
 
