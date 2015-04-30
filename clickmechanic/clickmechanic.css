@@ -263,7 +263,7 @@
 
 .block { display: block; width: 100%; }
 
-.button, input[type="submit"], button { border-radius: 3px; -webkit-appearance: none; display: inline-block; background: transparent; padding: 0 2rem !important; height: 52px; line-height: 52px; font-size: 0.875rem; font-weight: 600; font-family: "proxima nova", Helvetica, Arial, sans-serif; text-decoration: none; text-transform: capitalize; text-align: center; cursor: pointer; min-width: inherit; }
+.button, input[type="submit"], button { border-radius: 3px; -webkit-appearance: none; display: inline-block; background: transparent; padding: 0 2rem !important; height: 52px; line-height: 52px; font-size: 0.875rem; font-weight: 600; font-family: "proxima nova", "proxima-nova", Helvetica, Arial, sans-serif; text-decoration: none; text-transform: capitalize; text-align: center; cursor: pointer; min-width: inherit; }
 @media screen and (min-width: 720px) { .button, input[type="submit"], button { font-size: 1rem; } }
 @media screen and (min-width: 960px) { .button, input[type="submit"], button { font-size: 1rem; } }
 .button.primary, input[type="submit"], button.primary { background-color: #009DFF; color: white; }
@@ -353,7 +353,7 @@ input[type="submit"] { width: 100%; }
 
 form button { height: 3.75rem; padding: 0 40px; min-width: 100px; }
 
-input[type="text"], input[type="email"], input[type="number"], input[type="password"], input[type="url"], input[type="date"], input[type="tel"], input[type="search"], select, textarea, .input { -webkit-appearance: none; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); border-radius: 3px; -webkit-transition: all ""; transition: all ""; border: 1px solid #EDEDED; background: white; height: 3.75rem; padding: 1rem; font-weight: 400; font-family: "proxima nova", Helvetica, Arial, sans-serif !important; font-size: 0.875rem; outline: none; color: #CCCCCC; text-decoration: none; width: 100%; }
+input[type="text"], input[type="email"], input[type="number"], input[type="password"], input[type="url"], input[type="date"], input[type="tel"], input[type="search"], select, textarea, .input { -webkit-appearance: none; box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); border-radius: 3px; -webkit-transition: all ""; transition: all ""; border: 1px solid #EDEDED; background: white; height: 3.75rem; padding: 1rem; font-weight: 400; font-family: "proxima nova", "proxima-nova", Helvetica, Arial, sans-serif !important; font-size: 0.875rem; outline: none; color: #CCCCCC; text-decoration: none; width: 100%; }
 input[type="text"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="date"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, select::-webkit-input-placeholder, textarea::-webkit-input-placeholder, .input::-webkit-input-placeholder { -webkit-transition: color 0.25s; transition: color 0.25s; color: #EDEDED; }
 input[type="text"]::-moz-placeholder, input[type="email"]::-moz-placeholder, input[type="number"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="url"]::-moz-placeholder, input[type="date"]::-moz-placeholder, input[type="tel"]::-moz-placeholder, input[type="search"]::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder, .input::-moz-placeholder { -webkit-transition: color 0.25s; transition: color 0.25s; color: #EDEDED; }
 input[type="text"]:-moz-placeholder, input[type="email"]:-moz-placeholder, input[type="number"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="url"]:-moz-placeholder, input[type="date"]:-moz-placeholder, input[type="tel"]:-moz-placeholder, input[type="search"]:-moz-placeholder, select:-moz-placeholder, textarea:-moz-placeholder, .input:-moz-placeholder { -webkit-transition: color 0.25s; transition: color 0.25s; color: #EDEDED; }
@@ -635,7 +635,7 @@ section.padded { padding: 80px 0; }
 
 html, body, div, span, object, iframe, hr, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, b, sub, sup, var, i, em, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, input, button, textarea, select, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0; border: 0; outline: 0; vertical-align: baseline; }
 
-html { font-family: "proxima nova", Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1; color: colours(greyscale, dark); min-height: 100%; }
+html { font-family: "proxima nova", "proxima-nova", Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1; color: colours(greyscale, dark); min-height: 100%; }
 
 article, aside, footer, header, menu, nav, section { display: block; }
 
