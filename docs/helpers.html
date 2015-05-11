@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My Divshot Application</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <link rel="stylesheet" href="../docs/docs.css">
+  <!-- Typekit !-->
+  <script src="//use.typekit.net/zvy0qyb.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <!-- / Typekit !-->
+ <!--  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62796887-1', 'auto');
+  ga('send', 'pageview');
+
+</script> -->
+</head>
+<script>
+  $(document).ready(function() {
+    $(".sidebar-nav ul > li").click(function(e) {
+      // e.preventDefault();
+      $(this).children("ul").slideToggle();
+    });
+  });
+</script>
+
+<div class="sidebar">
+  <a href="index.html" class="logo">
+  <div class="sidebar-nav">
+    <ul>
+      <li><a href="intro.html">Getting Started</a></li>
+      <li><a href="grid.html">Layout</a></li>
+      <li><a href="components.html">Components</a></li>
+      <li><a href="theme.html">Theming</a></li>
+      <li>
+        <a href="helpers.html">Helpers</a>
+        <ul>
+          <li><a href="#background-color" class="is-active">Background-color</a></li>
+          <li><a href="#borders" class="is-active">Borders</a></li>
+          <li><a href="#colors" class="is-active">Colors</a></li>
+          <li><a href="#display" class="is-active">Display</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="mixins.html" class="is-active">Mixings</a>
+        <ul>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+        </ul>
+      </li>
+      Facebook, twitter, LinkedIn
+      <!-- <li><a href="theme.html">Gallery</a></li>
+      <li><a href="theme.html">JavaScript</a></li>
+      <li><a href="theme.html">Resources</a></li> -->
+    </ul>
+  </div>
+</div>
+<div class="main">
+  <div class="actions">
+    <a class="button primary bordered small rounded">Download</a>
+  </div>
+  <div class="typography">
+
+  <h1>Helpers</h1><p>All helper classees have !importnat set on them to ensure the intended effect is achieved. </p><h2 id="background-color">Background Color</h2><p>A background-color helper is generated for the main colours defined in our theme file. </p><div class="example"><div class="background-light"></div><div class="background-dark"></div><div class="background-white"></div><div class="background-brand-primary"></div><div class="background-brand-secondary"></div></div><pre><code class="language-markup">.element.background-light</code></pre><h2 id="borders">Borders</h2><p>Add a keyline to any element using border-{size} (e.g. border-top)</p><div class="example"><div class="element border-top"></div></div><pre><code class="language-markup">.element.background-light</code></pre><h2 id="colors">Colors</h2><p>Sets the text color for an elemnet. Can either be set on the parent, or on the element itself. </p><div class="example"><p class="text-primary">This is blue text</p><p class="text-secondary">This is blue text</p><p class="text-muted">This is blue text</p><p class="text-dark">This is dark text</p><p class="text-white">This is white text</p><p class="text-error">Thisis error text</p><p class="text-success"></p></div><h2 id="display">Display </h2><p>Forces display properties on an element. </p><ul><li>inline-block: sets display to display: inline-block</li><li>block: sets display property to display: block</li></ul><h2 id="line-height">Line Height</h2><p>Forces line-height. Can be used on parent or element itself. </p><ul><li>line-height-double: sets line-height property to line-height: 2</li><li>line-height-reset: sets line-heu</li></ul><h2 id="text-align">Text Align</h2><p>Forces text to align. These classes can either be set on the parent element, or the element itself (e.g. h2 class="text-left")</p><ul><li>text-left: aligns text to the left</li><li>text-center: aligns text to the center</li><li>text-right: aligns text to the right</li></ul><h2 id="text-transform">Text Transform</h2><p>Forces text to transform</p><ul><li>text-uppercase: sets text to uppercase, and adds 0.05em letter-spacing. </li><li>text-capitalize: sets text mode to text-transform: capitalize</li></ul><h2 id="">Margin</h2><p>Margin helpers are paritcularly useful when you want to fine tune spacing in between elements, without needing to write custom selectors. I don't use them all the time, 
+but there are many cases where, especifailyl in large. The main disadvatnage of the helper approach is that you lose some control, and can risk pullutiny your markup
+with too many classes. But in some cases, these do the job, and I find they're apritcularly useful for rapid prototpying. 
+The helper classes are available for both padding and margin, as follows: </p><ul><li>padding-{direction}, margin-{direction} followed by the unit value</li><li>.no-margin and .no-padding strips off any padding or margins. </li></ul><h1>Typography</h1><p> 
+From a designer's perspective, typography is one of the most critial asepcts of any prokect. Managing typgoraphy well, especially with varying 
+viewports makes it even harder. Typgraohyp in X is managed using a typgoraphy scale map, found in the config file. This method has several
+advantages, namely that it ensures text-sizes are kept consistent throughout your project. It works in the following way: <ul><li>X includes 7 different standard sizes - 3 sizes above the base font size, and 3 sizes above. </li><li>The size and line-height is then specified for each type of device, found int he breakpoitns map. </li><li>To use a size on a new element, use the mixin @responsive-text-size(size). </li><li>You can speficiy additional breakpoints and sizes in the map. </li></ul></p><ul><li>text-x-small</li><li>text-small</li><li>text-base</li><li>text-medium</li><li>text-large</li><li>text-x-large</li></ul><h2>Media Queries</h2><p>By default, media queries are mobile first (the styles you specifiy in the content block will only apply to device sizes greater than your specified breakpoint).</p><div class="example"><pre><code>@include respond-to(device-large)
+	// Your Styles</code></pre></div><h2>Floats & Clearfix</h2><ul><li>float-left - floats elements left</li><li>float-right - float elements right</li><li>clearfix - clears the floats (apply to the parent element)</li></ul><div class="example"><pre><code>div class="clearfix"
+	div class="float-left"
+		div class="flaot-right"
+div</code></pre></div><h2>Visiblity</h2><p>Forces an element to be visible, by setting visibility: visible, display: block and opacity: 1. </p><ul><li>is-visible</li><li>is-hidden</li><li>-is-hidden-phone</li></ul><h2>Headings</h2><p>H1, H2, H3, H4, H5, H6 (incldue sizes). Headings include margins and set line line-height. </p><P>Add the class .uppercase to capitaluse the text. </P><h2>Links</h2><p>By default, includes a cursor pointer and the primary brand color. </p><ul> <li>Use .link-reset to change to the same color as the parent container. </li><li>Use  .underline to underline</li><li> </li></ul><h2>Lists</h2><p>Use .no-bullet to remove bullets, margins and padding. </p><h2>Typography</h2><p>For pages that include loads of text (such as articles, blogs etc), additional styels are needed to make the text legible. </p><p> </p>

@@ -1,89 +1,44 @@
-.block
-	display: block
-	width: 100%
+$button-colours: (primary: colors(brand-primary), secondary: colors(brand-secondary), white: #FFF)
+$button-sizes: (small: 12px, medium: 14px, large: 16px)
 
-.button, button
+button, .button 
 	+border-radius(3px)
-	-webkit-appearance: none // Removes styling on iOS
-
-	display: inline-block // If class is applied to a element
+	display: inline-block 
 	background: transparent
-	padding: 0 sizes(double) !important
-	height: 52px
-	line-height: 52px
-	@include responsive-text-size(base)
+	padding: 0 sizes(double)
+	height: 48px
+	line-height: 48px
+	letter-spacing: 1px
+	
 	font:
 		weight: 600
 		family: $font-family-primary
+	
 	text:
 		decoration: none
-		transform: capitalize
+		transform: uppercase
 		align: center
-	// padding: rem(14px) sizes(base)
-	// line-height: 1 !important
+	
 	cursor: pointer
-	min-width: inherit
-
-	// Color Modifiers
-	&.primary 
-		background-color: colors(brand-primary)
-		color: white
-		&:hover
-			background-color: colors(brand-primary, dark)
-
-	&.secondary
-		background-color: colors(brand-primary)
-		color: white
-		&:hover
-			background-color: colors(brand-primary, dark)
+	-webkit-appearance: none // Removes styling on iOS
+	
+	&.rounded
+		+border-radius(50px)
 
 	
-	&.bordered
-		// border: 1px solid $color-primary
-		// color: $color-primary
-
-	&.secondary
-		background: #92D32D
-		color: white
-
-	&.grey
-		background: #e5e5e5
-		border: 0
-		color: white
-
-	&.facebook
-		background-color: #3D5B99
-		color: white
-
-	&.twitter
-		background-color: #2894F3
-		color: white
-
-	&.white
-		background: white
-		// color: $color-primary
-		&.hollow
-			border: 2px solid white
-			background: transparent
+	@each $size, $value in $button-sizes
+		&.#{$size}
+			height: $value * 3.5
+			font-size: $value
+			line-height: $value * 3.5
+			padding: 0 $value * 1.5
+	
+	@each $name, $value in $button-colours
+		&.#{$name}
+			background: $value
 			color: white
-		&:hover
-			background: darken(white, 5%)
-
-	&.small
-		+border-radius(3px)
-		padding: .5rem
-		// font-size: rem(12px)
-
-		&.rounded
-			+border-radius(15px)
-
-	&.medium
-		+border-radius(3px)
-		padding: 16px 20px
-		// font-size: rem(18px)
-
-	&.large
-		// font-size: rem(16px)
-		padding: 0 32px
-		height: 52px
+			&.bordered
+				background: transparent
+				border: 1px solid $value
+				color: $value
 

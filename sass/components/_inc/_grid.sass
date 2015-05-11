@@ -15,6 +15,28 @@ $screen-padding: null
 
 // margin-right: gutter();
 
+// @mixin grid($value, $position: null, $offset: null) {
+// 	// float: left;
+// 	width: 100%;
+// 	@media #{$large-up} {
+// 		width: (100% / $column-numbers) * $value;
+// 	}
+
+// 	@if ($offset) {
+// 		@media #{$large-up} {
+// 			margin-left: (100% / $column-numbers) * $offset;
+// 		}
+// 	}
+
+// 	@if $position == "centered" {
+// 		margin: auto;
+// 	}
+// }
+
+
+
+
+
 =grid($value)
 	float: left
 	width: (100% / $column-numbers) * $value
@@ -60,10 +82,11 @@ $column-width: 100% / $column-numbers
 	.columns-#{$i}
 		width: 100%
 		margin-bottom: sizes(double)
-		padding: 0 sizes(base)
 		float: left
 		+respond(device-medium)
+			padding: 0 sizes(base)
 			width: $i * $column-width
+			// Add nth-class helper
 			
 
 @for $i from 1 through $column-numbers
@@ -90,11 +113,201 @@ $column-width: 100% / $column-numbers
 .row, .flex-row
 	+clearfix
 	position: relative
+	
+	&.no-gutter
+		margin-left: 0 !important
+		margin-right: 0 !important
+		> [class^="column"], > li
+			padding: 0 !important
+	
 	+respond(device-medium)
 		margin-left: -(sizes(base))
 		margin-right: -(sizes(base))
-		> [class^="column"]
-			padding: 0 sizes(base)
+		// > [class^="column"]
+		// 	padding: 0
+
+
+// $column-numbers: 12;
+// @mixin row() {
+//   @include clearfix;
+//   @include respond(device-medium) {
+//     margin-left: -1rem;
+//     margin-right: -1rem;
+//   }
+// }
+
+
+
+
+// .page-container {
+//   // padding: 0 2rem;
+//   // Experiment with this - how to remove requirement for outer containers?
+// }
+
+
+
+
+// @mixin site-padding {
+//   padding: 0 sizes(base);
+//   @include respond(device-medium) {
+//     padding: 0 sizes(double);
+//   }
+// }
+
+
+
+// // Creates a list of items that wrap
+// @mixin list-grid($mobile-items: 1, $desktop-items: "", $gutter-width: sizes(base)) {
+//   @include clearfix;
+//   @include no-bullet;
+	
+//   @include respond(device-medium) {
+//     margin-left: -($gutter-width);
+//     margin-right: -($gutter-width);
+//   }
+//   > li, > a {
+//     width: (100% / $mobile-items);
+//     margin-bottom: $gutter-width * 2;
+//     float: left;
+//     // Add nth-child margin cancellation. 
+
+//     @include respond(device-medium) {
+//       float: left;
+//       padding: 0 $gutter-width;
+//       width: (100% / $desktop-items);
+//       margin-bottom: $gutter-width * 2;
+//     }
+//   }
+// }
+
+// // @mixin grid-test($mobile-items: 1, $desktop-items: "", $gutter-width: sizes(base)) {
+// //   @include clearfix;
+// //   @if map-has-key($m, $a)
+// //   > li, > a, > div {
+// //     width: 100% / $mobile-items;
+// //     float: left;
+// //     margin-bottom: sizes(double);
+// //     @include respond(device-medium) {
+// //       float: left;
+// //       width: (100% / $desktop-items);
+// //       padding: 0 sizes(base); // Adds gutter to columns
+// //       margin-bottom: 0;
+// //     }
+// //   }
+// // }
+
+
+@mixin grid-test($map)
+	@include clearfix
+	// $total-margin: (map-get($map, row-items-desktop) - 1)  * map-get($map, margin)
+	// $width: 100% - $total-margin
+	margin-left: -1rem
+	margin-right: -1rem
+
+	> li, > a, > div
+		float: left
+		margin-bottom: map-get($map, margin-bottom)
+		width: (100% / map-get($map, row-items-mobile))
+		@if (map-get($map, row-items-mobile)) > 1
+			padding: 0 1rem
+		@include respond(device-medium)
+			width: (100% / map-get($map, row-items-desktop))
+			padding: 0 1rem
+			margin-bottom: map-get($map, margin-bottom)
+	
+	// @if map-get($map, visible-mobile) == false
+	// 	display: none
+	
+	@if map-get($map, output) == "flex"
+		display: flex
+		> li, > a, > div
+			flex: 1
+			padding: 0
+			margin-right: 20px
+			&:last-child
+				margin-right: 0
+		
+
+
+
+
+@mixin span-columns($columns, $position: null, $breakpoint: device-medium)
+	width: (100% / $column-numbers) * $columns
+	@include respond($breakpoint)
+		// margin: auto
+
+	@if $position == "centered"
+		margin: 0 auto
+
+
+
+// // // What if I just want the width, rather than having columns side by side? 
+
+// // $column-padding as variable? 
+
+// // strucutre would be as follows
+
+
+// // Example with no-coolumns. 
+
+// // .page-auth
+// //   .auth-container
+// //     // This does the same as container-wide, so may as well use a generic class?
+// //     max-width: 1000px
+// //     padding: 0 2 rem
+// //   .auth-box
+// //     // IN this case, I just want to set a width on the container. The below syntax doesn't make sense, 
+// //     // In this case, a column based layout makes sense. 
+// //     @include span-columns(12 (mobile-value), 6(desktop-value) )
+// //     margin: auto
+// //     // No margin is needed, as single element. 
+// //     // This can be extendde from .panel
+// //     padding: 2rem;
+// //     background: white;
+// //     // Still need an element around the container to provide padding relative to page border. Just wrap in a container element?
+// //     // Or, set a left and right margin on mobile phone. 
+// //     // No negatiee margins needed here as it's a single element. 
+
+// // Example with columns
+// // .footer-home
+// //   width: 100%
+// //   .footer-contents
+// //     margin: auto
+// //     max-width: 1000px
+// //     padding: 0 2rem // Extend from site-padding
+// //     // Row styles can't be applied to this container, as need margin: auto to center element. 
+// //     // This is the outer container for the contents. It centers evrything and clears floats. 
+// //     .columns
+// //       // If the layout involves columns that are side by side, we'll add padding onto each element and negate with negative margins. 
+// //       @include clearfix;
+// //       margin-left: -1rem
+// //       margin-right: -1rem
+// //       .footer-links
+// //         float: left;
+// //         width: 50%;
+// //         // Here, I want a query that defines how many elements sit on a line before going to the next row, rather than making it column based. 
+// //         // So could be @include grid(2, 4)
+// //         padding: 0 2rem;
+// //           mobile
+// //             width: 100%
+// //             padding: 0 // NO padding is necessary as they're not floated
+// //             margin-bottom: 2rem // Margin is needed as they'll stack on mobile. 
+
+// Creates a normal column-based grid.
+
+
+// Gutters true / false?
+@mixin grid($width, $position: null, $offset: null, $padding: 0 sizes(base), $breakpoint: device-medium)
+	width: 100%
+	display: block
+	@include respond($breakpoint)
+		float: left
+		width: (100% / $column-numbers) * $width
+		padding: $padding
+	// Add poisition centered
+	// No gutters
+	@if $offset 
+		margin-left: (100% / $column-numbers) * $offset
 
 
 

@@ -1,0 +1,19 @@
+=animation($name, $options)
+	$browsers: -webkit, -moz, -o
+	@each $browser in $browsers
+		#{$browser}-animation-name: map-get($options, name)
+		#{$browser}-animation-duration: map-get($options, duration)
+		#{$browser}-animation-iteration-count: map-get($options, count)
+		#{$browser}-animation-direction: map-get($options, direction)
+		#{$browser}-animation-fill-mode: map-get($options, fill-mode)
+		#{$browser}-animation-delay: map-get($options, delay)
+		
+=keyframes($name)
+	@-webkit-keyframes #{$name}
+		@content
+	@-moz-keyframes #{$name}
+		@content
+	@-ms-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content

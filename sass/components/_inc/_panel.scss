@@ -1,0 +1,62 @@
+%panel {
+  @include border-radius($size-border-radius);
+  background: white;
+  border: 1px solid $color-keyline-light;
+  section {
+    padding: sizes(base);
+   @include respond(device-medium) {
+     padding: sizes(double);
+   }
+  }
+}
+
+
+
+
+
+.panel {
+  @include border-radius($size-border-radius);
+  border: 1px solid $color-keyline-light;
+  background: white;
+  section {
+    padding: sizes(base);
+   @include respond(device-medium) {
+     padding: sizes(double);
+   }
+  }
+  
+  &.padded {
+  }
+
+  .panel-header {
+    margin-bottom: rem-calc(10);
+    border-bottom: 1px solid $color-keyline-light;
+    text-align: center;
+    padding: sizes(base) 0;
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+
+
+  .panel-footer {
+    padding: sizes(double);
+  }
+}
+
+// Same as panel, but allows user to interact with - used in booking pages.
+.card {
+  @extend .panel;
+  @include transition(box-shadow, .5s);
+  padding: sizes(base);
+
+  &:hover {
+    @include box-shadow(0 0 20px rgba(00,00,00,0.2));
+    cursor: pointer;
+  }
+}
+
+// .testimonial {
+//   @include mixin panel(testimonial);
+// }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My Divshot Application</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <link rel="stylesheet" href="../docs/docs.css">
+  <!-- Typekit !-->
+  <script src="//use.typekit.net/zvy0qyb.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <!-- / Typekit !-->
+ <!--  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62796887-1', 'auto');
+  ga('send', 'pageview');
+
+</script> -->
+</head>
+<script>
+  $(document).ready(function() {
+    $(".sidebar-nav ul > li").click(function(e) {
+      // e.preventDefault();
+      $(this).children("ul").slideToggle();
+    });
+  });
+</script>
+
+<div class="sidebar">
+  <a href="index.html" class="logo">
+  <div class="sidebar-nav">
+    <ul>
+      <li><a href="intro.html">Getting Started</a></li>
+      <li><a href="grid.html">Layout</a></li>
+      <li><a href="components.html">Components</a></li>
+      <li><a href="theme.html">Theming</a></li>
+      <li>
+        <a href="helpers.html">Helpers</a>
+        <ul>
+          <li><a href="#background-color" class="is-active">Background-color</a></li>
+          <li><a href="#borders" class="is-active">Borders</a></li>
+          <li><a href="#colors" class="is-active">Colors</a></li>
+          <li><a href="#display" class="is-active">Display</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="mixins.html" class="is-active">Mixings</a>
+        <ul>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+        </ul>
+      </li>
+      Facebook, twitter, LinkedIn
+      <!-- <li><a href="theme.html">Gallery</a></li>
+      <li><a href="theme.html">JavaScript</a></li>
+      <li><a href="theme.html">Resources</a></li> -->
+    </ul>
+  </div>
+</div>
+<div class="main">
+  <div class="actions">
+    <a class="button primary bordered small rounded">Download</a>
+  </div>
+  <div class="typography">
+
+  <div class="container-narrow"><section><h1>Grid</h1><p> 
+The X grid is a fluid, responsive grid. By default, it's configured to be mobile-first, but you can change this in your theme file. </p><h2>Creating a Layout</h2><h3>Container</h3><p> 
+The container class is not strictly part of the grid. There are two containers included by default - container-wide and container-fluid. 
+This centers the content on the screen, and applies a max-width of 1000px to your content (you can change this in your theme file). Both container classes also include left and right padding to give space from the browser edge.  </p><p>container-fluid is useful for say, creating full-with nav bars and ensuring consistent padding throughout your site. However, to avoid pullting your markup with unnecessary clases, 
+you can also simply extend this class into your module. </p><div class="example">body
+container
+Full width vs narrow example</div><div class="example">body
+container
+<!-- Page Content goes here --></div><pre><code class="language-scss">.primary-header-site {
+  @extend .container-fluid;
+};</code></pre><h3>Global Grid Settings</h3><p>X offers 3 different ways of creating a column-based layout. This grid system uses a standard 12-column setting to create the classes (or whatever you specify in theme.scs).</p><h2>Method 1: Columns &amp; Rows</h2><p>The first method is using predefined column class helpers. This is very similar to how grid systems provided by other frameworks (Bootstrap, Foundation etc) work.  </p><p>First, you create a <span class="class">.row</span> element. This clears the floats and adds a negative margin on the left and right, equal to the column gutters to ensure the outer column edges sit flush with the rest of the site content.</p><p>Note that because this method uses padding to create the gutter between the columns, you'll need to include an additional container for your content, if that content has a background color. </p><p>By default, at screen sizes lower than 600px, the margins on the row element are removed, and so are the paddings on the columns, the widths are set to 100%, and a bottom margin is added. </p><p>P For example, .columns-x</p><p>X will utomatically generate classes for as many columns as you have in your layout. </p><div class="example"><div class="flex-row"><div class="columns-3"><div class="content">3</div></div><div class="columns-3"><div class="content">3</div></div><div class="columns-6"><div class="content">6</div></div></div><div class="flex-row"><div class="columns-4"><div class="content">4</div></div><div class="columns-4"><div class="content">4</div></div><div class="columns-4"><div class="content">4</div></div></div></div><h4>Gutter Helpers</h4><p>By default, colum gutters are set to 1rem. Because the padding is on both sides, this adds up to 2 rems between each column. If you want to increase the gutter sizes, you can use one of the following clases.</p><p><ul><li>no-gutter: removes gutters</li><li>gutter-double: 2 rem gutter</li><li>gutter-triple: 3 rem gutter</li><li>gutter-quadruple: 3 rem gutter</li></ul></p><div class="well">This class needs to be added to the row component, as the margin on either side needs to be adapted accordingly.</div><div class="example"><div class="flex-row no-gutter"><div class="columns-4"><div class="content">4</div></div><div class="columns-4"><div class="content">4</div></div><div class="columns-4"><div class="content">4</div></div></div><div class="flex-row gutter-double"><div class="columns-4"><div class="content">4</div></div><div class="columns-4"><div class="content">4</div></div><div class="columns-4"><div class="content">4</div></div></div></div><pre><code class="language-markup">&lt;div class="row gutter-double"&gt;
+		&lt;div class="columns-6"&gt;.columns-6&lt;/div&gt;
+		&lt;div class="columns-6"&gt;.columns-6&lt;/div&gt;
+	&lt;/div&gt;</code></pre><h3>Method 2: Grid Generator</h3><p> 
+Column helpers do the job for us in most cases. But sometimes, a custom grid will provide more control and flexibility, 
+particualrly in the context of responsive design. This also means cleaner and more maintable markup - and the ability to easily change things from your CSS, rather than having to change your markup. </p><p> 
+Let's say I want to create a 'team' oage, with rows of staff photos. 
+On this page, I want 3 photos per row on mobile, 4 on tablet, and 5 on desktop. The default for column helpers is for each column to expand to 100% on specified breakpoints (by default, 480px). 
+I want to be able to specify a different number of items on each row for different breakpoints. I might also want to increase or decrease the padding between these rows, and possibly specify
+A differnt amount of padding to my normal gutters. </p><p>The grid generator allows me to create this custom grid in just a few lines of code. First we create a new SASS map, with our settings. The following settings are available:</p><pre><code class="language-css">team: (
+ items-mobile: 5,
+ items-tablet: 4,
+ items-desktop: 3,
+ margin-mobile: 2rem,
+ padding-mobile: 1rem,
+ padding-desktop: 1rem,
+ output: float, 
+);
+ 
+ 
+.team-members
+ +grid(team)</code></pre><p>Then, I use the grid mixin to create my grid, as such:</p><pre><code class="language-markup">	&gt;div class="team-members"
+		&gt;div class="team-members"
+		&gt;div class="team-members"
+		&gt;div class="team-members"
+		&gt;div class="team-members"</code></pre><ul><li>items-mobile: specifies how many items you want included on each row on a mobile device (480px - 600px).</li><li>items-desktop: specifies how many items you want included on each row on a mobile device (480px - 600px).</li><li>vertical-margin-mobile: if multiple elemtsn, you want them to be seperateed. </li><li>horizontal-padding-mobile: if the above is greater than 1, you will want to keep some gutter between the columns. This allows you to specify what that gutter should be, or turn it off altogether if you prefer. This takes the default gutter spacing as a default value.</p></li><li>horizontal-padding-desktop: specifies gutter between columsn on desktop</li></ul><p>Note that this mixin is intended for use on the actual div container who's width you're controlling. For example, a sidebar and main content layout. </p><h3>Method 3: Lists</h3><p>For repeating blocks of content (for example, cards, thumbansil etc), you'll want to use the above. </p><p>The mixin takes the following arguments and defaults: </p><pre><code class="language-scss">@include grid($container-width, $position: null, $offset: null, $padding: 0 sizes(base), $breakpoint: device-medium)</code></pre><p>Offsets</p><p>The grid helper classes also includes offets which allow you to offset your content. </p><div class="example"><div class="flex-row"><div class="columns-6 offset-4">test</div></div></div></section></div>

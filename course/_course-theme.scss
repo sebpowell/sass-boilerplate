@@ -7,21 +7,10 @@ $size-input-height: 												rem(48px);
 //  Appy to nav if fixed, then to body element. 
 
 
-$theme: (
-	
-	mobile-first: false,
-	font-family-serif: null,
-	base-size: 16px,
-	brand-primary: #789798,
-	button-type: rounded,
-	site-padding: null
-);
-
-
 $colors: (
 	brand-primary: (
 		light: lighten(#009DFF, 5%),
-		base: black,
+		base: #0C7BF8,
 		dark: darken(#009DFF, 5%)
 	),
 	brand-secondary: (
@@ -34,7 +23,7 @@ $colors: (
 		light: #EDEDED,
 		base: #CCCCCC,
 		mid: #989898,
-		mid-dark: rgb(105, 105, 105),
+		mid-dark: #CCCCCC,
 		dark: #343840,
 	), 
 	info: (
@@ -45,9 +34,19 @@ $colors: (
 );
 
 $drop-shadow: 													0 2px 3px rgba(231,231,231,0.50);
-$color-keyline-light: 									#F8F8F8;
-$color-keyline-dark: #D8D8D8;
-$font-family-primary: "jaf-bernino-sans", 'proxima nova';
+$color-keyline-light: 									#DFDFDF;
+$font-family-primary: 'adelle sans', 'proxima-nova', Helvetica, Arial, sans-serif ;
+
+
+
+
+
+
+
+
+
+
+
 
 
 

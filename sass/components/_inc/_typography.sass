@@ -12,17 +12,6 @@ h1, h2
 h3, h4, h5, h6
 	margin-bottom: sizes(half)
 
-
-
-
-
-.text-primary
-	color: colors(brand-primary)
-
-.text-muted
-	color: colors(greyscale, mid)
-
-
 a
 	color: greyscale(dark)
 	
@@ -33,7 +22,7 @@ a
 		color: inherit
 
 p
-	+responsive-text-size(base)
+	+responsive-text-size(medium)
 	line-height: 1.8
 	&:not(:last-child)
 		margin-bottom: sizes(base)
@@ -65,27 +54,38 @@ strong
 
 
 .typography
-	h1, h2, h3, h4, h5, h6
-		margin-bottom: sizes(base)
 
+	h1, h2, h3, h4, h5, h6
+		margin: sizes(triple) 0 sizes(base) 0
+
+	p, ul, li
+		color: rgb(58, 58, 58)
+		
 	p
-		margin-bottom: sizes(base)
-		line-height: 2
+		+responsive-text-size(medium)
+		margin-bottom: sizes(medium)
+		line-height: 1.6
+		font-weight: 200
 
 		&:last-child
 			margin-bottom: 0
 
 		&:first-child
 			margin-top: 0
-	a
-		text-decoration: underline
+		> a
+			text-decoration: underline
 
-	ul, ol
-		line-height: 1.5
-		margin: 0 0 sizes(base) sizes(base)
+	> ul, ol
+		+responsive-text-size(base)
+		margin: 0
+		padding: 0
+		margin-bottom: sizes(base)
 
 		li
 			margin: 0
+			line-height: 1.5
+			&:not(:last-child)
+				margin-bottom: sizes(base)
 
 		&:last-child
 			margin-bottom: 0
@@ -107,11 +107,6 @@ h5, .h5
 
 h6, .h6
 	@include responsive-text-size(x-small)
-
-.heading
-	text-transform: uppercase
-	font-size: rem(24px)
-	font-weight: 500
 
 
 .legal

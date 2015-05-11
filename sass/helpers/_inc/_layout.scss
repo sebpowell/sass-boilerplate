@@ -1,0 +1,16 @@
+.clearfix {
+	@include clearfix;
+}
+
+.float-right {
+	float: right;
+}
+
+.float-left {
+	float: left;
+}
+
+.block {
+	display: block;
+	width: 100%;
+}

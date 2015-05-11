@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My Divshot Application</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <link rel="stylesheet" href="../docs/docs.css">
+  <!-- Typekit !-->
+  <script src="//use.typekit.net/zvy0qyb.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <!-- / Typekit !-->
+ <!--  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62796887-1', 'auto');
+  ga('send', 'pageview');
+
+</script> -->
+</head>
+<script>
+  $(document).ready(function() {
+    $(".sidebar-nav ul > li").click(function(e) {
+      // e.preventDefault();
+      $(this).children("ul").slideToggle();
+    });
+  });
+</script>
+
+<div class="sidebar">
+  <a href="index.html" class="logo">
+  <div class="sidebar-nav">
+    <ul>
+      <li><a href="intro.html">Getting Started</a></li>
+      <li><a href="grid.html">Layout</a></li>
+      <li><a href="components.html">Components</a></li>
+      <li><a href="theme.html">Theming</a></li>
+      <li>
+        <a href="helpers.html">Helpers</a>
+        <ul>
+          <li><a href="#background-color" class="is-active">Background-color</a></li>
+          <li><a href="#borders" class="is-active">Borders</a></li>
+          <li><a href="#colors" class="is-active">Colors</a></li>
+          <li><a href="#display" class="is-active">Display</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="mixins.html" class="is-active">Mixings</a>
+        <ul>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+        </ul>
+      </li>
+      Facebook, twitter, LinkedIn
+      <!-- <li><a href="theme.html">Gallery</a></li>
+      <li><a href="theme.html">JavaScript</a></li>
+      <li><a href="theme.html">Resources</a></li> -->
+    </ul>
+  </div>
+</div>
+<div class="main">
+  <div class="actions">
+    <a class="button primary bordered small rounded">Download</a>
+  </div>
+  <div class="typography">
+
+  <h1>Introduction</h1><p> 
+I  I knew very little about coding. I'd built simple websites in HTML &amp; CSS before, but knew very little about how to build actual design systems. 
+In the last couple of years, I've worked on increasinly complex projects - and realised I needed a better worflow.
+To cut a long story short, I fundamentally believe that UI designers need to know how to code. Here are some of the benefits I've found:<ul><li><strong>Better, faster protoyping:</strong> you can build something that looks almost identical to the final product, allowing you to test ideas in their real context. </li><li>Allows the engineering team to focus on the heavy-lfiting instead of wrestling with CSS &amp; marktup</li><li>Building a system: Encourages the designer to design a consistent UI</li><li>I realised that works best in many cases is prototpying directly in the browser. Doing this allows you to fine tune your aesthic, </li><li>see how your design adapts to different screen sizes and many more benefits. </li></ul><p>Over time, I've worked with various frameworks, including Bootstrap, Foundation and others. 
+These frameowkrs have their utility, but I persnally have found them 
+I tried a few frameworks, and found them to be either too complex, opinionated, or bloated. And I've often found the namving convetions hard to read. 
+Anton who's used Boostrap knows that this is one of the problems with the frameowkr - you end up wrtestinh with it more than enjoying it;s benefits. 
+XYZ posted  great articel a few ytears ago, about 'building boostraps for clients'. This is essentially the idea of th eliving style guide.</p><p>IN short, Enso is a colletion of all the buts of code I find myself using over and over again. It's not designed to be a turn key solution, 
+but rather a resource you can use to either learn to build interfaces, or quickly build prototpyes. My hope is to encourage more designers to learn how to design in the browser, by offering a tool.
+It's far from perfect, but it's a start - I hope you nejoy using it. </p></p><h2>Who's this for?</h2><p>Enso isn't nearly as complete or as robust as some other frameowkrs - but it's very flexible, and designer for flexibiltiy and customisation. </p><p>So it's primaeily geared towards designers, who either code already or want to start codinh, as a foudnation for desining and building </p><p>beautiful web and mobile interfaces. </p><h2>Principles</h2><p> 
+First of all, this framwork isn't really designed for people with no prior knowledge of HTML & CSS. 
+So before you go any further - if you're completely new to CSS, I suggest taking a quick CodeAcademy or Treehouse course to learn about
+the different tags, positining methods etc. </p><p>Secondy, unlike say, Bootstrap, Enso was not made with the idea that you would simply include the compiled CSS and build on top of it. 
+Instead, it's designed to act as a boilerplate, allowing you to pick the best bits, and extend or odify as you see fit. So whilst a compulted, CDN-hosted
+version is avaible, I recommend downaloding the full source files. </p><p>Enso is the results of a lot of trial and error, I've taken what I think is best from different structures and created my own style.</p><h3>SMACSS & OOCSS</h3><p>Enso is loosely based on the SMACSS approach, breaking the code down into components, modules, states and layouts.  </p><p>If you aren't familiar with SMACSS, I strongly  you should give it a quick read. </p><p>The naming contention. </p><h3>Built with SASS </h3><p> 
+is built using SASS, the CSS preprocessor. If you're new to SASS and preprocessors in general, I suggest taking a quick read of the excellent A List Apart book. </p><h3>Building Enso</h3><p> 
+To build Enso, you'll need a compiler - depending on the nature of your porject, your backend frameowkr may take care of this (e.g. Rails). Otherwise, 
+check out the <a href="http://sass-lang.com/install">SASS site</a> for app suggestions and instrcutions for building using the command line. </p><h2>Acknowledgements</h2><ul><li>Bootstrap</li><li>SMACSS</li><li>Hugo Giraudel, for his awesome articles on SASS maps </li></ul><h3>Class Name Conventions</h3><p>One of the conventions in Pure is for every module to have a standard class name for common rules across a module, and then have additional class names for specific presentational rules for a specific sub-module. A</p><p>ll classes start with a pure- prefix to prevent collisions. In addition, we try not to have presentational class names. Instead of calling something pure-form-horizontal, we prefer to call it pure-form-aligned. This prevents a tight coupling between class names and styles, which is good for maintainability.</p></p><p>Additioanlly: </p><p><ul><li>Class names are always hyphenated (this is my erpsonal preference, I find it easier to read than camelcase)</li><li>Modifier classes don't use the elemtn name twice. </li><li>Modules are always description (e.g. Testimonial-header, testimonial-body)</li><li>I use the indented version of the SASS language, and in some cases the SCSS syntax</li></ul></p><div class="example"><div class="modal"><div class="modal-header"></div><div class="modal-content"></div><div class="modal-footer"></div></div></div><ul><li>Prefix classes with js- for class names used as Javascript hooks</li><li>Try to keep styles less than 3 levels deep</li><li>Try not to use !important, only if really needed or obvious classes e.g. a hidden class</li><li>Instead of making up names, inspect frameworks like Bootstrap for similar components</li><li>Avoid using IDs for styling</li><li>Write lots of comments to document your styles</li><li>Make classes and modules reusable throughout your project</li><li>In addition, it's good practice to have a pattern library showcasing all the styled elements that are currently available</li><li>Have a standard agreed way for you and your team to write CSS - Harry Roberts has some great CSS Guidelines</li></ul><h2>REMS, Pixels, EMs</h2><p> 
+Throughout the frameowkr, I've used REM units. If you're not familry with this, it's worth checking out the article here. 
+Percentages are used for layouts, gutters are kept consisted using fixed REM units. 
+Mixin to set at theme level. </p><h2>Quick Start</h2><P>Add Pure to Your Page. You can add Pure to your page via Yahoo's free CDN. Just add the following <link> element into your page's <head>, before your project's stylesheets. This is compiled vresion of the CSS, which uses the default theme (what's used on this site).Add the Viewport Meta Element</h3> The viewport meta element lets you control the the width and scale of the viewport on mobile browsers. Since you're building a responsive website, you want the width to be equal to the device's native width. Add this into your page's head. meta name="viewport" content="width=device-width, initial-scale=1"</p></P><h2>Browser Support</h2>

@@ -1,0 +1,156 @@
+include _header.html
+
+h1 Helpers
+p All helper classees have !importnat set on them to ensure the intended effect is achieved. 
+
+h2(id="background-color") Background Color
+p A background-color helper is generated for the main colours defined in our theme file. 
+.example
+	.background-light
+	.background-dark
+	.background-white
+	.background-brand-primary
+	.background-brand-secondary
+pre
+	code.language-markup
+		| .element.background-light
+
+h2(id="borders") Borders
+p Add a keyline to any element using border-{size} (e.g. border-top)
+.example
+	.element.border-top
+
+pre
+	code.language-markup
+		| .element.background-light
+
+h2(id="colors") Colors
+p Sets the text color for an elemnet. Can either be set on the parent, or on the element itself. 
+.example
+	p.text-primary This is blue text
+	p.text-secondary This is blue text
+	p.text-muted This is blue text
+	p.text-dark This is dark text
+	p.text-white This is white text
+	p.text-error Thisis error text
+	p.text-success
+
+h2(id="display") Display 
+p Forces display properties on an element. 
+ul
+	li inline-block: sets display to display: inline-block
+	li block: sets display property to display: block
+
+
+h2(id="line-height") Line Height
+p Forces line-height. Can be used on parent or element itself. 
+ul
+	li line-height-double: sets line-height property to line-height: 2
+	li line-height-reset: sets line-heu
+
+
+h2(id="text-align") Text Align
+p Forces text to align. These classes can either be set on the parent element, or the element itself (e.g. h2 class="text-left")
+ul
+	li text-left: aligns text to the left
+	li text-center: aligns text to the center
+	li text-right: aligns text to the right
+
+h2(id="text-transform") Text Transform
+p Forces text to transform
+ul
+	li text-uppercase: sets text to uppercase, and adds 0.05em letter-spacing. 
+	li text-capitalize: sets text mode to text-transform: capitalize
+
+h2(id="") Margin
+p Margin helpers are paritcularly useful when you want to fine tune spacing in between elements, without needing to write custom selectors. I don't use them all the time, 
+	| but there are many cases where, especifailyl in large. The main disadvatnage of the helper approach is that you lose some control, and can risk pullutiny your markup
+	| with too many classes. But in some cases, these do the job, and I find they're apritcularly useful for rapid prototpying. 
+	| The helper classes are available for both padding and margin, as follows: 
+ul
+	li padding-{direction}, margin-{direction} followed by the unit value
+	li .no-margin and .no-padding strips off any padding or margins. 
+
+h1 Typography
+p 
+	| From a designer's perspective, typography is one of the most critial asepcts of any prokect. Managing typgoraphy well, especially with varying 
+	| viewports makes it even harder. Typgraohyp in X is managed using a typgoraphy scale map, found in the config file. This method has several
+	| advantages, namely that it ensures text-sizes are kept consistent throughout your project. It works in the following way: 
+
+	ul
+		li X includes 7 different standard sizes - 3 sizes above the base font size, and 3 sizes above. 
+		li The size and line-height is then specified for each type of device, found int he breakpoitns map. 
+		li To use a size on a new element, use the mixin @responsive-text-size(size). 
+		li You can speficiy additional breakpoints and sizes in the map. 
+
+ul
+	li text-x-small
+	li text-small
+	li text-base
+	li text-medium
+	li text-large
+	li text-x-large
+
+
+h2 Media Queries
+p By default, media queries are mobile first (the styles you specifiy in the content block will only apply to device sizes greater than your specified breakpoint).
+
+.example
+	pre
+		code
+			| @include respond-to(device-large)
+			| 	// Your Styles
+
+
+
+h2 Floats & Clearfix
+ul
+	li float-left - floats elements left
+	li float-right - float elements right
+	li clearfix - clears the floats (apply to the parent element)
+
+.example
+	pre
+		code
+			| div class="clearfix"
+			| 	div class="float-left"
+			|		div class="flaot-right"
+			| div
+
+h2 Visiblity
+p Forces an element to be visible, by setting visibility: visible, display: block and opacity: 1. 
+ul
+	li is-visible
+	li is-hidden
+	li -is-hidden-phone
+
+
+
+
+
+h2 Headings
+
+p H1, H2, H3, H4, H5, H6 (incldue sizes). Headings include margins and set line line-height. 
+P Add the class .uppercase to capitaluse the text. 
+
+h2 Links
+p By default, includes a cursor pointer and the primary brand color. 
+ul 
+	li Use .link-reset to change to the same color as the parent container. 
+	li Use  .underline to underline
+	li 
+
+h2 Lists
+p Use .no-bullet to remove bullets, margins and padding. 
+
+
+h2 Typography
+p For pages that include loads of text (such as articles, blogs etc), additional styels are needed to make the text legible. 
+p 
+
+
+
+
+
+
+

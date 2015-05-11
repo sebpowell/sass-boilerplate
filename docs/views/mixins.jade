@@ -1,0 +1,135 @@
+include _header.html
+
+h2 Animation
+
+
+p
+	| Using multiples of this unit allows us to estlablish a consisten rtthm
+	| and consistency throughout the platform. There are cases where you don't necessarily want to use exact multuples (for instance, buttons), but in many cases this
+	| does help. 
+
+p These values can be accessed throughout your code using the sizes() function. 
+pre
+	code.language-scss
+		| .primary-header-site {
+		|		padding: sizes(base);
+		|   margin-bottom: sizes(double);
+		| }
+
+
+h2 Normalise
+//- Pure was crafted with the goal that it can be used in every web project. To showcase this, we've made some common layouts that leverage Pure. These layouts are responsive and don't require JavaScript (except for certain menu interactions).
+
+//- When viewing these layouts, view or copy the source to get a good understanding of what's happening.
+
+//-  Screenshot of Blog example layout.
+//- Blog
+
+//- A layout example that shows off a blog page with a list of posts.
+
+//- Base
+//- Grids
+//- Buttons
+//- Menus
+
+<!-- Backgrounf Images !-->
+h2 Background Images
+ul
+	li size (default: cover)
+	li position (default: center)
+	li repeat (default: no-repeat)
+
+pre
+	code.language-scss
+		| +background-image(cover, center, no-repeat)
+pre
+	code.language-css
+		| .element {
+		|    background-size: cover;
+		|    background-position: center;
+		|    background-repeat: no-repeat;
+		| }
+<!-- Backgrounf Images !-->
+
+<!-- Border Radius !-->
+h2 Border Radius
+pre
+	code.language-scss
+		| +border-radius(3px)
+pre
+	code.language-css
+		| .element {
+		|    border-radius: 3px;
+		| }
+
+
+h2 Borders
+ul
+	li Direction (required): Top | Left | Right | Bottom | All
+	li Type (defaults to solid)
+	li Size (required)
+	li Color: defaults to $color-keyline
+pre
+	code.language-scss
+		| +border(left, solid, 1px)
+pre
+	code.language-css
+		| .element {
+		|    border-left: 1px solid #e5f5f5;
+		| }
+
+h2 Box Shadow
+pre
+	code.language-scss
+		| +box-shadow(2px 2px 3px 0 rgba(00,00,00,0.4))
+
+h2 Ellipsis
+p Adds ellpsis to prevent text-wrapping. 
+p Width: defaults to 100%. 
+pre
+	code.language-scss
+		| +ellipsis($width)
+
+h2 Lists
+| +list(bordered, 2rem, clickable, removable)
+
+h2 Sliding Panel
+p Creates the necessary CSS to create a slid-out panel (mobile nav menu etc). 
+pre
+	code.language-scss
+		| +sliding-panel($direction, $width)
+pre
+	code.language-css
+		| .element {
+		|    position: fixed;
+		|    width: 400px;
+		|    left: -400px;
+		| }
+		| .element.is-visible {
+		| left: 0;
+		| }
+
+h2 Transition
+pre
+	code.language-scss
+		| +transition($direction, $width)
+
+
+h2 Triangle
+p Creates a triangle, used on tooltips, dropdown menus etc. 
+pre
+	code.language-scss
+		| +transition($direction, $width, $color)
+
+
+h2 Rems, Raiots, Clearfix
+
+h1 Z-index
+
+h1 Colors
+
+h1 Responsive
+p 
+	| The responvie mixin uses the breakpoints specified int he breakpoints.scss file. By default, the following are included. 
+
+h2 Transform

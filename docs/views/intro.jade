@@ -1,0 +1,116 @@
+include _header.html
+
+
+//- One of our goals when developing Pure was to make it extremely extensible. By including Pure and writing some CSS on top of it, you can ensure that your site or app works across browsers, while looking truly unique. Best of all, your CSS file size will remain tiny, which is a great thing for mobile users and others with slow connections.
+
+h1 Introduction
+p 
+	| I  I knew very little about coding. I'd built simple websites in HTML &amp; CSS before, but knew very little about how to build actual design systems. 
+	| In the last couple of years, I've worked on increasinly complex projects - and realised I needed a better worflow.
+	| To cut a long story short, I fundamentally believe that UI designers need to know how to code. Here are some of the benefits I've found:
+	ul
+		li <strong>Better, faster protoyping:</strong> you can build something that looks almost identical to the final product, allowing you to test ideas in their real context. 
+		li Allows the engineering team to focus on the heavy-lfiting instead of wrestling with CSS &amp; marktup
+		li Building a system: Encourages the designer to design a consistent UI
+		li I realised that works best in many cases is prototpying directly in the browser. Doing this allows you to fine tune your aesthic, 
+		li see how your design adapts to different screen sizes and many more benefits. 
+	p
+		| Over time, I've worked with various frameworks, including Bootstrap, Foundation and others. 
+		| These frameowkrs have their utility, but I persnally have found them 
+		| I tried a few frameworks, and found them to be either too complex, opinionated, or bloated. And I've often found the namving convetions hard to read. 
+		| Anton who's used Boostrap knows that this is one of the problems with the frameowkr - you end up wrtestinh with it more than enjoying it;s benefits. 
+		| XYZ posted  great articel a few ytears ago, about 'building boostraps for clients'. This is essentially the idea of th eliving style guide.
+	p
+		| IN short, Enso is a colletion of all the buts of code I find myself using over and over again. It's not designed to be a turn key solution, 
+		| but rather a resource you can use to either learn to build interfaces, or quickly build prototpyes. My hope is to encourage more designers to learn how to design in the browser, by offering a tool.
+		| It's far from perfect, but it's a start - I hope you nejoy using it. 
+
+h2 Who's this for?
+p Enso isn't nearly as complete or as robust as some other frameowkrs - but it's very flexible, and designer for flexibiltiy and customisation. 
+p So it's primaeily geared towards designers, who either code already or want to start codinh, as a foudnation for desining and building 
+p beautiful web and mobile interfaces. 
+
+h2 Principles
+p 
+	| First of all, this framwork isn't really designed for people with no prior knowledge of HTML & CSS. 
+	| So before you go any further - if you're completely new to CSS, I suggest taking a quick CodeAcademy or Treehouse course to learn about
+	| the different tags, positining methods etc. 
+p
+	| Secondy, unlike say, Bootstrap, Enso was not made with the idea that you would simply include the compiled CSS and build on top of it. 
+	| Instead, it's designed to act as a boilerplate, allowing you to pick the best bits, and extend or odify as you see fit. So whilst a compulted, CDN-hosted
+	| version is avaible, I recommend downaloding the full source files. 
+
+p Enso is the results of a lot of trial and error, I've taken what I think is best from different structures and created my own style.
+
+h3 SMACSS & OOCSS
+p Enso is loosely based on the SMACSS approach, breaking the code down into components, modules, states and layouts.  
+p If you aren't familiar with SMACSS, I strongly  you should give it a quick read. 
+p The naming contention. 
+
+h3 Built with SASS 
+p 
+	| is built using SASS, the CSS preprocessor. If you're new to SASS and preprocessors in general, I suggest taking a quick read of the excellent A List Apart book. 
+
+h3 Building Enso
+p 
+	| To build Enso, you'll need a compiler - depending on the nature of your porject, your backend frameowkr may take care of this (e.g. Rails). Otherwise, 
+	| check out the <a href="http://sass-lang.com/install">SASS site</a> for app suggestions and instrcutions for building using the command line. 
+
+h2 Acknowledgements
+ul
+	li Bootstrap
+	li SMACSS
+	li Hugo Giraudel, for his awesome articles on SASS maps 
+
+
+h3 Class Name Conventions
+p One of the conventions in Pure is for every module to have a standard class name for common rules across a module, and then have additional class names for specific presentational rules for a specific sub-module. A
+p ll classes start with a pure- prefix to prevent collisions. In addition, we try not to have presentational class names. Instead of calling something pure-form-horizontal, we prefer to call it pure-form-aligned. This prevents a tight coupling between class names and styles, which is good for maintainability.</p>
+p Additioanlly: 
+p
+	ul
+		li Class names are always hyphenated (this is my erpsonal preference, I find it easier to read than camelcase)
+		li Modifier classes don't use the elemtn name twice. 
+		li Modules are always description (e.g. Testimonial-header, testimonial-body)
+		li I use the indented version of the SASS language, and in some cases the SCSS syntax
+.example
+	.modal
+		.modal-header
+		.modal-content
+		.modal-footer
+
+
+
+
+
+
+
+
+
+
+
+ul
+	li Prefix classes with js- for class names used as Javascript hooks
+	li Try to keep styles less than 3 levels deep
+	li Try not to use !important, only if really needed or obvious classes e.g. a hidden class
+	li Instead of making up names, inspect frameworks like Bootstrap for similar components
+	li Avoid using IDs for styling
+	li Write lots of comments to document your styles
+	li Make classes and modules reusable throughout your project
+	li In addition, it's good practice to have a pattern library showcasing all the styled elements that are currently available
+	li Have a standard agreed way for you and your team to write CSS - Harry Roberts has some great CSS Guidelines
+
+
+
+
+
+h2 REMS, Pixels, EMs
+p 
+	| Throughout the frameowkr, I've used REM units. If you're not familry with this, it's worth checking out the article here. 
+	| Percentages are used for layouts, gutters are kept consisted using fixed REM units. 
+	| Mixin to set at theme level. 
+
+h2 Quick Start
+P Add Pure to Your Page. You can add Pure to your page via Yahoo's free CDN. Just add the following <link> element into your page's <head>, before your project's stylesheets. This is compiled vresion of the CSS, which uses the default theme (what's used on this site).Add the Viewport Meta Element</h3> The viewport meta element lets you control the the width and scale of the viewport on mobile browsers. Since you're building a responsive website, you want the width to be equal to the device's native width. Add this into your page's head. meta name="viewport" content="width=device-width, initial-scale=1"</p>
+
+h2 Browser Support

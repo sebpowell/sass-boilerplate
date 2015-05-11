@@ -16,7 +16,15 @@ var gulp = require("gulp"),
 	cssGlobbing = require('gulp-css-globbing'),
 	extender = require('gulp-html-extend'),
 	browserSync = require('browser-sync').create(),
-	fileinclude = require('gulp-file-include');
+	fileinclude = require('gulp-file-include'),
+	coffee = require('gulp-coffee');
+
+// gulp.task('coffee', function() {
+//   gulp.src('./src/*.coffee')
+//     .pipe(coffee({bare: true}).on('error', gutil.log))
+//     .pipe(gulp.dest('./public/'))
+// });
+
 
 // Browser Sync Config
 // gulp.task('browser-sync', function() {
@@ -40,19 +48,50 @@ gulp.task('sass', function () {
 
 
 gulp.task('clickmechanic', function () {
-	return sass('clickmechanic/clickmechanic.sass', { style: 'compact' })
+	// return sass('clickmechanic/clickmechanic.sass', { style: 'compact' })
+	// .on('error', function (err) {
+	// 	console.error('Error!', err.message);
+	// })
+	// .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
+	// .pipe(gulp.dest('clickmechanic/'));
+	
+
+	// gulp.src(['clickmechanic/views/*.html'])
+ //    .pipe(fileinclude())
+ //    .pipe(gulp.dest('clickmechanic/views/'))
+ //    .pipe( notify({ message: "fileInclude tasks have been completed!"}) );
+});
+
+gulp.task('course', function () {
+	// return sass('course/course.scss', { style: 'compact' })
+	// .on('error', function (err) {
+	// 	console.error('Error!', err.message);
+	// })
+	// .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
+	// .pipe(gulp.dest('course/'));
+});
+
+gulp.task('sass-docs', function () {
+
+	return sass('docs/docs.scss', { style: 'compact' })
 	.on('error', function (err) {
 		console.error('Error!', err.message);
 	})
-	.pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
-	.pipe(gulp.dest('clickmechanic/'));
+	// .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1'))
+	.pipe(gulp.dest('docs/'));
 	
-
-	gulp.src(['clickmechanic/views/*.html'])
-    .pipe(fileinclude())
-    .pipe(gulp.dest('clickmechanic/views/'))
-    .pipe( notify({ message: "fileInclude tasks have been completed!"}) );
 });
+
+gulp.task('sass-build', function() {
+  var YOUR_LOCALS = {};
+ 
+  gulp.src('docs/views/*.jade')
+    .pipe(jade({
+      locals: YOUR_LOCALS
+    }))
+    .pipe(gulp.dest('docs/'))
+});
+
 
 gulp.task('browser-sync', function() {
     browserSync.init({
@@ -70,7 +109,9 @@ gulp.task('fileinclude', function() {
 });
 
 gulp.task("watch", function() {
-	gulp.watch("sass/**/*.*", ['clickmechanic'])
+	gulp.watch(['course/**/*'], ['course'])
+	gulp.watch(['docs/**/*'], ['sass-docs', 'sass-build'])
+	gulp.watch("sass/**/*.*", ['clickmechanic', 'course', 'sass-docs'])
 	gulp.watch(['clickmechanic/views/*.html'], ['fileinclude'])
 	gulp.watch(['clickmechanic/**/*'], ['clickmechanic'])
 });

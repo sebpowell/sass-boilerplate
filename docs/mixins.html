@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My Divshot Application</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <link rel="stylesheet" href="../docs/docs.css">
+  <!-- Typekit !-->
+  <script src="//use.typekit.net/zvy0qyb.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <!-- / Typekit !-->
+ <!--  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62796887-1', 'auto');
+  ga('send', 'pageview');
+
+</script> -->
+</head>
+<script>
+  $(document).ready(function() {
+    $(".sidebar-nav ul > li").click(function(e) {
+      // e.preventDefault();
+      $(this).children("ul").slideToggle();
+    });
+  });
+</script>
+
+<div class="sidebar">
+  <a href="index.html" class="logo">
+  <div class="sidebar-nav">
+    <ul>
+      <li><a href="intro.html">Getting Started</a></li>
+      <li><a href="grid.html">Layout</a></li>
+      <li><a href="components.html">Components</a></li>
+      <li><a href="theme.html">Theming</a></li>
+      <li>
+        <a href="helpers.html">Helpers</a>
+        <ul>
+          <li><a href="#background-color" class="is-active">Background-color</a></li>
+          <li><a href="#borders" class="is-active">Borders</a></li>
+          <li><a href="#colors" class="is-active">Colors</a></li>
+          <li><a href="#display" class="is-active">Display</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="mixins.html" class="is-active">Mixings</a>
+        <ul>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+        </ul>
+      </li>
+      Facebook, twitter, LinkedIn
+      <!-- <li><a href="theme.html">Gallery</a></li>
+      <li><a href="theme.html">JavaScript</a></li>
+      <li><a href="theme.html">Resources</a></li> -->
+    </ul>
+  </div>
+</div>
+<div class="main">
+  <div class="actions">
+    <a class="button primary bordered small rounded">Download</a>
+  </div>
+  <div class="typography">
+
+  <h2>Animation</h2><p>Using multiples of this unit allows us to estlablish a consisten rtthm
+and consistency throughout the platform. There are cases where you don't necessarily want to use exact multuples (for instance, buttons), but in many cases this
+does help. </p><p>These values can be accessed throughout your code using the sizes() function. </p><pre><code class="language-scss">.primary-header-site {
+		padding: sizes(base);
+  margin-bottom: sizes(double);
+}</code></pre><h2>Normalise</h2>
+<!-- Backgrounf Images !--><h2>Background Images</h2><ul><li>size (default: cover)</li><li>position (default: center)</li><li>repeat (default: no-repeat)</li></ul><pre><code class="language-scss">+background-image(cover, center, no-repeat)</code></pre><pre><code class="language-css">.element {
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}</code></pre><!-- Backgrounf Images !-->
+<!-- Border Radius !--><h2>Border Radius</h2><pre><code class="language-scss">+border-radius(3px)</code></pre><pre><code class="language-css">.element {
+   border-radius: 3px;
+}</code></pre><h2>Borders</h2><ul><li>Direction (required): Top | Left | Right | Bottom | All</li><li>Type (defaults to solid)</li><li>Size (required)</li><li>Color: defaults to $color-keyline</li></ul><pre><code class="language-scss">+border(left, solid, 1px)</code></pre><pre><code class="language-css">.element {
+   border-left: 1px solid #e5f5f5;
+}</code></pre><h2>Box Shadow</h2><pre><code class="language-scss">+box-shadow(2px 2px 3px 0 rgba(00,00,00,0.4))</code></pre><h2>Ellipsis</h2><p>Adds ellpsis to prevent text-wrapping. </p><p>Width: defaults to 100%. </p><pre><code class="language-scss">+ellipsis($width)</code></pre><h2>Lists</h2>+list(bordered, 2rem, clickable, removable)<h2>Sliding Panel</h2><p>Creates the necessary CSS to create a slid-out panel (mobile nav menu etc). </p><pre><code class="language-scss">+sliding-panel($direction, $width)</code></pre><pre><code class="language-css">.element {
+   position: fixed;
+   width: 400px;
+   left: -400px;
+}
+.element.is-visible {
+left: 0;
+}</code></pre><h2>Transition</h2><pre><code class="language-scss">+transition($direction, $width)</code></pre><h2>Triangle</h2><p>Creates a triangle, used on tooltips, dropdown menus etc. </p><pre><code class="language-scss">+transition($direction, $width, $color)</code></pre><h2>Rems, Raiots, Clearfix</h2><h1>Z-index</h1><h1>Colors</h1><h1>Responsive</h1><p> 
+The responvie mixin uses the breakpoints specified int he breakpoints.scss file. By default, the following are included. </p><h2>Transform</h2>

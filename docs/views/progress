@@ -1,0 +1,257 @@
+
+    <h4>Column Settings</h4>
+    <p>
+
+    <h4>Margin Bottom</h4>
+    By default, the grid assumes you don;t want to have multiple rows 
+    
+  
+  
+
+
+    <div class="browser-example">
+      <div class="masthead"></div>
+      <div class="row">
+        <div class="columns-3"><div class="content"></div></div>
+        <div class="columns-3"><div class="content"></div></div>
+        <div class="columns-3"><div class="content"></div></div>
+        <div class="columns-3"><div class="content"></div></div>
+      </div>
+    </div>
+   <pre data-source="angular.js"><code class="language-markup">&lt;div class="row"&gt;2test&lt;/p&gt;</code></pre>
+
+    
+
+   
+
+    
+
+    <h2>Single Column</h2>
+    <p>You can also use the mixin to define a width for a single column (for instance, a login form centered on the page). In this case, you don't want any floats specified, and you'll also want the container to be centered.
+
+    <div class="example">
+        <div class="login-box">Login</div>
+    </div>
+    <div class="team-photos">
+      <div class="team-member">
+        <div class="card">
+          Henry
+        </div>
+      </div>
+      <div class="team-member">
+        <div class="card">
+          Henry
+        </div>
+      </div>
+      <div class="team-member">
+        <div class="card">
+          Henry
+        </div>
+      </div>
+      <div class="team-member">
+        <div class="card">
+          Henry
+        </div>
+      </div>
+      <div class="team-member">
+        <div class="card">
+          Henry
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+Then, from the command line:
+Install grunt-cli globally with npm install -g grunt-cli.
+Navigate to the root /bootstrap/ directory, then run npm install. npm will look at the package.json file and automatically install the necessary local dependencies listed there.
+When completed, you'll be able to run the various Grunt commands provided from the command line.
+
+<body style="padding-bottom: 100px">
+
+
+<div class="main typography">
+
+
+
+
+  <div class="masthead">
+    <div class="masthead-contents">
+      <h1>SASS Docs</h1>
+    </div>
+  </div>
+
+  
+  
+  <section class="border-top padded">
+    <div class="container-narrow">
+      <h2>Buttons</h2>
+
+      <h3>Button Primary</h3>
+      <p>Button colours are generated from the colour map. There are 4 variants available. 
+      <div class="example text-center">
+        <a class="button primary">Primary</a>
+        <a class="button secondary">Secondary</a>
+        <a class="button bordered">Hollow</a>
+        <a class="button hollow">Bordered</a>
+        <a class="button white">Bordered</a>
+      </div>
+      <h3>Button Helpers</h3>
+      <p>Create smaller or larger buttons using the following helpers</p>
+      <div class="example text-center">
+        <a class="button small primary">Small</a>
+        <a class="button large primary">Large</a>
+      </div>
+
+  </section>
+  <section class="border-top padded">
+    <div class="container-narrow">
+      <div class="example text-center">
+        <div class="panel">
+          <div class="panel-header">Testimonial</div>
+          <div class="panel-body">
+            
+            <div class="avatar">
+              
+            </div>
+            <p>Rumyana is punctual like a Swiss watch, very diligent, hardworking, thorough and a very nice person</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-top padded">
+    <div class="container-narrow">
+      <h2> Creating Themes
+      <div class="example text-center">
+        <div class="panel">
+          sdfgs
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-top padded">
+    <div class="container-wide">
+      <h2>Filters</h2>
+      <p>Filters are typically used in mastheads to allow the user to filter through results. </p>
+      <div class="example text-center">
+          <div class="filters">
+            <div class="filter-container">
+              <select>
+                <option>Bedrooms</option>
+              </select>
+            </div>
+            <div class="filter-container">
+              <select>
+                <option>Type</option>
+              </select>
+            </div>
+            <div class="filter-container">
+              <select>
+                <option>Size</option>
+              </select>
+            </div>
+            <div class="filter-container">
+              <button class="primary">Search</button>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <section class="border-top padded">
+    <div class="container-wide">
+      <h1>Typography</h1>
+      <p>The typgraophy is set using a module typescale, specified in <span class="class">config/text-sizes.scss</span>. 8 sizes are specified:
+      <p>The mixin takes the various breakpoints specified in the breakpoints config file, and will adapt the text size for each device at that breakpoint. The different elements come prepacked with theses sizes set. Doing things this way allows ut to get better control over how different elements render on different devices (I used to use REM units to do this, but find this solution gives more control).
+      <table>
+        <tr>
+          <td>10px, line-height</td>
+          <td>10px</td>
+          <td>10px</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+  <section class="border-top padded">
+    <div class="container-wide">
+      <h1>Sizing</h1>
+      <p>Sizes used for text, padding and margin through the project are all based on a base unit size of 16px (this can be changed in the config file).From there, various. Base line height?</p>
+
+  </section>
+
+
+      
+  </section>
+
+  <section class="border-top padded">
+    <div class="container-wide">
+      <h1>Breakpoints & Responsive</h1>
+      <p>SASS docs is a mobile-first frameowkr. You can override this setting in your project settings. </p>
+       <pre>
+      <code class="language-sass">
+        z-index: layers(dropdown-menu);
+      </code>
+    </pre>
+
+      
+  </section>
+  <section>
+    Importing Files
+  </section>
+
+  <section>
+    <h2>Lists</h2>
+    Creating a list is easy. You can use the following mixin: 
+    
+    <pre>
+      <code class="language-sass">
+    $list: (
+      bordered: true,
+      clickable: true, 
+      removable: true, 
+      scrollHeight: 600,
+    );
+    </code>
+    </pre>
+    <div class="container-wide">
+      <ul class="vertical-list is-bordered">
+        <li>List Item 1</li>
+        <li>List Item 1</li>
+        <li>List Item 1</li>
+        <li>List Item 1</li>
+        <li>List Item 1</li>
+      </ul>
+    </div>
+  </section>
+
+  CSS gradient mixin
+
+
+
+
+
+You'll then need to compile your CSS using whicheve tool is best for the job. 
+
+The default theme is what's being used on this site, and is impored in the dist version of the CSS.
+
+
+
+IE
+JavaScript
+Code Conventions
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+ -->
