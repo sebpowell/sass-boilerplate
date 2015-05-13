@@ -2,6 +2,19 @@
 @import "../sass/base";
 
 
+.page-intro {
+	#intro {
+		display: block;
+	}
+}
+
+.page-grid{
+	#grid {
+		display: block;
+	}
+}
+
+
 .footer {
 	border-top: 1px solid $color-keyline-light;
 	padding: sizes(double);
@@ -9,6 +22,7 @@
 
 .actions {
 	// @include box-shadow(0 0 5px rgba(00,00,00,0.2));
+	display: none;
 	position: absolute;
 	top: 0;
 	border-bottom: 1px solid $color-keyline-light;
@@ -82,11 +96,6 @@
 
 
 
-p, li {
-	@include responsive-text-size(medium);
-	
-}
-
 .sidebar {
 	// @include grid(4);
 	width: 400px;
@@ -101,33 +110,56 @@ p, li {
 		display: block;
 	}
 	&:after {
-		position: absolute;
+		position: fixed;
 		left: 0;
 		top: 0;
 		height: 100%;
 		width: 100%;
-		background: rgba(00,00,00,0.4);
+		background: rgba(00,00,00,0.6);
 		content: "";
 	}
 	
 	.sidebar-nav {
 		position: relative;
 		z-index: 5;
+		
+		> ul {
+			> li {
+				> a {
+					&:after {
+						@include triangle(10px, white, down);
+						content: "";
+						float: right;
+					}
+				}
+			}
+		}
 		ul {
 			@include no-bullet;
 			> li {
-
 				> ul {
 					display: none;
+					> li {
+						> a {
+							padding-left: 40px;
+						}
+					}
 				}
 				> a {
+
+					&.is-active {
+						opacity: 1;
+					}
+
+
 					@include transition(all, .25s);
 					display: block;
 					color: white;
-					opacity: 0.4;
-					border-left: 1px solid white;
+					opacity: 0.6;
+					// border-left: 1px solid white;
 					padding: 20px;
 					font-size: 18px;
+				
 					
 					
 					&:hover {
@@ -149,7 +181,7 @@ p, li {
 	padding: 100px !important;
 	.typography {
 		width: 100%;
-		max-width: 600px;
+		max-width: 800px;
 		margin: auto;
 	}
 }
@@ -177,14 +209,19 @@ p, li {
 
 .example {
 	margin-bottom: 40px;
-	background: colors(greyscale, x-light);
+	border: 1px solid $color-keyline-dark;
+	
 	padding: 40px;
+	
+	.flex-row:not(:last-child) {
+		margin-bottom: sizes(double);
+	}
 	[class^="column"] {
 		
 	}
 
 	.content {
-		background: white;
+		background: colors(greyscale, x-light);
 		text-align: center;
 		height: 60px;
 		line-height: 60px;  

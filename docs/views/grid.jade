@@ -1,166 +1,165 @@
 include _header.html
+body.page-grid
 
-//- 1.) With gutters
-//- 	- Width
-//- 	- Gutter size (mobile, desktop)
-//- 	- If list, vertical gutter
+h2 Creating a Layout
+p Enso is built on a fluid, responsive grid. By default, it's configured to be mobile-first, but you can change this in your <strong>_theme.sass</strong> file. 
+h3 Container
+p 
+	| The container class is not strictly part of the grid. There are two containers included by default - <strong>container-wide</strong> and <strong>container-fluid</strong>. 
+	| The container centers and applies a max-width your content (by default, 1000px). 
+	| Both container classes also include left and right padding to give space from the browser edge.  
+p
+	| These classes are used for creatings layouts, but also for giving modules enough breathing room. 
+	| container-fluid is useful for say, creating full-with nav bars and ensuring consistent padding throughout your site. However, to avoid pullting your markup with unnecessary clases, 
+	| you can also simply extend this class into your module. 
 
-//- 2.) No gutters
-//- 	- Width
-//- 	- With on desktop
-//- 	- With on mobile
+pre
+	code.scss
+		| .primary-header-site {
+		|   @extend .container-fluid;
+		| };
 
-.container-narrow
-	section
-		h1 Grid
-		p 
-			| The X grid is a fluid, responsive grid. By default, it's configured to be mobile-first, but you can change this in your theme file. 
+h2 Rows &amp; Columns
+p Enso uses a standard 12-column setting to create the classes (or whatever you specify in theme.scs), and offers 3 different ways of creating a column-based layout.
+p 
+	| The first method is using predefined column class helpers. This is very similar to how grid systems provided by other frameworks (Bootstrap, Foundation etc) work.  
+	| First, you create a <span class="class">.row</span> element. This clears the floats and adds a negative margin on the left and right, equal to the column gutters to ensure the outer column edges sit flush with the rest of the site content.
+	| Note that because this method uses padding to create the gutter between the columns, you'll need to include an additional container for your content, if that content has a background color. 
 
-		h2 Creating a Layout
-		h3 Container
-		p 
-			| The container class is not strictly part of the grid. There are two containers included by default - container-wide and container-fluid. 
-			| This centers the content on the screen, and applies a max-width of 1000px to your content (you can change this in your theme file). Both container classes also include left and right padding to give space from the browser edge.  
-		p
-			| container-fluid is useful for say, creating full-with nav bars and ensuring consistent padding throughout your site. However, to avoid pullting your markup with unnecessary clases, 
-			| you can also simply extend this class into your module. 
+p The default breakpint for the grid is set to 720px. At this point, the margin is added and paddings on the columns, the widths are set to 100%, and a bottom margin is added. 
 
-		.example
-			| body
-			| container
-			| Full width vs narrow example
+p X will automatically generate classes for as many columns as you have in your layout (specified in your theme file). 
+p 
+.example
+	.flex-row
+		.columns-3
+			.content 3
+		.columns-3
+			.content 3
+		.columns-6
+			.content 6
+	.flex-row
+		.columns-4
+			.content 4
+		.columns-4
+			.content 4
+		.columns-4
+			.content 4
 
-		.example
-			| body
-			| container
-			<!-- Page Content goes here -->
-		pre
-			code.language-scss
-				| .primary-header-site {
-				|   @extend .container-fluid;
-				| };
-		
-		h3 Global Grid Settings
-		p X offers 3 different ways of creating a column-based layout. This grid system uses a standard 12-column setting to create the classes (or whatever you specify in theme.scs).
+pre
+	code.language-markup
+		| &lt;div class="&gt;flex-row&lt;/div&gt;
+		|  &lt;div class="columns-4"&gt;4&lt;/div&gt;
+		|  &lt;div class="columns-4"&gt;4&lt;/div&gt;
+		|  &lt;div class="columns-4"&gt;4&lt;/div&gt;
+		| &lt;/div&gt;
 
-		h2 Method 1: Columns &amp; Rows
-		p The first method is using predefined column class helpers. This is very similar to how grid systems provided by other frameworks (Bootstrap, Foundation etc) work.  
-		p First, you create a <span class="class">.row</span> element. This clears the floats and adds a negative margin on the left and right, equal to the column gutters to ensure the outer column edges sit flush with the rest of the site content.
-		p Note that because this method uses padding to create the gutter between the columns, you'll need to include an additional container for your content, if that content has a background color. 
-		p By default, at screen sizes lower than 600px, the margins on the row element are removed, and so are the paddings on the columns, the widths are set to 100%, and a bottom margin is added. 
+h2 Offsets
+p 
+	| The grid helper classes also includes offets which allow you to offset your content by the specified number of columns. 
+	| To use an offset, apply the classe <span class="class">.offset-n</span> (where 'n' is the offset value) to the relevant column. 
+.example
+	.flex-row
+		.columns-6.offset-1
+			.content 6, 1
+	.flex-row
+		.columns-6.offset-4
+			.content 6, 4
+pre
+	code.language-markup
+		| &lt;div class="row"&gt;
+		|		&lt;div class="columns-6 offset-1"&gt;.columns-6&lt;/div&gt;
+		|	&lt;/div&gt;
+		| &lt;div class="row"&gt;
+		|		&lt;div class="columns-6 offset-4"&gt;.columns-6&lt;/div&gt;
+		|	&lt;/div&gt;
 
-		p P For example, .columns-x
-		p X will utomatically generate classes for as many columns as you have in your layout. 
-		.example
-			.flex-row
-				.columns-3
-					.content 3
-				.columns-3
-					.content 3
-				.columns-6
-					.content 6
-			.flex-row
-				.columns-4
-					.content 4
-				.columns-4
-					.content 4
-				.columns-4
-					.content 4
+h2 Gutter Helpers
+p By default, colum gutters are set to 1rem. Because the padding is on both sides, this adds up to 2 rems between each column. If you want to increase the gutter sizes, you can use one of the following clases.
+p
+	ul
+		li <strong>no-gutter</strong>: removes gutters
+		li <strong>gutter-double:</strong> doubles the gutter (default: 40px)
+		li <strong>gutter-triple:</strong> doubles the gutter (default: 40px)
+		li <strong>gutter-quadruple:</strong> doubles the gutter (default: 40px)
+.well
+	| This class needs to be added to the <span class="class">.row</span> element, as the margin on either side needs to be adapted accordingly.
+.example
+	.flex-row.no-gutter
+		.columns-4
+			.content 4
+		.columns-4
+			.content 4
+		.columns-4
+			.content 4
+	.flex-row.gutter-double
+		.columns-4
+			.content 4
+		.columns-4
+			.content 4
+		.columns-4
+			.content 4
 
-		
-		
+pre
+	code.language-markup
+		| &lt;div class="row gutter-double"&gt;
+		|		&lt;div class="columns-6"&gt;.columns-6&lt;/div&gt;
+		|		&lt;div class="columns-6"&gt;.columns-6&lt;/div&gt;
+		|	&lt;/div&gt;
 
-		h4 Gutter Helpers
-		p By default, colum gutters are set to 1rem. Because the padding is on both sides, this adds up to 2 rems between each column. If you want to increase the gutter sizes, you can use one of the following clases.
-		p
-			ul
-				li no-gutter: removes gutters
-				li gutter-double: 2 rem gutter
-				li gutter-triple: 3 rem gutter
-				li gutter-quadruple: 3 rem gutter
-		.well
-			| This class needs to be added to the row component, as the margin on either side needs to be adapted accordingly.
-		.example
-			.flex-row.no-gutter
-				.columns-4
-					.content 4
-				.columns-4
-					.content 4
-				.columns-4
-					.content 4
-			.flex-row.gutter-double
-				.columns-4
-					.content 4
-				.columns-4
-					.content 4
-				.columns-4
-					.content 4
 
-		pre
-			code.language-markup
-				| &lt;div class="row gutter-double"&gt;
-				|		&lt;div class="columns-6"&gt;.columns-6&lt;/div&gt;
-				|		&lt;div class="columns-6"&gt;.columns-6&lt;/div&gt;
-				|	&lt;/div&gt;
-		
+h3 Method 2: Grid Generator
+p 
+	| Column helpers do the job for us in most cases. But sometimes, a custom grid will provide more control and flexibility, 
+	| particualrly in the context of responsive design. This also means cleaner and more maintable markup - and the ability to easily change things from your CSS, rather than having to change your markup. 
 
-		h3 Method 2: Grid Generator
-		p 
-			| Column helpers do the job for us in most cases. But sometimes, a custom grid will provide more control and flexibility, 
-			| particualrly in the context of responsive design. This also means cleaner and more maintable markup - and the ability to easily change things from your CSS, rather than having to change your markup. 
 
-		
-		p 
-			| Let's say I want to create a 'team' oage, with rows of staff photos. 
-			| On this page, I want 3 photos per row on mobile, 4 on tablet, and 5 on desktop. The default for column helpers is for each column to expand to 100% on specified breakpoints (by default, 480px). 
-			| I want to be able to specify a different number of items on each row for different breakpoints. I might also want to increase or decrease the padding between these rows, and possibly specify
-			| A differnt amount of padding to my normal gutters. 
+p 
+	| Let's say I want to create a 'team' oage, with rows of staff photos. 
+	| On this page, I want 3 photos per row on mobile, 4 on tablet, and 5 on desktop. The default for column helpers is for each column to expand to 100% on specified breakpoints (by default, 480px). 
+	| I want to be able to specify a different number of items on each row for different breakpoints. I might also want to increase or decrease the padding between these rows, and possibly specify
+	| A differnt amount of padding to my normal gutters. 
 
-		p The grid generator allows me to create this custom grid in just a few lines of code. First we create a new SASS map, with our settings. The following settings are available:
-		pre
-			code.language-css
-				| team: (
-				|  items-mobile: 5,
-				|  items-tablet: 4,
-				|  items-desktop: 3,
-				|  margin-mobile: 2rem,
-				|  padding-mobile: 1rem,
-				|  padding-desktop: 1rem,
-				|  output: float, 
-				| );
-				| #{' '}
-				| #{' '}
-				| .team-members
-				|  +grid(team)
-		
-		p Then, I use the grid mixin to create my grid, as such:
+p The grid generator allows me to create this custom grid in just a few lines of code. First we create a new SASS map, with our settings. The following settings are available:
+pre
+	code.language-css
+		| team: (
+		|  items-mobile: 5,
+		|  items-tablet: 4,
+		|  items-desktop: 3,
+		|  margin-mobile: 2rem,
+		|  padding-mobile: 1rem,
+		|  padding-desktop: 1rem,
+		|  output: float, 
+		| );
+		| #{' '}
+		| #{' '}
+		| .team-members
+		|  +grid(team)
 
-		pre
-			code.language-markup
-				|	&gt;div class="team-members"
-				|		&gt;div class="team-members"
-				|		&gt;div class="team-members"
-				|		&gt;div class="team-members"
-				|		&gt;div class="team-members"
+p Then, I use the grid mixin to create my grid, as such:
 
-		ul
-			li items-mobile: specifies how many items you want included on each row on a mobile device (480px - 600px).
-			li items-desktop: specifies how many items you want included on each row on a mobile device (480px - 600px).
-			li vertical-margin-mobile: if multiple elemtsn, you want them to be seperateed. 
-			li horizontal-padding-mobile: if the above is greater than 1, you will want to keep some gutter between the columns. This allows you to specify what that gutter should be, or turn it off altogether if you prefer. This takes the default gutter spacing as a default value.</p>
-			li horizontal-padding-desktop: specifies gutter between columsn on desktop
-		
-		p Note that this mixin is intended for use on the actual div container who's width you're controlling. For example, a sidebar and main content layout. 
-		h3 Method 3: Lists
-		p For repeating blocks of content (for example, cards, thumbansil etc), you'll want to use the above. 
-		p The mixin takes the following arguments and defaults: 
-		pre
-			code.language-scss
-				@include grid($container-width, $position: null, $offset: null, $padding: 0 sizes(base), $breakpoint: device-medium)
-		p Offsets
-		p The grid helper classes also includes offets which allow you to offset your content. 
-		.example
-			.flex-row
-				.columns-6.offset-4
-					| test
+pre
+	code.language-markup
+		|	&gt;div class="team-members"
+		|		&gt;div class="team-members"
+		|		&gt;div class="team-members"
+		|		&gt;div class="team-members"
+		|		&gt;div class="team-members"
+
+ul
+	li items-mobile: specifies how many items you want included on each row on a mobile device (480px - 600px).
+	li items-desktop: specifies how many items you want included on each row on a mobile device (480px - 600px).
+	li vertical-margin-mobile: if multiple elemtsn, you want them to be seperateed. 
+	li horizontal-padding-mobile: if the above is greater than 1, you will want to keep some gutter between the columns. This allows you to specify what that gutter should be, or turn it off altogether if you prefer. This takes the default gutter spacing as a default value.</p>
+	li horizontal-padding-desktop: specifies gutter between columsn on desktop
+
+p Note that this mixin is intended for use on the actual div container who's width you're controlling. For example, a sidebar and main content layout. 
+h3 Method 3: Lists
+p For repeating blocks of content (for example, cards, thumbansil etc), you'll want to use the above. 
+p The mixin takes the following arguments and defaults: 
+pre
+	code.language-scss
+		@include grid($container-width, $position: null, $offset: null, $padding: 0 sizes(base), $breakpoint: device-medium)
+
 

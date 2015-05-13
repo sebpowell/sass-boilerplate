@@ -5,12 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>My Divshot Application</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script> -->
+  <script src="highlight.pack.js"></script>
   <link rel="stylesheet" href="../docs/docs.css">
+  <link rel="stylesheet" href="docco.css">
   <!-- Typekit !-->
   <script src="//use.typekit.net/zvy0qyb.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <!-- / Typekit !-->
  <!--  <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -25,8 +28,9 @@
 </head>
 <script>
   $(document).ready(function() {
-    $(".sidebar-nav ul > li").click(function(e) {
+    $(".sidebar-nav ul > li > a").click(function(e) {
       // e.preventDefault();
+      $(this).toggleClass("is-active");
       $(this).children("ul").slideToggle();
     });
   });
@@ -36,29 +40,76 @@
   <a href="index.html" class="logo">
   <div class="sidebar-nav">
     <ul>
-      <li><a href="intro.html">Getting Started</a></li>
-      <li><a href="grid.html">Layout</a></li>
-      <li><a href="components.html">Components</a></li>
-      <li><a href="theme.html">Theming</a></li>
+      <li>
+        <a href="intro.html">Getting Started</a>
+        <ul id="intro">
+          <li><a href="theme.html#overview">Intro &amp; Quick Setup</a></li>
+          <li><a href="theme.html#overview">Who's This For?</a></li>
+          <li><a href="theme.html#overview">Principles</a></li>
+          <li><a href="theme.html#overview">Acknowledgements</a></li>
+          <li><a href="theme.html#overview">Browser Support</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="grid.html">Layout</a>
+        <ul id="grid">
+          <li><a href="theme.html#overview">Containers</a></li>
+          <li><a href="theme.html#overview">Rows &amp; Columns</a></li>
+          <li><a href="theme.html#overview">Gutters</a></li>
+          <li><a href="theme.html#overview">Offsets</a></li>
+          <li><a href="theme.html#overview">Grid Generator</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="components.html">Components</a>
+        <ul>
+          <li><a href="theme.html#overview">Buttons</a></li>
+          <li><a href="theme.html#overview">Dropdown</a></li>
+          <li><a href="theme.html#overview">Navigation</a></li>
+          <li><a href="theme.html#overview">Form</a></li>
+          <li><a href="theme.html#overview">Typography</a></li>
+          <li><a href="theme.html#overview">Tabs</a></li>
+          <li><a href="theme.html#overview">Overview</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="theme.html">Theming</a>
+        <ul>
+          <li><a href="theme.html#overview">Overview</a></li>
+          <li><a href="theme.html#overview">Settings File</a></li>
+          <li><a href="theme.html#overview">Global Breakpoints</a></li>
+          <li><a href="theme.html#overview">Colors</a></li>
+          <li><a href="theme.html#overview">Stacking</a></li>
+        </ul>
+      </li>
       <li>
         <a href="helpers.html">Helpers</a>
         <ul>
-          <li><a href="#background-color" class="is-active">Background-color</a></li>
-          <li><a href="#borders" class="is-active">Borders</a></li>
-          <li><a href="#colors" class="is-active">Colors</a></li>
-          <li><a href="#display" class="is-active">Display</a></li>
+          <li><a href="#background-color">Background-color</a></li>
+          <li><a href="#borders">Borders</a></li>
+          <li><a href="#colors">Colors</a></li>
+          <li><a href="#display">Display</a></li>
         </ul>
       </li>
       <li>
         <a href="mixins.html" class="is-active">Mixings</a>
         <ul>
-          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
-          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
-          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
-          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
-          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
-          <li><a href="mixins.html" class="is-active">Box-shadow</a></li>
+          <li><a href="mixins.html#1">Animation</a></li>
+          <li><a href="mixins.html#1">Background Images</a></li>
+          <li><a href="mixins.html#1">Border Radius</a></li>
+          <li><a href="mixins.html#1">Borders</a></li>
+          <li><a href="mixins.html#1">Box Shadow</a></li>
+          <li><a href="mixins.html#1">Ellipsis</a></li>
+          <li><a href="mixins.html#1">Lists</a></li>
+          <li><a href="mixins.html#1">Sliding Panel</a></li>
+          <li><a href="mixins.html#1">Responsive</a></li>
+          <li><a href="mixins.html#1">Transition</a></li>
+          <li><a href="mixins.html#1">Triangle</a></li>
+          <li><a href="mixins.html#1">Transform</a></li>
         </ul>
+      </li>
+      <li>
+        Resources & Acknowledgements
       </li>
       Facebook, twitter, LinkedIn
       <!-- <li><a href="theme.html">Gallery</a></li>
@@ -71,15 +122,9 @@
   <div class="actions">
     <a class="button primary bordered small rounded">Download</a>
   </div>
-  <div class="typography">
+  <div class="typography container-narrow">
 
-  <h2>Animation</h2><p>Using multiples of this unit allows us to estlablish a consisten rtthm
-and consistency throughout the platform. There are cases where you don't necessarily want to use exact multuples (for instance, buttons), but in many cases this
-does help. </p><p>These values can be accessed throughout your code using the sizes() function. </p><pre><code class="language-scss">.primary-header-site {
-		padding: sizes(base);
-  margin-bottom: sizes(double);
-}</code></pre><h2>Normalise</h2>
-<!-- Backgrounf Images !--><h2>Background Images</h2><ul><li>size (default: cover)</li><li>position (default: center)</li><li>repeat (default: no-repeat)</li></ul><pre><code class="language-scss">+background-image(cover, center, no-repeat)</code></pre><pre><code class="language-css">.element {
+  <h2>Animation</h2><!-- Backgrounf Images !--><h2>Background Images</h2><ul><li>size (default: cover)</li><li>position (default: center)</li><li>repeat (default: no-repeat)</li></ul><pre><code class="language-scss">+background-image(cover, center, no-repeat)</code></pre><pre><code class="language-css">.element {
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
@@ -88,12 +133,16 @@ does help. </p><p>These values can be accessed throughout your code using the si
    border-radius: 3px;
 }</code></pre><h2>Borders</h2><ul><li>Direction (required): Top | Left | Right | Bottom | All</li><li>Type (defaults to solid)</li><li>Size (required)</li><li>Color: defaults to $color-keyline</li></ul><pre><code class="language-scss">+border(left, solid, 1px)</code></pre><pre><code class="language-css">.element {
    border-left: 1px solid #e5f5f5;
-}</code></pre><h2>Box Shadow</h2><pre><code class="language-scss">+box-shadow(2px 2px 3px 0 rgba(00,00,00,0.4))</code></pre><h2>Ellipsis</h2><p>Adds ellpsis to prevent text-wrapping. </p><p>Width: defaults to 100%. </p><pre><code class="language-scss">+ellipsis($width)</code></pre><h2>Lists</h2>+list(bordered, 2rem, clickable, removable)<h2>Sliding Panel</h2><p>Creates the necessary CSS to create a slid-out panel (mobile nav menu etc). </p><pre><code class="language-scss">+sliding-panel($direction, $width)</code></pre><pre><code class="language-css">.element {
+}</code></pre><h2>Box Shadow</h2><pre><code class="language-scss">+box-shadow(2px 2px 3px 0 rgba(00,00,00,0.4))</code></pre><h2>Ellipsis</h2><p>Adds ellpsis to prevent text-wrapping. </p><p>Width: defaults to 100%. </p><pre><code class="language-scss">+ellipsis($width)</code></pre><h2>Margin &amp; Padding</h2><p>Using multiples of this unit allows us to estlablish a consisten rtthm
+and consistency throughout the platform. There are cases where you don't necessarily want to use exact multuples (for instance, buttons), but in many cases this
+does help. </p><p>These values can be accessed throughout your code using the sizes() function. </p><pre><code class="language-scss">.primary-header-site {
+		padding: sizes(base);
+  margin-bottom: sizes(double);
+}</code></pre><h2>Lists</h2>+list(bordered, 2rem, clickable, removable)<h2>Sliding Panel</h2><p>Creates the necessary CSS to create a slid-out panel (mobile nav menu etc). </p><pre><code class="language-scss">+sliding-panel($direction, $width)</code></pre><pre><code class="language-css">.element {
    position: fixed;
    width: 400px;
    left: -400px;
 }
 .element.is-visible {
 left: 0;
-}</code></pre><h2>Transition</h2><pre><code class="language-scss">+transition($direction, $width)</code></pre><h2>Triangle</h2><p>Creates a triangle, used on tooltips, dropdown menus etc. </p><pre><code class="language-scss">+transition($direction, $width, $color)</code></pre><h2>Rems, Raiots, Clearfix</h2><h1>Z-index</h1><h1>Colors</h1><h1>Responsive</h1><p> 
-The responvie mixin uses the breakpoints specified int he breakpoints.scss file. By default, the following are included. </p><h2>Transform</h2>
+}</code></pre><h2>Transition</h2><pre><code class="language-scss">+transition($direction, $width)</code></pre><h2>Triangle</h2><p>Creates a triangle, used on tooltips, dropdown menus etc. </p><pre><code class="language-scss">+transition($direction, $width, $color)</code></pre>

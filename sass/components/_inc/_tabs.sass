@@ -1,26 +1,18 @@
 .tabs
 	ul
 		+nobullet
-		border-bottom: 1px solid $color-keyline-light
-		display: flex
+		+clearfix
+		border-bottom: 1px solid $color-keyline-dark
 		margin-bottom: sizes(base)
-		padding: 5px
 
 	li
-		flex: 1
-		+border-radius(5px)
 
+		float: left
 		> a
-			flex: 1
-			&:focus
-				outline: none
-
+			color: red
 			display: block
 			text-align: center
-			&:not(:last-child)
-				margin-right: 2px
 			padding: 10px
-			+border-radius(5px)
 			&:hover
 				background: white
 				cursor: pointer

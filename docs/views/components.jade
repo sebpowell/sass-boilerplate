@@ -45,6 +45,44 @@ h2 Form
 		.form-group
 			button.primary Submit
 
+h2 Typography
+p All HTML headings, h1 through h6, are available. .h1 through .h6 classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.
+.example
+	table.is-bordered
+		tr
+			td
+				h1 Heading 1
+			td 36px
+		tr
+			td
+				h2 Heading 2
+			td 36px
+		tr
+			td
+				h3 Heading 3
+			td 36px
+		tr
+			td
+				h4 Heading 4
+			td 36px
+		tr
+			td
+				h5 Heading 5
+			td 36px
+		tr
+			td
+				h6 Heading 6
+			td 36px
+		tr
+			td
+				p 
+					| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur facilisis mauris vitae dui congue maximus.
+					| Quisque tincidunt laoreet massa, at commodo velit semper at. 
+			td 36px
+		tr
+			td
+				small Small text
+
 h2 Tabs
 .example
 	.tabs
@@ -61,18 +99,30 @@ h2 Tabs
 h2 Dropdowns
 
 .example
-	.dropdown-menu-toggle
-		| This isa link toggle
-		.dropdown-menu.right
-			ul
-				li 
-					a Test
-				li 
-					a Test
-				li 
-					a Test
-				li 
-					a Test
+	.primary-nav-desktop
+		.logo
+		ul.primary-nav-links
+			li
+				a Link 1
+			li
+				a Link 1
+			li
+				a Link 1
+			li.dropdown-menu-toggle
+				a Link 1
+				.dropdown-menu.right
+					ul
+						li 
+							a Test
+						li 
+							a Test
+						li 
+							a Test
+						li 
+							a Test
+		ul.user-links
+	
+		
 
 pre
 	code

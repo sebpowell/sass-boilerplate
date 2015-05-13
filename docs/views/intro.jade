@@ -1,8 +1,40 @@
 include _header.html
-
+body.page-intro
 
 //- One of our goals when developing Pure was to make it extremely extensible. By including Pure and writing some CSS on top of it, you can ensure that your site or app works across browsers, while looking truly unique. Best of all, your CSS file size will remain tiny, which is a great thing for mobile users and others with slow connections.
 
+h2 Introduction
+p 
+	| First of all, this framwork isn't really designed for people with no prior knowledge of HTML & CSS. 
+	| So before you go any further - if you're completely new to CSS, I suggest taking a quick CodeAcademy or Treehouse course to learn about
+	| the different tags, positining methods etc. 
+p
+	| Secondy, unlike say, Bootstrap, Enso was not made with the idea that you would simply include the compiled CSS and build on top of it. 
+	| Instead, it's designed to act as a boilerplate, allowing you to pick the best bits, and extend or odify as you see fit. So whilst a compulted, CDN-hosted
+	| version is avaible, I recommend downaloding the full source files. 
+
+h2 Quick Start
+p Download the latest version from Github. 
+p 
+	| Alternatively, if you just want to try out add the following <link> element into your page's <head>, before your project's stylesheets. 
+	| This is compiled vresion of the CSS, which uses the default theme (what's used on this site).
+	| You'll aso need to add the Meta viewport tag to control the the width and scale of the viewport on mobile browsers. 
+	| meta name="viewport" content="width=device-width, initial-scale=1"</p>
+
+h2 Customising Enso
+p 
+	| Enso is not designed to be a framework you simply integrate and start buildign from - it's made to be customised with your own styles. To learn more, 
+	| read the 'Theme' section.
+
+h2 Units
+p 
+	| Throughout the frameowkr, I've used REM units. If you're not familry with this, it's worth checking out the article here. 
+	| Percentages are used for layouts, gutters are kept consisted using fixed REM units. 
+	| Mixin to set at theme level. 
+
+h2 Browser Support
+p Enso styles have been tested in Chrome, Safari،
+	
 h1 Introduction
 p 
 	| I  I knew very little about coding. I'd built simple websites in HTML &amp; CSS before, but knew very little about how to build actual design systems. 
@@ -24,21 +56,14 @@ p
 		| IN short, Enso is a colletion of all the buts of code I find myself using over and over again. It's not designed to be a turn key solution, 
 		| but rather a resource you can use to either learn to build interfaces, or quickly build prototpyes. My hope is to encourage more designers to learn how to design in the browser, by offering a tool.
 		| It's far from perfect, but it's a start - I hope you nejoy using it. 
+	
 
 h2 Who's this for?
 p Enso isn't nearly as complete or as robust as some other frameowkrs - but it's very flexible, and designer for flexibiltiy and customisation. 
 p So it's primaeily geared towards designers, who either code already or want to start codinh, as a foudnation for desining and building 
 p beautiful web and mobile interfaces. 
 
-h2 Principles
-p 
-	| First of all, this framwork isn't really designed for people with no prior knowledge of HTML & CSS. 
-	| So before you go any further - if you're completely new to CSS, I suggest taking a quick CodeAcademy or Treehouse course to learn about
-	| the different tags, positining methods etc. 
-p
-	| Secondy, unlike say, Bootstrap, Enso was not made with the idea that you would simply include the compiled CSS and build on top of it. 
-	| Instead, it's designed to act as a boilerplate, allowing you to pick the best bits, and extend or odify as you see fit. So whilst a compulted, CDN-hosted
-	| version is avaible, I recommend downaloding the full source files. 
+
 
 p Enso is the results of a lot of trial and error, I've taken what I think is best from different structures and created my own style.
 
@@ -73,11 +98,11 @@ p
 		li Modifier classes don't use the elemtn name twice. 
 		li Modules are always description (e.g. Testimonial-header, testimonial-body)
 		li I use the indented version of the SASS language, and in some cases the SCSS syntax
-.example
-	.modal
-		.modal-header
-		.modal-content
-		.modal-footer
+		li Try to keep styles less than 3 levels deep
+		li Try not to use !important, only if really needed or obvious classes e.g. a hidden class
+		li Avoid using IDs for styling
+		li Make classes and modules reusable throughout your project
+		li Have a standard agreed way for you and your team to write CSS - Harry Roberts has some great CSS Guidelines
 
 
 
@@ -86,31 +111,3 @@ p
 
 
 
-
-
-
-ul
-	li Prefix classes with js- for class names used as Javascript hooks
-	li Try to keep styles less than 3 levels deep
-	li Try not to use !important, only if really needed or obvious classes e.g. a hidden class
-	li Instead of making up names, inspect frameworks like Bootstrap for similar components
-	li Avoid using IDs for styling
-	li Write lots of comments to document your styles
-	li Make classes and modules reusable throughout your project
-	li In addition, it's good practice to have a pattern library showcasing all the styled elements that are currently available
-	li Have a standard agreed way for you and your team to write CSS - Harry Roberts has some great CSS Guidelines
-
-
-
-
-
-h2 REMS, Pixels, EMs
-p 
-	| Throughout the frameowkr, I've used REM units. If you're not familry with this, it's worth checking out the article here. 
-	| Percentages are used for layouts, gutters are kept consisted using fixed REM units. 
-	| Mixin to set at theme level. 
-
-h2 Quick Start
-P Add Pure to Your Page. You can add Pure to your page via Yahoo's free CDN. Just add the following <link> element into your page's <head>, before your project's stylesheets. This is compiled vresion of the CSS, which uses the default theme (what's used on this site).Add the Viewport Meta Element</h3> The viewport meta element lets you control the the width and scale of the viewport on mobile browsers. Since you're building a responsive website, you want the width to be equal to the device's native width. Add this into your page's head. meta name="viewport" content="width=device-width, initial-scale=1"</p>
-
-h2 Browser Support

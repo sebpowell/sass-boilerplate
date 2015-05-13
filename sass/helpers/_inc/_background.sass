@@ -1,5 +1,10 @@
-.background-light-grey
-	background: colors(greyscale, light)
+$color-helpers: (primary: colors(brand-primary), secondary: colors(brand-secondary), white: #FFF)
 
-.background-white
-	background: white
+
+
+@each $name, $value in $color-helpers
+	.background-#{$name}
+		background: $value
+	
+	.text-#{$name}
+		color: $value

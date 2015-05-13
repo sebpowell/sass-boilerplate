@@ -1,45 +1,53 @@
 include _header.html
 
 h1 Helpers
-p All helper classees have !importnat set on them to ensure the intended effect is achieved. 
+p All helper classes have an <strong>!important</strong> flat set on them to ensure they overide the element's styling. 
 
 h2(id="background-color") Background Color
 p A background-color helper is generated for the main colours defined in our theme file. 
-.example
-	.background-light
-	.background-dark
-	.background-white
-	.background-brand-primary
-	.background-brand-secondary
+p By default, these are: 
+ul
+	li .background-light
+	li .background-dark
+	li .background-white
+	li .background-brand-primary
+	li .background-brand-secondary
+
 pre
 	code.language-markup
 		| .element.background-light
 
 h2(id="borders") Borders
-p Add a keyline to any element using border-{size} (e.g. border-top)
+p Add a keyline to any element. Enso generates a helper for every side, as well as a light and dark variant.
+ul
+	li .bo
 .example
-	.element.border-top
-
+	.element.border-top-light.margin-bottom-double
+	.element.border-top-dark
 pre
 	code.language-markup
-		| .element.background-light
+		| .element.background-top-light
+		| .element.background-top-light
 
 h2(id="colors") Colors
-p Sets the text color for an elemnet. Can either be set on the parent, or on the element itself. 
+p Sets text color for an element. Can either be set on the parent, or on the element itself. 
+ul
+	li <strong>text-primary</strong>: primary brand color
+	li <strong>text-primary</strong>: primary brand color
+	li <strong>text-primary</strong>: primary brand color
+	li <strong>text-primary</strong>: primary brand color
 .example
 	p.text-primary This is blue text
-	p.text-secondary This is blue text
-	p.text-muted This is blue text
-	p.text-dark This is dark text
-	p.text-white This is white text
-	p.text-error Thisis error text
-	p.text-success
+pre
+	code.language-markup
+		| .element.background-top-light
+		| .element.background-top-light
 
 h2(id="display") Display 
-p Forces display properties on an element. 
+p Adds display property to an element. 
 ul
-	li inline-block: sets display to display: inline-block
-	li block: sets display property to display: block
+	li <strong>inline-block:</strong> sets display to display: inline-block
+	li <strong>block:</strong> sets display property to display: block
 
 
 h2(id="line-height") Line Height
@@ -59,30 +67,20 @@ ul
 h2(id="text-transform") Text Transform
 p Forces text to transform
 ul
-	li text-uppercase: sets text to uppercase, and adds 0.05em letter-spacing. 
-	li text-capitalize: sets text mode to text-transform: capitalize
+	li text-uppercase: sets text-fransform to uppercase (adds 0.05em letter-spacing). 
+	li text-capitalize: sets text mode to capitalize
 
 h2(id="") Margin
-p Margin helpers are paritcularly useful when you want to fine tune spacing in between elements, without needing to write custom selectors. I don't use them all the time, 
-	| but there are many cases where, especifailyl in large. The main disadvatnage of the helper approach is that you lose some control, and can risk pullutiny your markup
-	| with too many classes. But in some cases, these do the job, and I find they're apritcularly useful for rapid prototpying. 
+p 
+	| Margin helpers are paritcularly useful to help fine tune spacing in between elements, without needing to write custom selectors. 
 	| The helper classes are available for both padding and margin, as follows: 
 ul
 	li padding-{direction}, margin-{direction} followed by the unit value
-	li .no-margin and .no-padding strips off any padding or margins. 
+	li <strong>.no-margin</strong> and <strong>.no-padding</strong> removes any padding or margins. 
 
-h1 Typography
-p 
-	| From a designer's perspective, typography is one of the most critial asepcts of any prokect. Managing typgoraphy well, especially with varying 
-	| viewports makes it even harder. Typgraohyp in X is managed using a typgoraphy scale map, found in the config file. This method has several
-	| advantages, namely that it ensures text-sizes are kept consistent throughout your project. It works in the following way: 
-
-	ul
-		li X includes 7 different standard sizes - 3 sizes above the base font size, and 3 sizes above. 
-		li The size and line-height is then specified for each type of device, found int he breakpoitns map. 
-		li To use a size on a new element, use the mixin @responsive-text-size(size). 
-		li You can speficiy additional breakpoints and sizes in the map. 
-
+h2(id="text-sizes") Text Sizes
+p Helpers for creating the various text sizes specified in the text-sizes.scss file (if you don't want to use the heading helpers). 
+p Note that this method only sets the size - the weight is inherited from the parent.  
 ul
 	li text-x-small
 	li text-small
@@ -90,6 +88,34 @@ ul
 	li text-medium
 	li text-large
 	li text-x-large
+.example
+	table.is-bordered
+		tr
+			td
+				.text-x-large Heading 1
+			td 36px
+		tr
+			td
+				.text-large Heading 2
+			td 36px
+		tr
+			td
+				.text-medium-large Heading 2
+			td 36px
+		tr
+			td
+				.text-medium Heading 2
+			td 36px
+		tr
+			td
+				.text-small Heading 2
+			td 36px
+		tr
+			td
+				.text-x-small Heading 2
+			td 36px
+
+
 
 
 h2 Media Queries
@@ -103,11 +129,11 @@ p By default, media queries are mobile first (the styles you specifiy in the con
 
 
 
-h2 Floats & Clearfix
+h2(id="floats") Floats &amp; Clearfix
 ul
-	li float-left - floats elements left
-	li float-right - float elements right
-	li clearfix - clears the floats (apply to the parent element)
+	li <strong>float-left:</strong> floats elements left
+	li <strong>float-right:</strong> float elements right
+	li <strong>clearfix:</strong> clears the floats (apply to the parent element)
 
 .example
 	pre
@@ -125,20 +151,23 @@ ul
 	li -is-hidden-phone
 
 
-
-
-
-h2 Headings
-
-p H1, H2, H3, H4, H5, H6 (incldue sizes). Headings include margins and set line line-height. 
-P Add the class .uppercase to capitaluse the text. 
-
-h2 Links
+h2(id="links") Links
 p By default, includes a cursor pointer and the primary brand color. 
 ul 
-	li Use .link-reset to change to the same color as the parent container. 
-	li Use  .underline to underline
-	li 
+	li <strong>link-reset:</strong> to change to the same color as the parent container. 
+	li <strong>underline:</strong> to underline
+
+.example
+	div.margin-bottom-double
+		a.underline This link is underlined
+	div
+		a.link-reset This link is underlined
+pre
+	code
+		| div class="clearfix"
+		| 	div class="float-left"
+		|		div class="flaot-right"
+		| div
 
 h2 Lists
 p Use .no-bullet to remove bullets, margins and padding. 
@@ -146,7 +175,7 @@ p Use .no-bullet to remove bullets, margins and padding.
 
 h2 Typography
 p For pages that include loads of text (such as articles, blogs etc), additional styels are needed to make the text legible. 
-p 
+p Add the class 'typography' to your parent element to add proper spacing to headers, parapggs and list items. 
 
 
 

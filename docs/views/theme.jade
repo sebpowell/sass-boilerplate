@@ -1,14 +1,10 @@
 include _header.html
-h1 Theming
+h2 Overview
 p 
 	| One of the ways in which X differentaites from other frameworks, is that it's very basic when it comes to styling, and has been built to make it very easy for anyone
 	| to customise how it looks. Unlike say, Bootstrap, elements come with minimal styling, so you don't have to waste time overriding styles, and instead can add as you go. 
-	| The little styling that is included, works by referencing various settings that can be found in the _default-theme.sass file. 
-p
-	| To get started, you'll need to be in a position to build SASS files into CSS. If you're new to front-end, it;s worth checking out a tool like Hammer, which will allow you to get up and running 
-	| very quickly. Otherwise, if you're confortable using the console, all you need is to install the SASS ruby gem. 
+	| The little styling that is included, works by referencing various settings that can be found in the <strong>_theme.sass</strong> file. 
 
-h2 Project Strucutre
 p When you download the source files, you'll find the following structure: 
 pre
 	code.language-markup
@@ -19,13 +15,41 @@ pre
 		|| _theme.sass
 		|| styles.sass
 
-p Each filew in the above folders hich then get imported into a _base.scss file. This file gets imported into a file called styles.sass.
-p Please note that X uses an autoprefixer - if you are using this theme, you'll need to make sure you add this to your built tool to ensure cross-browser compatiblity. 
+p 
+	| Each file in the above folders hich then get imported into the <strong>_base.sass</strong> file. This file, and the theme file then getsimported into a global styles.sass which 
+	| then gets compiled into the CSS.
+.well
+	| Please note that X uses an autoprefixer - if you are using this theme, you'll need to make sure you add this to your built tool to ensure cross-browser compatiblity. 
 h2 The Theme File
 p 
-	| The file we're interested in editing is called _theme.scss. The example file included in the source files
-	| includes all the available settings - so you can just change settings in this file, and you'll be good to go. 
-	| Note that because of the way it's set up, you need to have a theme file set up - if you don't, your SASS won't compile. 
+	| Included in the download is a boilerplate theme.sass file that contains all the system-wide settings you can change. 
+
+h3 Sizing
+p 
+	ul
+		li <strong>size-border-radius</strong>: used on elements with rounded corners, such as buttons, forms, dropdowns etc. If you don't want rounded corners, simply set this to 0. 
+		li <strong>size-base-font</strong>: base font size, set on the HTML &amp; Body elements. Also used as the base unit to calculate unit layout helpers. 
+		li <strong>size-container-padding</strong>: padding between the content and browser edge. 
+		li <strong>size-grid-gutter</strong>: amount of spacing between standard grid columns. 
+		li <strong>size-base-font</strong>: max-width set on the .container-wide container. 
+		li <strong>mobile-first</strong>: changes the order of the media query, so mobile styles come first. This is a preference for some people, and basically means all mobile styles are declared first, and are then followed by tablet and desktop styles. 
+
+//- h2 Normalise
+//- Pure was crafted with the goal that it can be used in every web project. To showcase this, we've made some common layouts that leverage Pure. These layouts are responsive and don't require JavaScript (except for certain menu interactions).
+
+//- When viewing these layouts, view or copy the source to get a good understanding of what's happening.
+
+//-  Screenshot of Blog example layout.
+//- Blog
+
+//- A layout example that shows off a blog page with a list of posts.
+
+//- Base
+//- Grids
+//- Buttons
+//- Menus
+
+
 pre
 	code.language-scss
 		| $theme: (
@@ -61,94 +85,15 @@ pre
 		|     drop-shaodw-large:
 		| );
 
-h2 Sizing
-p 
-	ul
-		li <strong>size-border-radius</strong>: used on elements with rounded corners, such as buttons, forms, dropdowns etc. If you don't want rounded corners, simply set this to 0. 
-		li <strong>size-base-font</strong>: base font size, set on the HTML &amp; Body elements. Also used as the base unit to calculate unit layout helpers. 
-		li <strong>size-container-padding</strong>: padding between the content and browser edge. 
-		li <strong>size-grid-gutter</strong>: amount of spacing between standard grid columns. 
-		li <strong>size-base-font</strong>: max-width set on the .container-wide container. 
+h2 Colours
+p Specifiy your colour palette in this file. You can create additional colours and add them to the map. To access the colours, use the <strong>colours()</strong> function. 
 
-h2 Mobile-First
-p 
-	| Changes the order of the media query, so mobile styles come first. This is a preference for some people, and basically means all mobile styles are declared first, 
-	| and are then followed by tablet and desktop styles. 
-
-
-h2
-p Example of sites using different theme files. 
-
-h2 Breakpoints
 pre
 	code.language-scss
-		| $breakpoints: (
-		|   device-small:    480px,
-		|   device-medium:   720px,
-		|   device-large:    960px,
-		|   device-xlarge:  1280px
-		| );
+		| .element {
+		|  background: colors(brand-primary, dark);
+		| }
 
-h2 Layout Units
-p Enso using a system of layout units to keep spacing like margins and padding consistent throughout the project. 
-p Helper classes that allow you to add or override an objects margin and padding. 
-p This can be useful, if say, you want to add more margin to a heading elemtn in your interface, or inteed would rather avoid. 
-p
-	| In our layout, we set a base unit size (by default, 16px) which is then used to caclulate variants. 
-	ul
-		li sizes-quarter-unit: 16px / 4
-		li size-half-unit: 16px / 2
-		li size-base-unit: 16px
-		li size-double-half: 24px
-		li size-double-unit: 32px
-		li size-triple-unit: 48px
-		li size-quadriple-unit: 64px
-
-.example
-	h1.margin-bottom-double Heading 1
-
-h2 Responsive Typograhpy
-p he typgraophy is set using a module typescale, specified in <span class="class">config/text-sizes.scss</span>. 8 sizes are specified:
-p The mixin takes the various breakpoints specified in the breakpoints config file, and will adapt the text size for each device at that breakpoint. 
-p The different elements come prepacked with theses sizes set. Doing things this way allows ut to get better control over how different elements render on 
-p different devices (I used to use REM units to do this, but find this solution gives more control).
-
-//- <table>
-//- <tr>
-//- <td>10px, line-height</td>
-//- <td>10px</td>
-//- <td>10px</td>
-//- </tr>
-//- </table>
-pre
-	code.language-scss
-		| $text-sizing: (
-		|   x-small: (
-		|     device-small: (
-		|       font-size: rem(14px)
-		|      ),
-		|      device-medium: (
-		|        font-size: rem(12px)
-		|       ), 
-		|      device-large: (
-		|        font-size: rem(12px)
-		|      )
-		|    ),
-		|   medium: (
-		|    device-small: (
-		|      font-size: rem(16px)
-		|     ),
-		|    device-medium: (
-		|      font-size: rem(18px)
-		|     ), 
-		|     device-large: (
-		|       font-size: rem(18px)
-		|      )
-		|    ),
-		| );
-
-
-h2 Colour Palettes
 pre
 	code.language-scss
 		| $colors: (
@@ -181,19 +126,90 @@ pre
 		| ),
 		| );
 
+h2 Global Breakpoints
+pre
+	code.language-scss
+		| $breakpoints: (
+		|   device-small:    480px,
+		|   device-medium:   720px,
+		|   device-large:    960px,
+		|   device-xlarge:  1280px
+		| );
+
+h2 Layout Units
+p Enso using a system of layout units to keep spacing like margins and padding consistent throughout the project. 
+p Helper classes that allow you to add or override an objects margin and padding. 
+p This can be useful, if say, you want to add more margin to a heading elemtn in your interface, or inteed would rather avoid. 
+p
+	| In our layout, we set a base unit size (by default, 16px) which is then used to caclulate variants. 
+	ul
+		li sizes-quarter-unit: 16px / 4
+		li size-half-unit: 16px / 2
+		li size-base-unit: 16px
+		li size-double-half: 24px
+		li size-double-unit: 32px
+		li size-triple-unit: 48px
+		li size-quadriple-unit: 64px
+
+h2 Responsive Typograhpy
+p he typgraophy is set using a module typescale, specified in <span class="class">config/text-sizes.scss</span>. 8 sizes are specified:
+p The mixin takes the various breakpoints specified in the breakpoints config file, and will adapt the text size for each device at that breakpoint. 
+p The different elements come prepacked with theses sizes set. Doing things this way allows ut to get better control over how different elements render on 
+p different devices (I used to use REM units to do this, but find this solution gives more control).
+
+p 
+	| From a designer's perspective, typography is one of the most critial asepcts of any prokect. Managing typgoraphy well, especially with varying 
+	| viewports makes it even harder.  It works in the following way: 
+
+ul
+	li X includes 7 different standard sizes - 3 sizes above the base font size, and 3 sizes above. 
+	li The size and line-height is then specified for each type of device, found int he breakpoitns map. 
+	li To use a size on a new element, use the mixin @responsive-text-size(size). 
+	li You can speficiy additional breakpoints and sizes in the map. 
+
+
+pre
+	code.language-scss
+		| $text-sizing: (
+		|   x-small: (
+		|     device-small: (
+		|       font-size: rem(14px)
+		|      ),
+		|      device-medium: (
+		|        font-size: rem(12px)
+		|       ), 
+		|      device-large: (
+		|        font-size: rem(12px)
+		|      )
+		|    ),
+		|   medium: (
+		|    device-small: (
+		|      font-size: rem(16px)
+		|     ),
+		|    device-medium: (
+		|      font-size: rem(18px)
+		|     ), 
+		|     device-large: (
+		|       font-size: rem(18px)
+		|      )
+		|    ),
+		| );
+
 h2 Stacking
-p Managing z-index order can be a pain - SASS docs makes it easy. In config/z-index is a sass map with various objects and their zindx. 
-p You can add new objects here, then add to the object using the z-index() function.
+p Managing z-index order can be a pain - SASS docs makes it easy. In config/z-index is a sass map with various objects and their z-index value. 
+p You can add new objects here, then add to the object using the <strong>layers($object)</strong> function.
 pre
 	code.language-scss
 		| $layers: (
-		| primary-header-site: 1,
-		| modal: 2,
-		| dropdown-menu: 3,
-		| ...
+		|   primary-header-site: 1,
+		|   modal: 2,
+		|   dropdown-menu: 3,
+		|   ...
 		| );
 		| &nbsp;
 		| &nbsp;
+		| &nbsp;
+		| // Use the function
 		| &nbsp;
 		| .primary-header-site {
 		|   z-index: layers(primary-header-site);

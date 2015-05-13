@@ -1,4 +1,8 @@
 $sides: top, right, bottom, left
 @each $side in $sides
-	.border-#{$side}
+	.border-#{$side}-light
 		border-#{$side}: 1px solid $color-keyline-light
+
+@each $side in $sides
+	.border-#{$side}-dark
+		border-#{$side}: 1px solid $color-keyline-dark

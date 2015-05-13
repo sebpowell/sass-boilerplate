@@ -20,9 +20,16 @@ a
 
 	&.link-reset 
 		color: inherit
+	
+	&.underline
+		text-decoration: underline
+
+@each $item, $size in $text-sizing
+	.text-#{$item}
+		@include responsive-text-size($item)
 
 p
-	+responsive-text-size(medium)
+	+responsive-text-size(base)
 	line-height: 1.8
 	&:not(:last-child)
 		margin-bottom: sizes(base)
@@ -30,13 +37,7 @@ p
 	&.lead
 		font-size: rem(24px)
 
-	&.caption
-		+responsive-text-size(small)
-		line-height: 1.2
-
-
 small
-	// Used for small labels, captiojs etc. 
 	+responsive-text-size(x-small)
 
 strong
@@ -55,17 +56,16 @@ strong
 
 .typography
 
-	h1, h2, h3, h4, h5, h6
+	> h1, h2, h3, h4, h5, h6
 		margin: sizes(triple) 0 sizes(base) 0
 
-	p, ul, li
+	> p, ul, li
 		color: rgb(58, 58, 58)
 		
-	p
-		+responsive-text-size(medium)
-		margin-bottom: sizes(medium)
-		line-height: 1.6
-		font-weight: 200
+	> p
+		+responsive-text-size(base)
+		margin-bottom: sizes(base)
+		line-height: 2
 
 		&:last-child
 			margin-bottom: 0
@@ -77,11 +77,11 @@ strong
 
 	> ul, ol
 		+responsive-text-size(base)
-		margin: 0
+		margin-left: sizes(triple)
 		padding: 0
 		margin-bottom: sizes(base)
 
-		li
+		> li
 			margin: 0
 			line-height: 1.5
 			&:not(:last-child)
